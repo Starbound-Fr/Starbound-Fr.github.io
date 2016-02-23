@@ -1,0 +1,102 @@
+---
+layout: post
+cover_alt: cover
+wordpress_id: 9402
+categories:
+- News
+tags:
+- !binary |-
+  bHVtacOocmU=
+- moteur
+- Patch
+- vaciller
+- spot
+- stroboscopique
+- JSON
+- __merge
+title: "19 Août : Le Jour où le Modding s'arrêta"
+cover: "/wp-content/uploads/2014/08/une-19-aout-omni-tueur-de-mods.png"
+---
+Hé les moddeurs, vous savez quoi ? Vous allez devoir corriger tous vos mods ! Sur les nightlies en tout cas. Si vous utilisiez des “__merge”.
+Voici les deux articles d'hier, traduits.
+
+<hr />
+
+<h1>19 Août - Lançons une Rave-Party, par <em>Armagon</em> !</h1>
+Les derniers jours se sont déroulés sans trop de surprise. La mission de la base lunaire avance bien, et je vais bientôt pouvoir la peupler d'ennemis et de loots.
+
+Kyren a implémenté une petite mise à jour du moteur lumineux qui offre un plus grand contrôle sur le vacillement de certaines sources de lumière. Auparavant les contrôles étaient un peu vagues et il était souvent difficile d'obtenir précisément le résultat désiré. Il était difficile d'obtenir des lumières qu'elles fassent autre chose que diminuer ou augmenter de manière imprévisible.
+
+Désormais nous avons la possibilité de les faire frémir, flasher ou vaciller comme nous le souhaitons. Comme effet secondaire, vous aurez peut-être remarqué que dans la nightly, les lumières qui vacillaient auparavant ne le font plus. J'ai l'intention de régler ce problème sous peu pour les refaire marcher comme prévu.
+
+Voici une petite vidéo de test avec des spots à effets variables, qui vacillent de manière erratique (NdT : De manière hasardeuse). Je vous déconseille de regarder cette vidéo si vous êtes sensibles aux effets de lumière stroboscopiques étant donné que j'en ai intentionnellement utilisé beaucoup.
+
+httpv://www.youtube.com/watch?v=gXvOLZEdeQY
+
+&nbsp;
+
+<strong>Source :</strong> [<a title="August 19th – Let’s throw a rave!" href="http://playstarbound.com/august-19th-lets-throw-a-rave/">August 19th – Let’s throw a rave!</a>]
+
+<hr />
+
+<h1>19 Août - Le jour où tous vos mods sont morts, par <em>OmnipotentEntity</em></h1>
+
+Le nouveau système de patching JSON dont <a href="/25-juin-progres-les-postes/" title="[Édité] 25 Juin : Plus de progrès sur les avant-postes !" target="_blank">nous avons parlé le 25 Juin dernier</a> est arrivé. Il pourrait y avoir certains cas où ce n'est pas tout à fait implémenté correctement, mais mes tests n'ont rien révélé. Faites moi savoir si vous tombez sur des cas que j'aurais raté.
+
+Les patchs du style “__merge” ne fonctionnent plus. Vous pouvez entièrement revoir vos fichiers, ou vous pouvez utiliser le système de patchs. Pour créer un patch, nommez votre fichier “quelquechose.config.patch” là où votre fichier à patcher se nomme “quelquechose.config”. Ça devrait supporter le <a href="http://tools.ietf.org/html/rfc6902" target="_blank">RFC6902</a> et le <a href="http://tools.ietf.org/html/rfc6901" target="_blank">RFC6901</a>.
+
+Q : Tu peux nous donner un exemple ?
+
+R : Bien sûr :
+
+Voici un court exemple.
+Imaginez que vous ayez un fichier nommé… oh, que sais-je, “player.config” Et disons que vous vouliez changer la hitbox du joueur.
+Vous devriez créer un fichier nommé “player.config.patch” qui contiendrait, par exemple, ce qui suit :
+<blockquote>[
+{ "op" : "replace", "path" : "/techControllerSettings/baseMovementParameters/standingPoly/2", "value" : [ 1.35, -2.5] }
+{ "op" : "replace", "path" : "/techControllerSettings/baseMovementParameters/standingPoly/3", "value" : [ 1.75, -2.0] }
+{ "op" : "replace", "path" : "/techControllerSettings/baseMovementParameters/standingPoly/4", "value" : [ 1.75, 0.65] }
+{ "op" : "replace", "path" : "/techControllerSettings/baseMovementParameters/standingPoly/5", "value" : [ 1.35, 1.22] }
+]</blockquote>
+
+Il changera les valeurs de ce fichier :
+
+<blockquote>"techControllerSettings" : {
+"baseMovementParameters" : {
+"standingPoly" : [ [-0.75, -2.0], [-0.35, -2.5], [0.35, -2.5], [0.75, -2.0], [0.75, 0.65], [0.35, 1.22], [-0.35, 1.22], [-0.75, 0.65] ],
+"crouchingPoly" : [ [-0.75, -2.0], [-0.35, -2.5], [0.35, -2.5], [0.75, -2.0], [0.75, -1], [0.35, -0.5], [-0.35, -0.5], [-0.75, -1] ],
+"airFriction" : 0.2,
+"mass" : 0.6,
+// should keep the player from teleporting through walls
+"maximumCorrection" : 1,
+"maxMovementPerStep" : 0.4
+}
+},</blockquote>
+
+pour obtenir ceci
+
+<blockquote>"techControllerSettings" : {
+"baseMovementParameters" : {
+"standingPoly" : [ [-0.75, -2.0], [-0.35, -2.5], [1.35, -2.5], [1.75, -2.0], [1.75, 0.65], [1.35, 1.22], [-0.35, 1.22], [-0.75, 0.65] ],
+"crouchingPoly" : [ [-0.75, -2.0], [-0.35, -2.5], [0.35, -2.5], [0.75, -2.0], [0.75, -1], [0.35, -0.5], [-0.35, -0.5], [-0.75, -1] ],
+"airFriction" : 0.2,
+"mass" : 0.6,
+// should keep the player from teleporting through walls
+"maximumCorrection" : 1,
+"maxMovementPerStep" : 0.4
+}
+},</blockquote>
+Les valeurs possibles pour “op” sont : “test”, “add”, “remove”, “move”, “copy”, and “replace”. Leurs rôles sont plutôt évidents. Le seul qui peut porter à confusion est “test”, qui teste simplement l'évolution d'une valeur qui, si elle n'est pas correcte, stoppe le patch.
+
+“test”, “add”, et “replace” se servent de “path” et de “value”
+“remove” utilise juste “path”
+“move” et “copy” utilisent “from” et “path”
+
+Il y a d'autres choses, comme “-” pour clore une liste, ou ~1 et ~0, qui se réfèrent respectivement à “/” et “~”. Mais c'est à peu près tout.
+
+<strong>Source :</strong> [<a href="http://playstarbound.com/august-19-the-day-when-all-your-mods-died/" title="August 19 – The day when all your mods died." target="_blank">August 19 – The day when all your mods died.</a>]
+
+<hr />
+
+Désolé de pas vous avoir publié ça plus tôt dans la journée, mais j'ai récemment découvert une série de comics (<em>Fables</em>) et c'est difficile de décrocher :D
+-Article rédigé par <em>Silverthedragon</em>

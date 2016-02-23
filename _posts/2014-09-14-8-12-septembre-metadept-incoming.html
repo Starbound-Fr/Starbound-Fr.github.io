@@ -1,0 +1,80 @@
+---
+layout: post
+cover_alt: cover
+wordpress_id: 9524
+categories:
+- News
+tags:
+- !binary |-
+  bHVtacOocmU=
+- statut
+- vaciller
+- script
+title: "8-12 Septembre : Metadept Incoming..."
+cover: "/wp-content/uploads/2014/09/une-8-12-septembre-metadept.png"
+---
+Salut, voilà l'article de la semaine !
+
+<hr />
+
+<h1>8 Septembre 2014, par <em>Kyren</em></h1>
+
+Rebonjour. Depuis la dernière fois que je vous ai parlé, j'ai travaillé sur plusieurs choses.
+
+Tout d'abord, un nouveau système de statut pour les joueurs, les PNJs et les monstres a été ajouté au dossier Player, mais il n'est pas encore prêt, il lui manque encore deux ou trois trucs. Basiquement, le nouveau système est prêt mais il reste beaucoup à faire avec l'ancien système, qui nécessite d'être retravaillé conceptuellement, parce qu'avant, soit ça ne marchait pas, soit ce n'était pas drôle. L'exemple le plus représentatif est celui du système de chaleur / température, qui sera probablement remplacé par quelque chose de plus simple. Le système est prêt, mais son ajout au reste n'arrivera que lorsque Metadept sera arrivé au Royaume-Uni pour que nous puissions nous asseoir et décider ensemble d'un design et des scripts à implémenter. Quoi qu'il en soit, le système est cool, il fonctionne un peu comme une technologie que vous ne contrôlez pas activement (effets sur le joueur qui impliquent un mouvement = tech, effets sur le joueur qui n'impliquent pas de mouvement = statut).
+
+Oh et au fait ! Metadept déménage en Angleterre pour travailler avec nous dans le même bureau, et pour devenir un véritable employé. Il arrive mardi et je suis super excitée, parce qu'il n'y a rien de mieux que de travailler avec quelqu'un en personne. En ce moment peu de membres de l'équipe se trouvent en Angleterre (je suis seule) donc avoir Metadept avec moi sera plutôt génial !
+
+En plus des statuts, j'imagine que vous avez entendu parler des gros problèmes de threading Star::Root (NdT : Le looooong post d'Omni de la semaine dernière)... l'important, c'est que c'est réparé, et que tout le truc avec les atomic_store / atomic_load n'était même pas nécessaire. Désormais <strong>chaque</strong> base de donnée dans Star::Root est mise à jour par un système de <a href="http://en.wikipedia.org/wiki/Read-copy-update" title="Read-Copy-Update sur en.wikipedia.org" target="_blank">mises à jour Lecture/Copie</a>, pas seulement celles qui posent problème, et le blocage est entièrement évité. Ce règle le problème sans ralentir le rendu, et en fait ça accélère même pas mal de trucs.
+
+En plus de ÇA, je travaille sur quelques objets à faire pour la 1.0, sur les missions et sur des trucs techniques ennuyeux impliquant les traînées et les particules. Quand j'en aurai fini, la pluie ne ralentira PLUS votre jeu, ce qui est pas mal. La semaine prochaine, une fois que Metadept et moi serons au bureau, nous commencerons à nous concentrer sur la sortie d'un nouveau patch stable, ce qui signifie que nous allons devoir nous amuser à régler plein de problèmes de compatibilité qui vont avec.
+
+Eeeeet au cas ou vous ne le sauriez pas, Chucklefish développe un nouveau jeu ! Ça s'appelle Wayward Tide, et vous devriez jeter un coup d’œil au post sur le blog Chucklefish <a href="http://blog.chucklefish.org/?p=128" title="Set sail for Wayward Tide!" target="_blank">ici</a>. Le développement de Wayward Tide est *complétement* parallèle à Starbound, une équipe complète séparée, en fait, avec Palf comme programmeur.
+
+Techniquement, Wayward Tide est plutôt cool pour Chucklefish, parce que ça représente un écart radical avec la manière dont Starbound a été développé, et si ça marche ce sera probablement de cette façon que nous développerons des jeux dorénavant. C'est écrit entièrement en Haskell, qui est une forme de programmation réactive fonctionnelle, et c'est vraiment vraiment cool. Je vous en aurai bien dis plus à ce sujet mais Palf voudra sans doute en parler lui-même dans un futur proche.
+
+<strong>Source :</strong> [<a href="http://playstarbound.com/september-8-2014/" title="September 8, 2014" target="_blank">September 8, 2014</a>]
+
+<hr />
+
+<h1>9 Septembre - Ça va pulser, par <em>Armagon</em> !</h1>
+
+Salut les gars !
+
+Vu que j'attends l'arrivée de Metadept au bureau plus tard dans la semaine avant de continuer à travailler sur les missions, j'ai travaillé sur une de mes tâches secondaires, qui consiste à convertir les sources lumineuses déjà existantes au nouveau code des lumières vacillantes dont je vous ai parlé <a href="/19-aout-jour-modding-sarreta/" title="19 Août : Le Jour où le Modding s’arrêta" target="_blank">il y a quelques semaines</a>. Beaucoup de lumières utilisaient l'ancien code, mais j'ai quasiment fini de tout convertir, et beaucoup de lumières (particulièrement celles basées sur le feu) sont en cours d'ajustement pour sembler plus naturelles.
+
+Travailler sur ces trucs là n'a rien de très intéressant en soit, mais ça représente un changement de rythme agréable comparé à mon travail sur les missions, et c'est sacrément bien de pouvoir synchroniser l'oscillation des lumières avec les animations de leurs objets !
+
+<a href="/8-12-septembre-metadept-incoming/ihqwv0/" rel="attachment wp-att-9536"><img src="/wp-content/uploads/2014/09/iHQwV0.gif" alt="iHQwV0" width="1000" height="553" class="aligncenter size-full wp-image-9536" /></a>
+
+<strong>Source :</strong> [<a href="http://playstarbound.com/september-9th-pulse-like-you-mean-it/" title="September 9th – Pulse like you mean it!" target="_blank">September 9th – Pulse like you mean it!</a>]
+
+<hr />
+
+<h1>À peu près le 11 Septembre - Post Lag, par <em>Metadept</em></h1>
+
+Donc, comme l'a mentionné, je suis arrivé au Royaume-Uni hier ! J'avais dis que j'écrirai quelque chose, mais j'ai été distrait par mes discussions…  désolé !
+
+Mes activités d'hier consistaient à discuter de nos plans et de nos priorités, m'installer à mon bureau, et être un zombie à cause du manque de sommeil ! Kyren et moi avons parlé de ses progrès sur le système de statut, qui à l'air plutôt extraordinaire. La fonctionnalité la plus importante est la conversion de tous les effets de statut complexes en scripts Lua. En plus des grosse améliorations apportées au code du moteur et du nettoyages des tonnes de code inutilisées, cela nous permettra d'implémenter quelques effets de statut très intéressants, nous avons donc passé un certain temps à essayer de trouver des idées de possibles effets de statut scriptés. J'ai aussi expliqué à GeorgeV et Armagon comment implémenter certaines fonctionnalités dont ils ont besoin pour les missions sur lesquelles ils travaillent. Ajouter plus de piège, plus de câblage/systèmes logiques et plus d'évènements scriptés/déclenchables pour les PNJs fait partie de leur travail. Je vous en dirait plus la dessus plus tard; le temps est venu pour moi d'écrire du code !
+
+Oh, et une petite note pour les moddeurs : Kyren a ajouté des raccourcis Lua pour obtenir et régler des propriétés arbitraires pour les mondes, nous avons donc désormais accès au stockage des mondes/niveaux pour faire communiquer des scripts et des données de mondes. Je suis sûr que certains d'entre vous arriverons à faire de belles choses avec ça !
+
+<strong>Source :</strong> [<a href="http://playstarbound.com/september-11ish-post-lag/" title="September 11ish – Post Lag" target="_blank">September 11ish – Post Lag</a>]
+
+<hr />
+
+<h1>12 Septembre : Missions et trucs, par <em>GeorgeV</em></h1>
+
+Salut !
+
+Starbound contiendra quelques missions, voici donc un aperçu de l'une d'entre elles. C'est une mission Floran où… de mauvaises choses se passent. Fidèle à moi-même, je ne vais rien dire et vous laisser vous poser des questions…
+
+<a href="/8-12-septembre-metadept-incoming/pretty/" rel="attachment wp-att-9537"><img src="/wp-content/uploads/2014/09/pretty.png" alt="pretty" width="1895" height="711" class="aligncenter size-full wp-image-9537" /></a>
+<a href="/8-12-septembre-metadept-incoming/pretty2-2/" rel="attachment wp-att-9538"><img src="/wp-content/uploads/2014/09/pretty2.png" alt="pretty2" width="1296" height="617" class="aligncenter size-full wp-image-9538" /></a>
+
+<strong>Source :</strong> [<a href="http://playstarbound.com/september-12th-missions-and-stuff/" title="September 12th: Missions and Stuff." target="_blank">September 12th: Missions and Stuff.</a>]
+
+<hr />
+
+Pfiou, juste à temps. Bon, j'y vais, à la prochaine !
+-Article rédigé par <em>Silverthedragon</em>

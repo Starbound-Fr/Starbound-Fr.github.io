@@ -1,0 +1,145 @@
+---
+layout: post
+cover_alt: cover
+wordpress_id: 6770
+categories:
+- News
+tags:
+- windows
+- linux
+- crash
+- feature creep
+- soin
+- omnipotent entity
+- omni
+- !binary |-
+  w6ljaGVsb24=
+- insomnia
+- progression
+- bugs
+- drm
+- !binary |-
+  YsOqdGE=
+- !binary |-
+  csOpcG9uc2U=
+- question
+- Starbound
+- suggestion
+title: "Questions réponses d'Omnipotent Entity"
+cover: "/wp-content/uploads/2013/09/QA.png"
+---
+Bonjour à tous, me voici aujourd'hui pour vous apporter une traduction du questions/réponses d'Omni, qui contient quelques infos intéressantes.
+
+<hr>
+
+<em>Il s'agit seulement de ce que la bêta requiert d'après ce que j'ai compris. Il me manque peut-être des informations et je peux tout simplement me tromper, donc ne prenez pas ça pour l'évangile.</em> <strong>-Omni</strong>
+
+
+
+
+<em>Qu'est-ce qui doit encore être fait avant la sortie de la bêta ? Essayez de vous retenir d'appeler des choses spoilers. Utilisez des noms de code si vous le devez, mais nous aimerions un peu de perspective.</em>
+
+<strong>Réponse d'OmnipotentEntity :</strong>
+Pas mal de choses. Nous devons mettre en place les quêtes du deuxième échelon et du troisième échelon, étoffer les quêtes en général, le système de groupe. Beaucoup de trucs. Le carnet de route a déjà pas mal d'informations a ce sujet. Nous voulons que l'univers paraisse bien plus habité qu'il ne l'est déjà. Certaines choses simples doivent encore être ajoutées, comme la configurabilité des touches. Ou encore l'interface pour plus d'options. Juste un million de petites choses pour finalement amener le jeu à un niveau de finition suffisant, et transformer un paquet de systèmes en un jeu avec lequel vous pouvez vous amuser.
+
+<em>Est-ce que le nombre de choses devant être faites avant la bêta a changé au cours des derniers mois, et si oui, comment et pourquoi ?</em>
+
+<strong>Réponse d'OmnipotentEntity :</strong>
+Pas vraiment, ça a toujours été pas mal de boulot.
+
+<em>À quel point pensez-vous que le jeu doive être stable au niveau des crashs et bugs lors de la sortie de la bêta ?</em>
+
+<strong>Réponse d'OmnipotentEntity :</strong>
+Je ne m'inquiète pas vraiment au sujet des crashs. Je suis beaucoup plus inquiet au sujet de la stabilité de la génération de monde. Je ne veux pas qu'il y ait de situations rendant incompatible des fichiers de sauvegardes plus souvent que nécessaire. Ne pas avoir fait de sortie publique nous donne la liberté nécessaire pour rendre incompatibles ces fichiers de sauvegarde sur un coup de tête si le jeu s'en porte mieux. Et nous faisons cela très régulièrement.
+Je suis inquiet au sujet des pertes de temps et de données. Il n'y a rien de plus frustrant que de perdre sa progression à cause d'un plantage. Ce n'est pas grave si le jeu crashe, du moment que vous pouvez reprendre au moment où ça s'est coupé, mais si vous perdez votre progression, c'est vraiment horrible, et c'est le genre de chose qui m'a fait ragequit sur des jeux autrement formidables.
+
+<em>Pourquoi les dates de sorties estimées pour la bêta et le jeu final ne cessent de changer ?</em>
+
+<strong>Réponse d'OmnipotentEntity :</strong>
+Loi de Hofstadter : ça prend toujours plus de temps que ce que vous aviez prévu, même si vous aviez pris en compte la loi de Hofstadter.
+Voici quelques bons exemples :
+Commençons par les nouveaux mécanismes de la barre de raccourcis. Je m'attendais à ce que ce ne soit qu'un projet d'une après-midi. Au final, ça m'a pris une fichue semaine entière de le faire et a touché quatre couches de code différentes (/client, /core, /game, /frontend), et c'est passé par cinq itérations différentes. Et ça m'a fait créer des matrices 12*12 pour trouver le bon fonctionnement.
+D'autres choses m'ont pris bien plus longtemps que prévu. J'ai réécrit pas mal de code d'interface utilisateur il y a quelques mois. Maintenant, nous utilisons ce qui équivaut à une boîte à outils de base, avec encapsulation arbitraire, extensibilité, etc. Ça fonctionne comme un sous-ensemble de Qt, et c'est totalement fondé sur les données. Ça m'a pris presque un mois. Mais c'était nécessaire pour des choses comme les zones de défilement, entre autres, que la vieille interface n'était tout simplement pas assez puissante pour gérer.
+Ça m'a pris un jour ou deux pour commencer à porter nos 7 ou 8 implémentations de la barre de progression en une barre de progression pour gérer le monde, une qu'on peut vraiment décrire en JSON et configurer (moddeurs, réjouissez-vous !). Maintenant, nous n'avons plus que 5 ou 6 implémentations différentes, nombre que je vais réduire en touchant au code adjacent.
+Et c'est juste des trucs d'interface. Il y a plein de petits trucs. Parfois, les choses qui paraissaient finies ont des problèmes. Par exemple, les changements de la barre de raccourcis dont je parlais ont cassé le manipulateur de matière, car (et ça m'a pris des heures et des heures d'éreintant débuggage pour le découvrir) l'objet était initialisé deux fois et essayait de lire la mauvaise main. Ce qui faisait partir le rayon du centre du joueur plutôt que du bout de la main. C'est un bug qui a toujours été là, mais n'a été exposé que par les changements de la barre de raccourcis.
+
+<em>Pourquoi la première mondiale à l'Insomnia a été un événement avec Yogscasts plutôt que vous en train de montrer les fonctionnalités fondamentales du jeu, comme la génération procédurale des mondes ?</em>
+
+<strong>Réponse d'OmnipotentEntity :</strong>
+Parce que, que vous les aimiez ou les détestiez, Yogscasts a des fans qui ne connaissent pas Starbound. C'était une très bonne exposition pour nous. On a déjà des jours d'enregistrements de lives de développeurs en train de jouer et de montrer des trucs comme la génération procédurale des mondes.
+
+<em>Pensez-vous que le "feature creep" (ndlr : l'ajout constant de petites fonctionnalités non prévues à la base) n'est pas un souci ou a conduit à du retard ?</em>
+
+<strong>Réponse d'OmnipotentEntity :</strong>
+Notre liste de fonctionnalités ne s'est pas vraiment allongée.
+
+<em>Pour vous, dans quels cas un bug "tue le jeu" ?</em>
+
+<strong>Réponse d'OmnipotentEntity :</strong>
+S'il provoque une perte de progression et donc d'investissement en temps.
+
+<em>Pensez-vous que sortir une bêta telle quelle permettrait de trouver et supprimer plus rapidement les bugs qu'une bêta sortant après que tout le contenu ait été ajouté ?</em>
+
+<strong>Réponse d'OmnipotentEntity :</strong>
+Nous n'attendons pas que tout le contenu ait été ajouté, à ce que je sache. Je suis à peu près sûr que nous n'allons intégrer que les trois premiers échelons.
+
+<em>Que pensez-vous des jeux qui permettent une sorte de test de version alpha ?</em>
+
+<strong>Réponse d'OmnipotentEntity :</strong>
+Si ça marche pour eux, c'est très bien. Mais je ne pense pas que ça marcherait pour nous. Il y a vraiment deux choses qui font rester un joueur sur un jeu, et rester excité à son sujet. La possibilité de construire des mondes, de jouer un scénario. Actuellement, nous n'avons que le premier, et c'est entravé par la sus-mentionnée constante invalidation de fichiers de sauvegarde à cause de différences de sérialisation.
+
+<em>Pourquoi sortir une démo comme celle qui était présentée à l'Insomnia n'est pas considéré comme faisable ? Certaines personnes ont l'impression que les raisons données ne sont pas suffisantes, donc peut-être qu'une explication plus approfondie serait mieux acceptée.</em>
+
+<strong>Réponse d'OmnipotentEntity :</strong>
+La démo de l'Insomnia avait un bug grave découvert cinq minutes avant de démarrer la démo. Ça n'apparaît qu'en utilisant certaines configurations mais ce sont les configurations que nous allons devoir utiliser pour la bêta. C'était dû au fait d'avoir coupé l'authentification renforcée, et d'avoir quitté une session multijoueur.
+Sous Linux, ça fonctionne bien, parce que j'ai écrit le code et je l'ai testé durant le vol vers l'Insomnia, parce que je devais contourner cette authentification obligatoire pour travailler sans Internet dans l'avion.
+Sous Windows, le serveur crash, corrompt la sauvegarde du monde et expulse tout le monde sans sauver leurs personnages.
+Inutile de dire que si vous sentiez une énorme boule de stress juste à gauche de Molly hors caméra durant le live, c'était moi. Bart était incroyablement stressé aussi.
+De plus, il y a une sorte de fuite de mémoire ou de ressources dans la version Windows de notre serveur, car l'utilisation de ressources ne fait qu'augmenter. Ça allait pendant une heure, mais si ça avait duré plus longtemps, je serais devenu vraiment nerveux.
+Enfin, le premier échelon n'est que partiellement fini, nous utilisons un boss qui ne sera même probablement pas le boss du premier échelon. Il n'y a pas de quêtes secondaires, rien en dehors de la suite de quêtes du tutoriel. La sérialisation n'est pas stable. Le système de groupe n'est accessible que via des commandes administrateur, comme beaucoup d'autres choses. En l'état, le jeu est plutôt sympa si on y joue une petite heure. Mais ça n'est vraiment pas prêt à être sorti pour le public.
+
+<em>Les gens voudraient vous voir plus souvent sur le forum. Est-ce que ça nuirait trop au développement pour être possible ?</em>
+
+<strong>Réponse d'OmnipotentEntity :</strong>
+J'essaie, j'essaie vraiment.
+
+<em>Est-ce que l'affirmation "Bêta en 2013, sortie... quelques temps après ça" est considérée comme la bonne réponse actuelle ?</em>
+
+<strong>Réponse d'OmnipotentEntity :</strong>
+Pour autant que je sache.
+
+<em>À combien d'échelons devons-nous nous attendre pour la bêta ? Aurons-nous les 10 (11 avec le post-jeu), ou est-ce que les derniers échelons seront ajoutés plus tard ?</em>
+
+<strong>Réponse d'OmnipotentEntity :</strong>
+Les dernières infos que j'ai c'est : 3 échelons pour la bêta. Une fois que nous aurons tout réglé comme nous le voulons pas rapport à la génération des mondes etc. Ensuite, nous sortirons les échelons au fur et à mesure que nous les aurons faits ? Je ne suis pas sûr de ce que sont les plans à ce sujet.
+
+<em>Certains pensent que sacrifier quelques articles journaliers chaque semaine pourrait permettre de créer un "gros article du vendredi" plus long, plus développé (ou peu importe comme on peut appeler ça), qui contiendrait une liste périodique de choses (spoilers exclus, noms de code si nécessaire) qui montrerait la progression pour chaque objet, fonctionnalité, sur lequel vous avez travaillé de façon résumée. Est-ce que vous pouvez envisage de faire ça ?</em>
+
+<strong>Réponse d'OmnipotentEntity :</strong>
+C'est assez difficile de trouver le temps de faire un article chaque jour, pour être tout à fait honnête. Vous pouvez demander plus. Je ne vais pas dire que vous êtes des ingrats pour avoir demandé, mais s'il vous plait, mettez-vous à notre place, nous faisons déjà des articles journaliers, ce qui est bien plus que pour n'importe quel autre jeu vidéo en développement dont j'ai entendu parler.
+
+<em>Nous pensons qu'il y a des choses importantes que vous aviez promises, que les gens attendaient mais qui n'ont pas été faites. Par exemple, un topic de questions/réponses, un trailer (je crois que vous avez dit que vous vouliez que ce trailer représente au mieux le produit fini, donc ça viendra peut-être avec la bêta), le carnet de route, l'histoire des Hylotls.</em>
+
+<strong>Réponse d'OmnipotentEntity :</strong>
+Nous avons laissé certaines choses en suspens car nous avons fonctionné en mode "à fond les manettes" depuis un moment. Je suis vraiment désolé. Je n'ai pas oublié toutes ces choses. Ça a juste été classé comme étant "pas aussi important que la sortie de la bêta". je suis sûr que vous êtes d'accord.
+
+<em>Est-ce que certaines suggestions de la communauté ont été intégrées au jeu ? Une liste des choses que vous avez adoptées ou que vous envisagez d'adopter pendant/après la bêta serait un gros coup de boost pour le moral de beaucoup de membres de la communauté.</em>
+
+<strong>Réponse d'OmnipotentEntity :</strong>
+Quelques unes. Un exemple qui me vient à l'esprit est la description du Matter manipulator (ndlr : manipulateur de matière), suggérée par quelqu'un sur Reddit. "Manipulates everything that matters" (ndlr : "manipule tout ce qui importe", désolé, j'ai pas trouvé de jeu de mots en français, si vous en avez un, n'hésitez pas à le mettre en commentaire). Je n'ai pas de liste de toutes ces choses, par contre.
+
+<em>Suggestion pour le gameplay : les kits de soin ne devraient être utilisables que lorsque l'on a perdu de la vie. Sinon, avec un kit de soin en main, on devrait pouvoir l'utiliser pour soigner un autre joueur ou un familier. (ce serait peut-être plus à sa place dans la section des suggestions)</em>
+
+<strong>Réponse d'OmnipotentEntity :</strong>
+Oui, c'est important. Les objets de soin sont en fait très récents. Vu que c'est un problème qui est à la fois facile à résoudre et indépendant, nous le laissons de côté. Du coup, nous n'avons pas encore corrigé certains problèmes quant à leur utilisation.
+
+<em>S'il vous plait, dites-moi que vous n'allez pas mettre de DRM qui requiert une connexion Internet pour jouer.</em>
+
+<strong>Réponse d'OmnipotentEntity :</strong>
+La version actuelle nécessite une connexion Internet obligatoire avec DRM, afin d'empêcher les fuites. Le code que j'ai écrit permettra de désactiver ça. Ce qui est une nécessité majeure pour la bêta.
+
+<hr>
+
+Et voilà. Ce qu'il faut en retenir, c'est que les devs sont à fond, que s'ils ne font pas certains trucs c'est parce que c'est moins important que la bêta, que seuls trois échelons seront disponibles pour la bêta, qu'il n'y aura pas de connexion Internet obligatoire, qu'ils lisent les suggestions et que je suis une quiche pour traduire les jeux de mots. Merci de m'avoir lu, et à bientôt !
+
+<strong>Source :</strong> [<a href="http://community.playstarbound.com/index.php?threads/omni-reply-to-community-questions.29051/" title="Omni's Q&A" target="_blank">Q&R d'Omni</a>]

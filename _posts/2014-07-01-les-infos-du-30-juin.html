@@ -1,0 +1,56 @@
+---
+layout: post
+cover_alt: cover
+wordpress_id: 9125
+categories:
+- News
+tags:
+- carburant
+- fuel
+- cockpit
+- couleur
+- profil de spawn
+- slot
+- beamaxe
+- matter manipulator
+- events
+- ia
+- bug
+- interface
+- monstre
+- biome
+- spawner
+title: "Les infos du 30 Juin"
+cover: "/wp-content/uploads/2014/07/une-30-juin-2014.png"
+---
+Hello !
+Désolé de vous publier ça si tard dans l'après-midi (voire même en début de soirée)...
+Bon, aussi faut dire que je viens de recevoir Mario Kart 8, la tentation était trop forte :3
+Donc, voici l'article de Kyren.
+
+<hr />
+
+Je vous la fais courte, juste histoire de vous expliquer ce que j'ai fais dernièrement :
+
+L'IA est désormais vraiment capable de déclencher des évènements, et chaque action possède maintenant un coût approprié, cela inclut par exemple l'apparition d'objets dans le casier du vaisseau ou l'amélioration du vaisseau. Cela m'a obligé à retravailler significativement le suivi des améliorations du vaisseau.
+
+Avec metadept, nous avons modifié la façon qu'a le jeu d'associer biome et profil de spawn. Aussi, le profil de spawn d'un biome contient maintenant plus d'informations, qui seront utilisées par exemple pour définir les palettes de couleurs utilisées pour les monstres du biome.
+
+J'ai réparé un bug d'interface avec le cockpit, la touche E et la priorité des différentes touches.
+
+J'ai réparé un bug avec les scripts de mise à niveau des versions (Toujours dysfonctionnel dans la version stable, tandis qu'il reste beaucoup de travail à faire sur la version nightly)
+
+Le carburant fonctionne à nouveau, après que j'ai brisé (délibérément) sont fonctionnement pour permettre aux améliorations du vaisseau de fonctionner avec l'IA.
+
+J'ai COMMENCÉ à travailler sur le nouveau système gérant les objets essentiels comme la beamaxe (NdT : C'est-à-dire le Matter Manipulator). Plutôt que de faire de la beamaxe un objet qui ne peut être jeté, nous allons rajouter plusieurs slots sous les slots L et R qui pourront contenir la beamaxe, le paint tool et le wire tool. Ils agiront comme des slots d'objets normaux, mais seront moins des objets que des améliorations permanentes du joueur. Aussi, nous nous sommes débarrassé du système qui appliquait des effets de statut sur le joueur lorsque certains objets se trouvaient dans son inventaire.
+
+Il y a aussi eu plein de trucs ennuyeux par rapport au spawner et à certains bugs et autres problèmes internes (en tout cas c'est ce que me dit mon log).
+
+<strong>Source :</strong> [<a href="http://playstarbound.com/jun-30/" target="_blank">Jun 30</a>]
+
+<hr />
+
+Voilà tout.
+Merci à LaChouette pour son idée d'<a href="http://img41.xooimage.com/files/c/5/6/209184lapin_pancake-1debdf7.jpg" target="_blank">image de une</a>... originale <:3
+À la prochaine !
+-Article rédigé par <em>Silverthedragon</em>

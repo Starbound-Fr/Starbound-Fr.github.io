@@ -1,0 +1,340 @@
+---
+---
+@font-face 
+  font-family: 'Didact Gothic'
+  font-style: normal
+  font-weight: 400
+  src: local('Didact Gothic'), local('DidactGothic'), url('/wp-content/themes/sb-fr/DidactGothic.woff') format('woff')
+
+// réglage du box sizing
+html
+  box-sizing: border-box
+  margin: 0px
+  padding: 0px
+*, *::before, *::after 
+  box-sizing: inherit
+
+// on empeche de faire sortir des blocs les images
+img
+  max-width: 100%
+  height: auto
+  display: inline-block
+  margin: auto
+h1, h2, h3, h4, h5, h6 
+  font-family: "Didact Gothic", Helvetica, Arial, sans-serif
+  font-weight: normal
+h2
+  font-size: 18px
+a
+  color: #222
+  text-decoration: none
+strong
+  font-weight: bold
+pre, code
+  max-width: 100%
+  overflow: auto
+  margin: auto 5px auto 5px
+
+body 
+  background-color: #220025
+  background-image: url('/wp-content/uploads/2013/01/fond-étoilé1.jpg')
+  background-repeat: repeat
+  background-position: top left
+  background-attachment: scroll
+  font-family: Helvetica, Arial, sans-serif
+  color: #333
+  padding: 0px
+  margin: 0px
+  font-size: 13px
+  
+  // mise en flex des éléments principaux
+  .site-header > .wrapper, > .wrapper, > .site-footer 
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+    align-items: flex-start
+  
+  // corp de la page + footer
+  > .wrapper, > .site-footer
+    background-color: rgba(255, 255, 255, 0.8)
+    width: 960px
+    margin: auto
+  > .site-header
+    width: 960px
+    margin: auto
+    margin-top: 40px
+    margin-bottom: 40px
+    > .wrapper > #logo
+      position: relative
+      
+      > a.logo
+        display: block
+        position: relative
+        background: url("{{site.asset_path.images}}/logo.png") transparent
+        width: 397px
+        height: 102px
+        h1
+          text-align: center
+          font-family: "Didact Gothic", Helvetica, Arial, sans-serif
+          font-size: 1em
+          color: #555
+          width: 180px
+          line-height: 12px
+          position: absolute
+          left: 0px
+          bottom: 0px
+      #dotcom
+        position: absolute
+        top: 63px
+        right: 2px
+        font-size: 0.75em
+    #menu-haut
+      position: relative
+      ul, li
+        margin: 0px
+        padding: 0px
+      ul
+        border: 1px solid #ccc
+        color: #ccc
+        padding: 0px
+        list-style: none
+        a
+          font-family: "Didact Gothic", Helvetica, Arial, sans-serif
+          font-size: 13px
+          text-transform: uppercase
+          color: #aaa
+          display: block
+          padding: 1px 9px 0
+          line-height: 36px
+          font-weight: 300
+        li
+          display: inline-block
+          border-left: 1px solid #ccc
+          position: relative
+          &:nth-child(1)
+            border-left: none
+          &:nth-last-child(1) ul
+            right: -1px
+          &:hover
+            background-color: #222
+            color: #fff
+          
+          ul
+            display: none
+            position: absolute
+            top: 37px
+            right: -5px
+            z-index: 2001
+            background: #E4E1E4
+            padding: 0px
+            width: 150px
+            
+            li
+              display: block
+              border-bottom: 1px solid #ccc
+              background: #E4E1E4
+              a
+                line-height: 18px
+                font-size: 13px
+                text-transform: none
+                padding-top: 5px
+                padding-bottom: 5px
+            li:nth-last-child(1)
+              border-bottom: none
+          
+          &:hover
+            > ul
+              display: block
+      
+  
+  // réglage du corp de page
+  > .wrapper
+    > .content
+      flex: 2
+      > .home, .post
+        margin: 20px
+        margin-right: 20px
+        max-width: 640px
+      .post
+        a
+          text-decoration: underline solid #222
+        .post-title
+          padding-top: 4px
+          font-size: 22px
+          margin-bottom: 20px
+        .post-meta
+          border-bottom: solid 1px #a8a8a8
+          border-top: solid 1px #a8a8a8
+          padding: 20px
+          padding-left: 0px
+          display: flex
+          flex-direction: row
+          justify-content: space-between
+        img
+          margin-top: 10px
+          margin-bottom: 10px
+      
+      .post-list
+        display: flex
+        flex-direction: row
+        justify-content: space-between
+        align-items: center
+        flex-wrap: wrap
+        position: relative
+        
+        > .post-cover:nth-child(1)
+          width: 620px
+          height: 250px
+          margin-top: 0px
+        > .post-cover
+          width: 300px
+          height: 150px
+          object-fit: cover
+          margin-top: 20px
+          position: relative
+          
+          a:hover .thumbnail-title
+            opacity: 0.9
+          a
+            display: block
+            position: relative
+            overflow: hidden
+            width: 100%
+            height: 100%
+            
+            .thumbnail-title
+              position: absolute
+              display: flex
+              justify-content: center
+              align-items: center
+              bottom: 0px
+              left: 0px
+              right: 0px
+              background: #222
+              min-height: 40px
+              opacity: 0.65
+              -moz-opacity: 0.65
+              line-height: 17px
+              
+              h2
+                // padding-left: 10px
+                text-align: center
+                color: #eee
+                text-shadow: 0 -1px 0 rgba(0,0,0,1.0)
+                display: block
+                text-decoration: none
+                margin: 5px
+      
+      .pagination
+        display: flex
+        flex-direction: row
+        justify-content: space-between
+        align-items: center
+        margin-top: 10px
+        
+        .pagination-previous
+          text-align: left
+        .pagination-next
+          text-align: right
+        a
+          background-color: #fff
+          font-family: "Didact Gothic", Helvetica, Arial, sans-serif
+          text-transform: uppercase
+          padding: 1px 12px 0
+          line-height: 32px
+          display: inline-block
+          border: 1px solid #ccc
+          color: #aaa
+          font-weight: 400
+          text-decoration: none
+          
+        a:hover
+          color: #fff
+          background-color: #222
+        
+    > aside
+      flex: 1
+      padding-right: 20px
+      padding-top: 20px
+      max-width: 300px
+      
+      h2
+        border-bottom: 1px solid #aaa
+        padding-bottom: 10px
+        margin-bottom: 10px
+        text-transform: uppercase
+        .material-icons
+          vertical-align: -23.475%
+          margin-right: 0.25em
+      
+      .label-info
+        border-radius: 3px
+        background-color: #F89406
+        padding: 2px 4px
+        font-size: 0.88em
+        font-weight: bold
+        line-height: 14px
+        color: #fff
+        text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.25)
+        vertical-align: baseline
+        display: inline-block
+        opacity: 0.8
+        font-family: Helvetica,Arial,sans-serif
+        font-weight: 700
+        text-align: center
+        
+        a
+          color: #FAFAFA
+          border-bottom: 1px dotted #FAFAFA
+      
+      #social
+        display: flex
+        flex-direction: row
+        justify-content: space-around
+        align-items: center
+        flex-wrap: wrap
+        margin-top: 1em
+        
+        h2
+          width: 100%
+        a
+          text-decoration: none
+        img
+          height: 32px
+          width: 32px
+          opacity: 0.75
+          &:hover
+            opacity: 1
+          
+      #partenaires
+        display: flex
+        flex-direction: row
+        justify-content: space-around
+        align-items: center
+        flex-wrap: wrap
+        
+        h2
+          width: 100%
+        a
+          display: block
+          width: calc(50% - 2px)
+          img
+            width: 100%
+      
+      #liens
+        .blogroll
+          padding-left: 1em
+          li
+            list-style-type: circle
+
+  
+  .site-footer
+    border-top: 1px solid #aaa
+    padding: 0px 20px 0px 20px
+    font-size: 1em
+    
+    .footer-right
+      text-align: right
+    .footer-left
+      text-align: left
+  

@@ -1,0 +1,266 @@
+---
+layout: post
+cover_alt: cover
+wordpress_id: 9475
+categories:
+- News
+tags:
+- canyon
+- Blog
+- '1.0'
+- mission
+- base lunaire
+- chucklefish
+- Donjon
+- terrain
+- !binary |-
+  Z8OpbsOpcmF0aW9u
+- loot
+title: "1-5 Septembre : Des bugs, encore des bugs..."
+cover: "/wp-content/uploads/2014/09/une-1-5-septembre-1.0.png"
+---
+Hey. Voici tous les posts de la semaine, réunis en un article. Attention, c'est lourd en contenu (3000 mots, aïe, mes doigts). Surtout le dernier article.
+
+<hr />
+
+<h1>1er Septembre - Travaux en cours, par <em>Metadept</em></h1>
+Je n'ai rien de très excitant à partager avec vous aujourd'hui. Kyren travaille sur des trucs techniques plutôt importants, elle s'occupe de problèmes de threading que nous avons eu avec les pointeurs en C++11. De leur côté, Armagon et les artistes continuent à travailler sur les missions, et je ne suis pas autorisé à vous en parler.
+
+Je m'amuse toujours avec la génération des terrains, j'essaie de tester les limites du jeu. Voici une capture d'écran de mes travaux en cours sur les canyons (cliquez pour la voir en plus grand) :
+
+<a href="/wp-content/uploads/2014/09/canyonswip.png"><img class="aligncenter size-full wp-image-9476" src="/wp-content/uploads/2014/09/canyonswip.png" alt="canyonswip" width="1858" height="879" /></a>
+
+Le générateur de terrain fonctionne en combinant des couches multiples de bruit de Perlin (NdT : Désigne une texture procéduralement générée, utilisée pour donner un certain réalisme à une image). Ici, le jeu génère tout d'abord le terrain primaire en surface (les dunes), puis il sculpte les canyons bruts, et enfin il mélange le tout, pour y donner un aspect plus naturel. Les dunes sont privilégiées, pour éviter de se retrouver avec trop de canyons. Cette configuration, cependant, présente de nombreux problèmes. Le problème le plus évident concerne les bords du canyon, où on passe brutalement d'un terrain plat à une falaise quasi-verticale. Cela pourrait être évité en polissant le terrain lors de sa génération (ce qui nécessiterait d'implémenter de nouvelles fonctionnalités pour le moteur). Un autre problème pour lequel je n'ai toujours pas trouvé de solution, à cause du nombre limité de couches et de l'aspect 2D du jeu, est la difficulté à distinguer visuellement une vallée ouverte d'un canyon long et étroit d'un trou profond. Je vais devoir continuer à expérimenter jusqu'à ce que je trouve une solution convenable.
+
+<strong>Source :</strong> [<a title="September 1st – WIPs" href="http://playstarbound.com/september-1st-wips/" target="_blank">September 1st – WIPs</a>]
+
+<hr />
+
+<h1>2 Septembre - Préparation de la nouvelle mission, par <em>Armagon</em></h1>
+Hey tout le monde !
+
+Aujourd'hui j'ai essayé d'aider George avec les fichiers du donjon de la mission sur laquelle il va commencer à travailler. Il a déjà établit un plan détaillé de la structure et de la forme de la mission, du coup il a passé la journée à créer un prototype d'environnement directement en jeu. Pendant ce temps, je me suis occupé de créer des bases fonctionnelles pour la mission. George essaie vraiment de raconter une histoire avec l'environnement, il a donc commencé à créer plein de nouveaux objets au fur et à mesure de sa progression.
+
+On dirait bien que tout est prêt pour pouvoir commencer à rendre la mission fonctionnelle, c'est donc probablement ce sur quoi il va se concentrer la semaine prochaine. Il risque aussi de devoir faire appel à moi pour quelques points plus techniques du système de donjons, mais je suis vraiment impatient de voir comment il va se débrouiller, au vu de ses maquettes qui sont en général toutes de grande qualité. En plus, je dois dire que je suis plutôt content d'avoir quelqu'un d'autre avec moi pour travailler sur ce genre de choses.
+
+Désolé, mais je n'ai rien de très extraordinaire à vous montrer. Notre travail ne varie pas beaucoup en ce moment, et nous préférons vous garder au moins quelques surprises, dans la mesure du possible.
+
+Bonne nuit !
+
+<strong>Source :</strong> [<a title="September 2nd – New Mission Prep" href="http://playstarbound.com/september-2nd-new-mission-prep/" target="_blank">September 2nd – New Mission Prep</a>]
+
+<hr />
+
+<h1>3 Septembre - Chucklefish Blog, par <em>Mollygos</em></h1>
+Salut les gars !
+
+Au lieu du post journalier habituel, hier Tiy s'est servi de <a title="Chucklefish Blog" href="http://blog.chucklefish.org/" target="_blank">notre nouveau blog</a> pour lister ce qu'il reste à faire avant de lancer la 1.0. Attention, cependant, le post et les schémas contiennent énormément de spoilers.
+
+Vous pouvez lire le post en question <a title="Finishing Up Starbound 1.0" href="http://blog.chucklefish.org/?p=91" target="_blank">ici</a>.
+
+RE: Le Blog Chucklefish – Nous y posterons tout ce qui concerne Chucklefish, et les jeux que nous publions. Donc restez attentifs ! Aussi, le site n'est pas encore tout à fait fini, et nous avons l'intention de le remplir un peu plus dans les jours à venir.
+
+Les posts habituels reprendront aujourd'hui !
+
+<strong>Source :</strong> [<a title="3rd September – Chucklefish Blog" href="http://playstarbound.com/3rd-september-chucklefish-blog/" target="_blank">3rd September – Chucklefish Blog</a>]
+
+<hr />
+
+<em>NdT : Note importante, étant donné que ce nouveau blog concerne Chucklefish en général et pas Starbound en particulier, je ne traduirai pas tous les articles qui y sortiront. CEPENDANT, je compte traduire l'article sur la 1.0 de Starbound dont il est question ci-dessus, car il est trop important pour être laissé de côté. Je compte juste le faire séparément, à cause de sa longueur et de la trop grande quantité de spoilers qu'il contient. De plus, si d'autres articles concernant exclusivement Starbound y paraissent dans le futur, j'essaierai bien entendu de les traduire dans la mesure du possible. Sur ce, retour aux traductions de la semaine.</em>
+
+<hr />
+
+<h1>Et parmi les nouveautés du jour, par <em>Armagon</em>...</h1>
+Bonsoir les gens !
+
+J'ai repris mon travail sur la base lunaire aujourd'hui, et j'ai commencé à passer la mission au peigne fin pour la remplir de loots et lui donner un aspect fini. Il y a encore quelques éléments dont je vais avoir besoin pour finaliser la mission, comme des évènements scriptés avec les PNJs (entre autres choses). La bonne nouvelle, c'est que Metadept nous rejoindra officiellement au bureau la semaine prochaine, nous devrions donc faire de gros progrès de ce côté là ! Je suis impatient de le voir s'installer ici pour de bon, vu qu'il fait du très bon boulot et que c'est un gars avec qui il est agréable de travailler.
+
+George a continué à travailler sur sa propre mission et a fait d'excellents progrès, avec très peu d'aide de notre part. Il possède déjà de solides fondations sur lesquelles construire, et même si c'est encore un peu brouillon sur les bords, la mission dans son état actuel est vraiment pas mal. J'ai bien peur que son talent finisse par m’éclipser ! Cela dit, ça risque d'être drôle quand je vais devoir lui apprendre à configurer les PNJs.
+
+Je crains de n'avoir personnellement pas grand chose d'autre à raconter, encore une fois parce que je souhaite éviter de vous spoiler les missions. Les programmeurs continuent à travailler de leurs côtés, et en tant que non-programmeur je n'y comprend pas grand chose. Mais de ce que j'ai compris, ils sont en train de régler leurs comptes à de nombreux bugs qui étaient présents dans le jeu depuis quelques temps. Kyren, elle, semble se préparer à assister Metadept à son arrivée.
+
+Enfin, au cas où vous auriez raté ça, le Blog de Chucklefish est en ligne, et Tiy y a posté un post sur ce que nous prévoyons d'ajouter d'ici la sortie de la 1.0. Je vous déconseille de lire ça si vous souhaitez vous garder la surprise, mais ceux parmi vous qui veulent absolument savoir ce qui arrivera prochainement n'ont pas besoin de se retenir. Nous publierons sur ce nouveau blog des nouveautés en rapport avec les jeux que nous publions, vous devriez donc y jeter un coup d’œil de temps à autre !
+
+Bonne nuit tout le monde !
+
+<strong>Source :</strong> [<a title="September 4th – And in today’s news…" href="http://playstarbound.com/september-4th-and-in-todays-news/" target="_blank">September 4th – And in today’s news…</a>]
+
+<hr />
+
+<h1>5 Septembre 2014 - Édition spéciale "Les nightlies ne se mettaient pas à jour, voici pourquoi", par <em>OmnipotentEntity</em></h1>
+
+Encore un de mes posts techniques. (yay?)
+
+Certains d'entre vous auront peut-être remarqué que durant ces quelques derniers jours, les nightlies n'étaient plus mises en ligne. Cela était dû à deux problèmes séparés, et nous avons réussi à les régler tous les deux. Cela a nécessité un peu de recherche, et nous avons dû revérifier tous les commits du mois passé pour voir à quel moment cela a commencé à arriver (bel exemple de combien un simple bug de logiciel peut-être embêtant à régler)
+
+Si vous remontez au 1er Septembre, vous vous rappellerez peut-être avoir lu ce passage :
+
+<blockquote>Kyren travaille sur des trucs techniques plutôt importants, elle s'occupe de problèmes de threading que nous avons eu avec les pointeurs en C++11.</blockquote>
+
+Pour être plus spécifique, cela réfère au fait que, alors que l'affectation shared_ptr est sécurisée dans la section de contrôle, elle ne l'est pas dans la section des pointeurs. Nous avions travaillé jusque là en pensant que c'était déjà sécurisé tel quel, créant un bug qui affectait deux zones de code (menant à de nombreux problèmes).
+
+Les zones de code spécifiques qui étaient affectées étaient la MaterialDatabase et la LiquidsDatabase, nous avons donc revu ces deux zones, et nous avons remplacé le code avec std::atomic_load et std::atomic_store et tout est bien qui fini bien.
+
+Ou tout était bien, spécifiquement sur l'ordinateur de Kyren, qui tournait sous OSX 10.9 et Clang 3.4. Après avoir fini tout ça, elle s'est aperçue que via notre système de builds automatisées que gcc ne voulait pas le compiler. Après un peu de recherche, elle a fini par s'apercevoir que gcc, en réalité, ne supportait pas atomic_store ou atomic_load. Et nous étions bon pour tout recommencer.
+
+Un ou deux jours plus tard, quelqu'un nous a signalé que les nightlies ne se mettaient plus à jour. À vrai dire, pas mal de gens rencontraient ce problème. Nous avons pensé, “C'est bizarre.” Parce que notre système de build nous dit automatiquement lorsqu'un commit git échoue une compilation automatique, et nous n'avions rien vu de tel.
+
+Nous avons donc vérifié le statut des builders de test, et, pour sûr, tout était dans le vert. MAIS, le build de la version OSX a échoué. Pourquoi ? Des erreurs de liens, d'après les logs. Impossible de trouver les opérations atomic.
+
+Pour faire court, le builder des versions à publier visait OSX 10.7, et pas le builder de test. Le builder de test était réglé par défaut sur l'OS installé, 10.9. La version de libc++ qui vient avec la dernière version de XCode compatible avec 10.7 ne fonctionne pas avec atomic_store et atomic_load. Facile à réparer, mais déplaisant. Pendant que nous y étions, nous en avons profité pour faire un nettoyage de la base de donnée, de manière à déclencher un rebuild complet, ce qui n'était pas arrivé depuis quelques mois. Il s'est avéré que cela a déclenché le second problème.
+
+Le code qui générait le fichier pak échouait silencieusement. En fait, l'erreur ne se faisait pas totalement silencieusement, mais parce qu'un fichier était créé et que notre script qui contrôle le tout ne vérifiait pas la valeur retournée par le programme, le système de build pensait que tout était OK. Et nous finissions par créer et mettre en ligne un fichier pak de 30KB (au lieu de 800MB, ce qui est plutôt embarrassant).
+
+Nous, bien entendu, n'avons rien remarqué jusqu’à ce que quelqu'un (en vérité plusieurs personnes) nous alerte (encore.)
+
+L'exception retournée par l'asset packer était la suivante :
+
+<blockquote>Exception caught: (EofException) Error, unexpected end of file found 1 0 0</blockquote>
+
+Ce qui semble super bizarre, parce qu'avec un fichier pak déjà existant, tout fonctionne, la seule chose qui ne va pas est la création d'un nouveau fichier. Et dans ce cas, pourquoi lirait-il l'ancien fichier ? Extrêmement bizarre.
+
+Pourquoi est-ce que ça s'est arrêté de fonctionner d'un coup ? Voici comment j'ai abordé le problème, étape par étape.
+
+Première chose à faire, jetons un coup d’œil à notre backtrace :
+
+<blockquote>$ gdb ./asset_packer
+(gdb) set args -d -i ../assets/pak_ignore.config ../assets/packed assets.pak
+(gdb) catch throw
+Catchpoint 1 (throw)
+(gdb) r
+Starting program: /home/omnipotententity/work/starbound/dist/asset_packer -d -i ../assets/pak_ignore.config ../assets/packed assets.pak
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+Catchpoint 1 (exception thrown), 0x00007ffff7916a30 in __cxa_throw () from /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+(gdb) bt
+#0 0x00007ffff7916a30 in __cxa_throw () from /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+#1 0x000000000044a2a8 in Star::Buffer::readPartial (this=0x7fffffffd6b8, data=0x7fffffffd57f "", len=1) at /home/omnipotententity/work/starbound/source/core/StarBuffer.cpp:76
+#2 0x0000000000451a58 in Star::IODevice::readFull (this=0x7fffffffd6b8, data=0x7fffffffd57f "", len=1) at /home/omnipotententity/work/starbound/source/core/StarIODevice.cpp:125
+#3 0x000000000044e083 in readData (len=1, data=0x7fffffffd57f "", this=0x7fffffffd690) at /home/omnipotententity/work/starbound/source/core/StarDataStream.cpp:71
+#4 operator&gt;&gt; (d=@0x7fffffffd57f: 0 '\000', this=0x7fffffffd690) at /home/omnipotententity/work/starbound/source/core/StarDataStream.cpp:165
+#5 read (this=0x7fffffffd690) at /home/omnipotententity/work/starbound/source/core/StarDataStream.hpp:339
+#6 operator() (__closure=) at /home/omnipotententity/work/starbound/source/core/StarDataStream.cpp:241
+#7 operator* (this=) at /home/omnipotententity/work/starbound/source/core/StarAlgorithm.hpp:381
+#8 readVlqU&lt;Star::FunctionInputIterator&lt;Star::DataStream::readVlqU(uint64_t&amp;)::__lambda18&gt; &gt; (in=..., x=@0x7fffffffd5b8: 0) at /home/omnipotententity/work/starbound/source/core/StarVlqEncoding.hpp:37
+#9 Star::DataStream::readVlqU (this=0x7fffffffd690, i=@0x7fffffffd5b8: 0) at /home/omnipotententity/work/starbound/source/core/StarDataStream.cpp:241
+#10 0x000000000044e211 in Star::DataStream::readVlqU (this=this@entry=0x7fffffffd690) at /home/omnipotententity/work/starbound/source/core/StarDataStream.cpp:272
+#11 0x0000000000441707 in Star::DataStream::readMapContainer&lt;Star::Map&lt;Star::String, Star::ByteArray, std::unordered_map&lt;Star::String, Star::ByteArray, Star::hash&lt;Star::String, void&gt;, std::equal_to, std::allocator&lt;std::pair &gt; &gt; &gt;, void Star::DataStream::readMapContainer&lt;Star::Map&lt;Star::String, Star::ByteArray, std::unordered_map&lt;Star::String, Star::ByteArray, Star::hash&lt;Star::String, void&gt;, std::equal_to, std::allocator&lt;std::pair &gt; &gt; &gt; &gt;(Star::Map&lt;Star::String, Star::ByteArray, std::unordered_map&lt;Star::String, Star::ByteArray, Star::hash&lt;Star::String, void&gt;, std::equal_to, std::allocator&lt;std::pair &gt; &gt; &gt;&amp;)::{lambda(Star::DataStream&amp;, Star::String&amp;, Star::ByteArray&amp;)#1}&gt;(Star::Map&lt;Star::String, Star::ByteArray, std::unordered_map&lt;Star::String, Star::ByteArray, Star::hash&lt;Star::String, void&gt;, std::equal_to, std::allocator&lt;std::pair &gt; &gt; &gt;&amp;, void Star::DataStream::readMapContainer&lt;Star::Map&lt;Star::String, Star::ByteArray, std::unordered_map&lt;Star::String, Star::ByteArray, Star::hash&lt;Star::String, void&gt;, std::equal_to, std::allocator&lt;std::pair &gt; &gt; &gt; &gt;(Star::Map&lt;Star::String, Star::ByteArray, std::unordered_map&lt;Star::String, Star::ByteArray, Star::hash&lt;Star::String, void&gt;, std::equal_to, std::allocator&lt;std::pair &gt; &gt; &gt;&amp;)::{lambda(Star::DataStream&amp;, Star::String&amp;, Star::ByteArray&amp;)#1}) (this=this@entry=0x7fffffffd690, map=..., function=function@entry=...) at /home/omnipotententity/work/starbound/source/core/StarDataStream.hpp:490
+#12 0x0000000000441942 in readMapContainer&lt;Star::Map&lt;Star::String, Star::ByteArray, std::unordered_map&lt;Star::String, Star::ByteArray, Star::hash&lt;Star::String, void&gt;, std::equal_to, std::allocator&lt;std::pair &gt; &gt; &gt; &gt; (container=..., this=0x7fffffffd690) at /home/omnipotententity/work/starbound/source/core/StarDataStream.hpp:523
+#13 operator&gt;&gt; (map=..., ds=...) at /home/omnipotententity/work/starbound/source/core/StarDataStreamExtra.hpp:155
+#14 read&lt;Star::Map&lt;Star::String, Star::ByteArray, std::unordered_map&lt;Star::String, Star::ByteArray, Star::hash&lt;Star::String, void&gt;, std::equal_to, std::allocator&lt;std::pair &gt; &gt; &gt; &gt; (data=...,
+this=0x7fffffffd690) at /home/omnipotententity/work/starbound/source/core/StarDataStream.hpp:345
+#15 Star::DataStreamBuffer::deserialize&lt;Star::Map&lt;Star::String, Star::ByteArray, std::unordered_map&lt;Star::String, Star::ByteArray, Star::hash&lt;Star::String, void&gt;, std::equal_to, std::allocator&lt;std::pair &gt; &gt; &gt; &gt; (t=..., data=...) at /home/omnipotententity/work/starbound/source/core/StarDataStream.hpp:567
+#16 0x0000000000441b05 in Star::DataStreamBuffer::deserialize&lt;Star::Map&lt;Star::String, Star::ByteArray, std::unordered_map&lt;Star::String, Star::ByteArray, Star::hash&lt;Star::String, void&gt;, std::equal_to, std::allocator&lt;std::pair &gt; &gt; &gt; &gt; (data=...) at /home/omnipotententity/work/starbound/source/core/StarDataStream.hpp:598
+#17 0x000000000043efba in Star::AssetsDatabaseBackend::build (assetsFolder=..., databaseFilename=..., ignoreFiles=..., skipFiles=..., digest=digest@entry=true) at /home/omnipotententity/work/starbound/source/game/StarAssetsDatabaseBackend.cpp:17
+#18 0x0000000000437cce in main (argc=, argv=) at /home/omnipotententity/work/starbound/source/utility/asset_packer.cpp:90
+(gdb)</blockquote>
+Bon, revenons en arrière et essayons de voir ce qui ne va pas. Au départ, tout fonctionne. En descendant un peu, on tombe sur le buffer readPartial, qui est ce qui nous a retourné une exception. Mais qu'est-ce qui peut bien avoir causé ça ? Eh bien, à la 10éme frame, on trouve readVlqU, qui renvoit à readMapContainer. La source readMapContainer ressemble à ça :
+<blockquote>template
+void DataStream::readMapContainer(Container&amp; map, ReadFunction function) {
+map.clear();
+size_t size = readVlqU();
+for (size_t i = 0; i &lt; size; ++i) {
+typename Container::key_type key;
+typename Container::mapped_type mapped;
+function(*this, key, mapped);
+map[key] = mapped;
+}
+}</blockquote>
+
+Tout semble normal. On lit la taille et on répète au fur et à mesure des entrées. Donc ça échoue à la première lecture, comme si le buffer était vide.
+
+Du coup, si ça échoue, peut-être qu'il y a quelque chose qui ne va pas avec la fonction write ?
+
+<blockquote>template
+void DataStream::writeMapContainer(Container&amp; map, WriteFunction function) {
+writeVlqU(map.size());
+for (auto const&amp; elem : map)
+function(*this, elem.first, elem.second);
+}</blockquote>
+Eh bien, non, tou
+t fonctionne parfaitement, la taille est toujours écrite.
+
+On dirait bien qu'on se retrouve face à une impasse… la prochaine étape consiste à se demander “Depuis combien de temps le problème existe-t-il, qu'est-ce qui l'a déclenché ?” Je commence donc à parcourir les commits, ce qui prend un peu de temps.
+
+<blockquote>$ git checkout '@{Sep 1}' 2&gt;&amp;1 &gt;/dev/null &amp;&amp; ../scripts/linux/setup.sh 20 2&gt;&amp;1 &gt;/dev/null &amp;&amp; rm assets.pak &amp;&amp; ./asset_packer -d -i ../assets/pak_ignore.config ../assets/packed assets.pak 2&gt;&amp;1 &gt;/dev/null &amp;&amp; echo "Success!" || echo "Fail!"
+Fail!
+$ ^Sep 1^Aug 23
+Fail!
+$ ^Aug 23^Aug 15
+Fail!
+$ ^Aug 15^Aug 1
+Fail!
+$ ^Aug 1^Jul 1
+Success!
+$ ^Jul 1^Jul 15
+Success!
+$ ^Jul 15^Jul 23
+Success!
+$ ^Jul 23^Jul 27
+Success!
+$ ^Jul 27^Jul 30
+Fail!
+$ ^Jul 30^Jul 29
+Fail!
+$ ^Jul 29^Jul 28
+Success!</blockquote>
+
+Donc… nous savons désormais que le problème a été créé quelque part entre le 28 et le 29 Juillet, allons donc regarder la différence entre les deux.
+<blockquote>$ git diff '@{Jul 28}' '@{Jul 29}'</blockquote>
+Il s'avère que dans l'un de ces commits, du code qui se sert de readMapContainer et de writeMapContainer a été modifié dans notre classe DataStreamBuffer, mais uniquement du côté de la désérialisation ou de la lecture :
+
+<blockquote>template
+void DataStreamBuffer::deserializeMapContainer(T&amp; t, ByteArray data, ReadFunction readFunction) {
+if (!data.empty()) {
+DataStreamBuffer ds(move(data));
+ds.readMapContainer(t, readFunction);
+}
+}</blockquote>
+A été modifié en ceci :
+<blockquote>template
+void DataStreamBuffer::deserializeMapContainer(T&amp; t, ByteArray data, ReadFunction readFunction) {
+DataStreamBuffer ds(move(data));
+ds.readMapContainer(t, readFunction);
+}</blockquote>
+
+Si on remonte un peu plus haut et que l'on revérifie notre backtrace gdb, nous nous apercevons que l'on passe effectivement par cette fonction. Donc le problème vient d'ici. Pourquoi ce code a-t-il été changé ?
+
+Si on y regarde de plus près, on dirait qu'il s'agit d'une vérification pour un buffer vide, et un buffer vide utilisé pour représenter une map vide, plutôt qu'un buffer contenant un 0 encodé (pour la taille). Nous avions jugé qu'utiliser un buffer vide comme donnée était inapproprié et ne correspondait pas vraiment à de la programmation de qualité, nous en avons donc fait une condition d'échec. Nous savons donc comment ça a arrêté de fonctionner. Mais reste à savoir pourquoi. Pourquoi est-ce que ça marchait avant et soudainement ça ne marche plus ?
+
+Continuons à suivre la backtrace. À la 17éme frame nous trouvons la source de l'erreur, jetons y un coup d’œil :
+
+<blockquote>void AssetsDatabaseBackend::build(String const&amp; assetsFolder, String const&amp; databaseFilename, StringList const&amp; ignoreFiles, StringList const&amp; skipFiles, bool digest) {
+SimpleSha256Database db("Assets2");
+db.setBlockSize(2048);
+db.setAutoCommit(false);
+db.setIODevice(File::open(databaseFilename, File::ReadWrite));
+db.open();
+// First, load the existing index for the database, if it exists.
+IndexMap oldIndex = DataStreamBuffer::deserialize(db.find("_index").value());</blockquote>
+
+Donc, on initialise la base de donnée, puis on vérifie s'il existe déjà un index de clés duquel on peut se servir, et si c'est le cas, la fonction ajoute des trucs directement à l'index existant plutôt que de tout régénérer à partir de rien. C'est de cette façon que nous avions initialement réglé le problème des mises à jour qui, quelles que soit leurs tailles, pesaient toujours plusieurs centaines de megaoctets, en réutilisant l'index de clés. Et que se passe-t-il si l'index de clés vient à manquer ?
+
+db.find semble retourner un Maybe&lt;ByteArray&gt;. Faire un appel de .value() dans un Maybe retournera soit ce qui se trouve dans le Maybe, ou, si rien ne se trouve dans le Maybe, le paramètre qui lui a été donné. Ou, si aucun paramètre ne lui a été donné, il retourne une valeur par défaut. Donc dans ce cas lorsqu'il s'agit d'une nouvelle base de donnée db.find retourne un Maybe qui contient un appel de value(), qui retourne un ByteArray vide (eurêka !)(NdT : Très honnêtement ? Là j'ai absolument rien compris).
+
+Donc c'est de là que provenait notre ByteArray vide, et c'est la raison pour laquelle ce changement a brisé le code.
+
+Pour réparer ça, on applique simplement du code un peu plus explicite à cette zone :
+
+<blockquote>// First, load the existing index for the database, if it exists.
+Maybe oldIndexByteArray = db.find("_index");
+IndexMap oldIndex;
+if (oldIndexByteArray) {
+oldIndex = DataStreamBuffer::deserialize(*oldIndexByteArray);
+}</blockquote>
+
+Et nous évitons habilement d'avoir un ByteArray vide envoyé via désérialisation. Et les nightlies fonctionnent à nouveau.
+
+<strong>Source :</strong> [<a title="September 5, 2014 – “Nightlies weren’t updating, here’s why” edition." href="http://playstarbound.com/september-5-2014-nightlies-werent-updating-heres-why-edition/" target="_blank">September 5, 2014 – “Nightlies weren’t updating, here’s why” edition.</a>]
+
+<hr />
+
+Comme d'habitude, de mon point de vue de non-programmeur, tout ce vocabulaire me passe un peu au dessus de la tête, du coup j'espère que c'est compréhensible :/
+Surtout que là il n'y en avait pas qu'un peu.
+Aussi, désolé si ça m'a pris du temps, mais il y avait énormément à traduire.
+À plus.
+-Article rédigé par Silverthedragon

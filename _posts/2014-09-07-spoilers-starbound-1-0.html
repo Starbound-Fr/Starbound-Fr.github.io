@@ -1,0 +1,189 @@
+---
+layout: post
+cover_alt: cover
+wordpress_id: 9499
+categories:
+- News
+- MAJ
+tags:
+- biome
+- technologie
+- !binary |-
+  bWlzZSDDoCBqb3Vy
+- MAJ
+- liste
+title: "[Spoilers] Ce qu'il reste à faire avant la 1.0..."
+cover: "/wp-content/uploads/2014/09/une-spoiler-list-1.0.png"
+---
+<script type="text/javascript">
+function showSpoiler(obj)
+    {
+    var inner = obj.parentNode.getElementsByTagName("div")[0];
+    if (inner.style.display == "none")
+        inner.style.display = "";
+    else
+        inner.style.display = "none";
+    }
+    </script>
+
+Deuxième article du jour ? Décidément...
+Comme précisé dans le titre, cet article est lourd en spoilers. Vous ne pourrez pas dire que vous n'avez pas été prévenus. Tiy liste ce qui leur reste à faire avant de pouvoir lancer la 1.0.
+Gardez à l'esprit qu'il ne s'agit pas d'une liste complète. Aussi, le diagramme des biomes n'est pas traduit, mais ce n'est rien de très compliqué à comprendre (Merci à Faragoo pour le diagramme des technologies).
+
+<hr />
+
+Salut les gars,
+
+J'ai décidé que ce blog serait parfait pour vous parler de ce qu'il nous reste à faire avant de lancer la 1.0 de Starbound, étant donné que ce qui suit va être plein de spoilers et que je ne l'aurai pas posté sur la page d'accueil pour éviter de le laisser à la vue d'éventuels lecteurs distraits. Donc <strong>SPOILERS DROIT DEVANT</strong> ! Je vous suggère d'ignorer ce qui suit si vous souhaitez une meilleure expérience de jeu plus tard, mais je sais que certains d'entre vous sont très intéressés par le développement.
+
+Bien entendu, tout ce qui suit pourra être sujet à des changements, on ne vous promet rien. Il s'agit purement de ce sur quoi nous travaillons actuellement.
+
+En premier je souhaitais vous montrer un diagramme représentant la progression des crafts au sein du jeu. Ce n'est pas une liste exhaustive, et le schéma ne contient absolument pas tous les objets que vous pouvez crafter. Mais cela peut vous donner un aperçu du chemin parcouru par le joueur en termes de production de nouvelles technologies. Ce qui suit <strong>peut être comparé avec les nightlies</strong> pour mesurer notre progression.
+
+Cliquez sur l'image ci-dessous pour voir l'arbre des technologies :
+
+<a href="/wp-content/uploads/2014/09/TechDiagramFR.png"><img src="/wp-content/uploads/2014/09/techbutton-300x85.png" alt="techbutton-300x85" width="300" height="85" class="aligncenter size-full wp-image-9501" /></a>
+
+Le diagramme suivant montre la progression du joueur au travers de l'univers, ainsi que les obstacles qui se présenteront sur sa route, dans le style d'un metroidvania.
+
+<a href="http://www.chucklefish.org/images/BiomeDiagram.png"><img class="aligncenter size-full wp-image-9500" src="/wp-content/uploads/2014/09/biomebutton-300x85.png" alt="biomebutton-300x85" width="300" height="85" /></a>
+
+<div class="spoiler">
+    <input type="button" onclick="showSpoiler(this);" value="Cliquez pour afficher la liste" />
+  <div class="inner" style="display:none;">
+Et voici une liste (résumée et non-exhaustive) de toutes les tâches majeures qu'il nous reste à accomplir avant la 1.0 :
+<ul>
+	<li>
+Équilibrer les stats d'armure et de santé de manière à ce que :
+ si niveau du monstre = niveau de l'armure &gt; 7 morsures de monstre pour tuer le joueur.
+ si niveau du monstre = niveau de l'armure +1 &gt; 3 morsures de monstre pour tuer le joueur.
+</li>
+	<li>
+Équilibrer la stat d'énergie de manière à ce que :
+ si niveau de l'arme à feu = niveau de l'armure = niveau du monstre &gt; possible de tirer assez longtemps pour tuer 1.5 / 2 monstres (en assumant qu'aucun tir ne rate).
+ si niveau du bâton = niveau de l'armure &gt; possible de tirer deux fois avec le bâton avant de tomber à 0 d'énergie.
+</li>
+	<li>
+Recolorer/échanger les apparences/échanger les stats des épées des tiers les plus hauts pour les faire correspondre avec les différentes classes d'armures.
+</li>
+	<li>
+Créer le biome jardin pour remplacer les plaines, ajouter des sapins. En faire la planète de départ.
+</li>
+	<li>
+Ajouter la possibilité d'assigner un biome à une instance.
+</li>
+	<li>
+Ajouter une fonctionnalité au moteur permettant de chercher un système de départ correspondant aux conditions requises.
+</li>
+	<li>
+Choisir un tier pour chaque tech, donner une impression de compétences apprises au fur et à mesure du jeu avec des intervalles réguliers.
+</li>
+	<li>
+Implémenter l'effet de statut roadblock + des objets de dos qui l'annulent, ajouter un effet de protection aux armures ultérieures.
+</li>
+	<li>
+Une fois que tous les bâtons seront finis, les équilibrer de manière à ce que :
+ si niveau du bâton = niveau du monstre &gt; tuer le monstre en un coup sans ralentir la recharge du bâton.
+</li>
+	<li>
+Équilibrer les armures des différentes branches.
+</li>
+	<li>
+Ajouter des éléments à chaque biome principal qui encouragent le joueur à y retourner tout au long du jeu, par exemple des bandages/du tissu dans les forêts.
+</li>
+	<li>
+Équilibrer les armures des trois branches
+</li>
+	<li>
+Faire fonctionner l'interface de sélection des missions.
+</li>
+	<li>
+Faire fonctionner le système de récompenses de mission.
+</li>
+	<li>
+Améliorer la montée de niveau avec l'augmentation des coordonnées en Z
+</li>
+	<li>
+Améliorer les traînées.
+</li>
+	<li>
+Optimiser les particules.
+</li>
+	<li>
+Ajouter le système de fossiles.
+</li>
+	<li>
+Ajouter des familiers.
+</li>
+	<li>
+Ajouter des nébuleuses.
+</li>
+	<li>
+Finir ces missions :
+ Mission de la base lunaire
+ Mission Avian
+ Mission Apex
+ Mission Floran
+ Mission Glitch
+ Mission Hylotl
+ Mission Humaine
+ Mission Tentacule
+</li>
+	<li>
+Équilibrer les manipulateurs et voir quelles améliorations devraient être ajoutées / quels outils devraient être retirés.
+</li>
+	<li>
+Retirer les armes pouvant attaquer avec deux effets différents (si ce n'est pas déjà fait).
+</li>
+	<li>
+Implémenter un système de génération de quêtes.
+</li>
+	<li>
+Créer le biome Alien.
+</li>
+	<li>
+Créer le biome Ville.
+</li>
+	<li>
+Implémenter un système de protection des blocs.
+</li>
+	<li>
+Ajouter les blocs incassables comme propriété de planète.
+</li>
+	<li>
+Ajouter des stations spatiales construites par le joueur.
+</li>
+	<li>
+Ajouter des statues de joueurs.
+</li>
+	<li>
+Ajouter les armes/chapeaux des joueurs.
+</li>
+	<li>
+Ajouter les noms de PNJ des joueurs.
+</li>
+	<li>
+Ajouter un générique de fin.
+</li>
+	<li>
+Finir les armures, armes et meubles des Novakids.
+</li>
+	<li>
+Finir/implémenter les chapeaux et monstres des concours.
+</li>
+</ul>
+</div>
+</div>
+
+Nous mettrons en ligne une mise à jour stable une fois que l'arbre des technologies pourra être traversé du début à la fin, après quoi nous nous concentrerons sur ce qu'il nous reste à faire dans la liste ci-dessus. Nous visons la fin de l'année, mais il est possible que ça dure jusqu'à l'année prochaine. Ça prendra le temps que ça prendra, mais nous travaillons aussi vite que possible.
+
+Nous avons plein de contenu et de mises à jour prévues pour après la 1.0, mais j'en parlerai plus tard.
+
+J'espère que cela vous aura aidé à comprendre ce que nous faisons et avec quoi nous travaillons. Et si vous voulez voir ce contenu arriver petit à petit, vous pouvez opter pour la branche des nightlies, mais attendez vous à une expérience pleine d'instabilités et de pertes de sauvegardes.
+
+<strong>Source :</strong> [<a href="http://blog.chucklefish.org/?p=91" title="Finishing Up Starbound 1.0" target="_blank">Finishing Up Starbound 1.0</a>]
+
+<hr />
+
+Pfiou, je ne suis pas mécontent d'en avoir enfin fini. J'espère que ce ne sera pas comme ça chaque semaine.
+-Article rédigé par <em>Silverthedragon</em>, Tech Diagram traduit par <em>Faragoo</em>

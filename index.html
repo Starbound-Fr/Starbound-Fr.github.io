@@ -1,0 +1,41 @@
+---
+layout: default
+---
+
+<div class="home">
+
+  <div class="post-list">
+    <!-- This loops through the paginated posts -->
+    {% for post in paginator.posts %}
+      <div id="{{ post.title }}" class="post-cover">
+        <a href="{{ post.url | prepend: site.baseurl }}" rel="bookmark" title="{{ post.title }}">
+          <img src="{{ post.cover | default: site.generic_cover }}" class="" alt="{{ post.cover_alt | default: "" }}">
+          <div class="thumbnail-title">
+            <h2>{{ post.title }}</h2>
+          </div>
+        </a>
+      </div>
+    {% endfor %}
+  </div>
+    
+  {% if paginator.total_pages > 1 %}
+    <div class="pagination">
+      <div class="pagination-previous">
+        {% if paginator.previous_page %}
+          <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">
+            <span>&laquo; Page précédente</span>
+          </a>
+        {% endif %}
+      </div>
+    
+      <div class="pagination-next">
+        {% if paginator.next_page %}
+          <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">
+            <span>Page suivante &raquo;</span>
+          </a>
+        {% endif %}
+      </div>
+    </div>
+  {% endif %}
+
+</div>

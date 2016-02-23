@@ -1,0 +1,69 @@
+---
+layout: post
+cover_alt: cover
+wordpress_id: 9047
+categories:
+- News
+tags:
+- bug
+- !binary |-
+  Y8OiYmxl
+- wire
+- noeud
+title: "Des câbles, des câbles et encore des câbles"
+cover: "/wp-content/uploads/2014/06/une-20-juin-cablage-cablage.png"
+---
+Aujourd'hui, trois articles ! Ah, et c'est même pas la faute à notre retard, en plus :>
+Bonne lecture.
+
+<hr />
+
+<h2>20 Juin - Câblage, par <em>Metadept</em> !</h2>
+
+Aujourd'hui j'ai mis mon travail sur les monstres en pause (pas pour longtemps) pour pouvoir réparer quelques vieux bugs de câblages. Ces trucs m'embêtaient depuis que j'ai commencé à modder en Décembre, s'en débarrasser a donc été très satisfaisant.
+D'abord, j'ai réglé des problèmes avec le code de sélection, pour que les câbles puissent être connecté vers et depuis des nœuds très proches les uns des autres :
+
+<a href="/wp-content/uploads/2014/06/Wires.gif"><img src="/wp-content/uploads/2014/06/Wires.gif" alt="Wires!" width="226" height="234" class="aligncenter size-full wp-image-9048" /></a>
+
+Après ça, j'ai réparé un bug qui empêchait de déconnecter les câbles dans la version nightly actuelle, j'ai réglé un problème de sélection de nœud et j'ai fait quelques autres trucs mineurs. Enfin, je pense avoir réussi à me débarasser d'un vieux bug qui brisait certaines connections lors du chargement du monde ! J'espère que certains d'entre vous qui testent les nightlies seront capables de confirmer que ça n'arrive plus (après la mise à jour de ce soir).
+
+L'une dans l'autre, toutes ces corrections devraient rendre le système de câblage beaucoup plus utilisable. Je vais maintenant pouvoir finir la semaine à m'amuser avec des idées que j'ai eu d'objets fonctionnant avec les câblages… on se voit la semaine prochaine !
+
+<strong>Source :</strong> [<a href="http://playstarbound.com/june-20-wires/" target="_blank">June 20 – Wires!</a>]
+
+<hr />
+
+<h2>20 Juin - Post d'Omni</h2>
+
+Récemment, je me suis occupé de plein de petites bricoles et j'ai un peu aidé les autres.
+
+Hier, j'ai fait quelques améliorations au niveau du code en Lua. Un objet peut maintenant accéder au aimPosition de l'entité qui le tient. Et tout ce qui a accès aux fonctions de rappel principales peut désormais interroger la base de données metadata des images, qui contient des informations sur la taille des images et sur le placement des blocs.
+
+J'ai travaillé sur les Parades (avec les armes à deux mains), mais c'est toujours incomplet pour le moment. J'ai donc travaillé à la place sur quelques problèmes que j'avais avec l'outil de rendu du texte et avec celui de rendu des câbles. Ce dernier doit toujours subir une grosse restructuration, mais au moins j'ai pu commencer. Le problème était que certains câbles devenaient invisibles si leur nœud entrant se situait a plus de 64 blocs hors de l'écran. Ce qui est un peu mal fichu.
+
+J'ai enlevé la zone de 64 blocs. Et j'ai fait de telle sorte à ce que le câble s'affiche à partir du moment ou le nœud sortant se trouve à l'écran. Cela révèle un autre problème cependant, qui est que si un câble ne fait que traverser l'écran, sans qu'aucun nœud ne soit affiché, il deviendra invisible. Régler ceci prendra un peu plus de travail (enregistrer les câbles eux-même, plutôt que leurs nœuds et leurs connections), et présente un défi intéressant (demander au monde de gérer des lignes passant par des points plutôt que des points seuls, et ce d'une manière efficace). De ce fait, je vais devoir m'en occuper un autre jour.
+
+Quant aux bugs de rendu du texte, j'ai simplifié les résultats de rendu pour qu'ils ne gèrent qu'un rectangle là où le texte est rendu, plutôt qu'une largeur, une hauteur et un nombre de lignes (qui ne donnent en fait pas d'information sur l'endroit où le texte est rendu). Ça m'a permis d'enlever un bug de texte qui vascille qui était apparu avec le texte déroulant des IAs. Lentement mais sûrement notre code de rendu devient quelque chose d'un peu plus respectable.
+
+<strong>Source :</strong> [<a href="http://playstarbound.com/june-20-omni-update/" target="_blank">June 20 – Omni Update</a>]
+
+<hr />
+
+<h2>20 Juin, le tiercé, par <em>Kyren</em></h2>
+
+Omni m'a demandé de poster quelque chose pour qu'on puisse avoir ce rare combo de 3 dev posts à la suite.
+
+Dernièrement j'ai beaucoup travaillé sur l'interface des IAs. J'ai principalement fais des trucs techniques d'arrière-plan pour connecter différentes fonctionnalités à l'IA, comme la réparation du vaisseau, mais aussi quelque chose de plus intéressant : donner différents schémas de dialogue à l'interface de l'IA. Désormais, quand l'IA a quelque chose à dire, elle le dira sur plusieurs écrans (NdT : En plusieurs fois, quoi, pas tout d'un coup), et chaque écran aura sa propre "émotion" qui lui sera rattachée. Par exemple, l'IA pourra commencer par parler normalement, puis lorsque vous cliquerez sur suivant, elle pourra devenir agitée et l'animation du texte pourra s'accélérer, de même que l'IA pourra montrer une autre émotion. Pensez à Phoenix Wright.
+
+J'ai aussi fais deux-trois bricoles, par exemple j'ai aidé Metadept à enlever le bug des câblages, et j'ai ajouté la possibilité de créer des collisions d'objets personnalisées. J'ai aussi réglé plein de bugs de rendus avec notre CanvasWidget (Ça règle quelques glitchs de l'interface de navigation) et avec notre système de rendu des textes.
+
+Aussi, du fait de vos retours positifs à propos de l'IA glitch, nous avons décidé que toutes les IAs de vaisseaux seront des animaux différents, avec des boobs.
+
+<strong>Source :</strong> [<a href="http://playstarbound.com/jun-20-the-trifecta/" target="_blank">Jun 20, The Trifecta</a>]
+
+<hr />
+
+Vwala vwala. C'est tout pour cette semaine.
+À bientôt !
+<a href="http://starbounder.org/File:Wiring_view.jpg" target="_blank"><strong>Source de l'image de une</strong></a>
+-Article rédigé par <em>Silverthdragon</em>.

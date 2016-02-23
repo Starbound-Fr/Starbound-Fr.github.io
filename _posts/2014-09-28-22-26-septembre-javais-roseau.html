@@ -1,0 +1,110 @@
+---
+layout: post
+cover_alt: cover
+wordpress_id: 9574
+categories:
+- News
+tags:
+- ".treasurepool"
+- !binary |-
+  dHLDqXNvcg==
+- goudron
+- liste
+- loot
+- mission
+- coffre
+- matter manipulator
+- glitch
+- minage
+title: "22-26 Septembre : Si j'avais un roseau..."
+cover: "/wp-content/uploads/2014/09/une-22-26-septembre-roseaux.png"
+---
+Bien le bonjour. Voici l'article de la semaine. Des informations intéressantes, et, pour mon plus grand bonheur, pas de programmation :3
+
+<hr />
+
+<h1>22 Septembre - Loot, Loot, Loot, par <em>Metadept</em> !</h1>
+
+Vendredi dernier, j'ai décidé de faire quelques changements au format des tables qui déterminent le contenu des trésors. Je me suis un peu laissé emporter, et j'ai fini par faire des heures supplémentaires ce week-end pour nettoyer, organiser et reconstruire TOUS nos fichiers .treasurepools, ce qui est enfin terminé. Ça représente pas mal de boulot, mais il est désormais beaucoup plus facile de travailler avec les trésors, et au final ça donne un bien meilleur système, je suis donc heureux d'en avoir fini.
+
+En ce qui concerne les détails techniques : chaque groupement de trésors consiste en une liste d'objets pondérée. Le "poids" de chaque objet détermine ses chances d'être sélectionné aléatoirement, par rapport aux autres objets de la liste (il ne s'agit pas d'un pourcentage de chance absolu). Cela signifie qu'ajouter un nouvel objet à la liste modifie la probabilité d'apparition de tous les autres objets, et cela rend l'édition et l'équilibrage des liste très difficile ! J'ai ajouté la possibilité de référencer une liste de trésors sur d'autres listes de trésors. Avec cette fonctionnalité d'ajoutée, j'ai pu reconstruire ces listes de manière à les séparer en catégories. Par exemple, voici une liste utilisée pour un trésor basique, tel qu'un simple coffre à la surface d'une planète :
+
+
+<blockquote>
+{“weight” : 0.4, “pool” : “money”},
+{“weight” : 0.1, “pool” : “ore”},
+{“weight” : 0.1, “pool” : “food”},
+{“weight” : 0.1, “pool” : “healingItem”},
+{“weight” : 0.1, “pool” : “fuel”},
+{“weight” : 0.05, “pool” : “thrownWeapon”},
+{“weight” : 0.05, “pool” : “weapon”},
+{“weight” : 0.03, “pool” : “tool”},
+{“weight” : 0.03, “pool” : “seed”},
+{“weight” : 0.02, “pool” : “shield”},
+{“weight” : 0.01, “pool” : “costume”},
+{“weight” : 0.01, “pool” : “instrument”}
+</blockquote>
+
+Comme vous pouvez le voir, les probabilités sont définies par catégories d'objets, chacune possédant sa propre liste d'objets. Maintenant, imaginez que vous ajoutiez (par exemple) une nouvelle arme, la probabilité d'obtenir des armes en général restera la même, de même que les probabilités d'obtenir des objets appartenant aux autres catégories dans le fichier. J'ai aussi séparé certaines catégories en sous-catégories, en se basant sur le niveau de danger de la planète, et j'ai massivement réorganisé le tout pour rendre le travail la-dessus plus facile. Nous allons finalement pouvoir avancer dans notre travail sur les biomes et la progression (Vous en saurez plus à ce sujet plus tard dans la semaine !) sans créer de fichiers de configuration redondants qui aurait dus être modifiés par la suite de toutes façons.
+
+<strong>Source :</strong> [<a href="http://playstarbound.com/september-22nd-loot-loot-loot/" title="September 22nd – Loot, Loot, Loot!" target="_blank">September 22nd – Loot, Loot, Loot!</a>]
+
+<hr />
+
+<h1>23 Septembre - Creusons plus profond, par Armagon</h1>
+
+Ces derniers jours, comme d'habitude, j'ai jonglé entre plusieurs tâches.
+
+Les travaux sur la mission Glitch <a href="/15-19-septembre-tchoo-tchoo/" title="15-19 Septembre : Tchoo Tchoo !" target="_blank">dont je vous ai parlé la semaine dernière</a> continuent, cependant une décision de gameplay qui est arrivée en cours de route m'a obligé à repenser la totalité de la structure. Je me suis aperçu qu'une plus grande structure n'était pas forcément plus amusante à parcourir pour le joueur. Néanmoins, ça commence lentement à prendre forme, et j'ai hâte de commencer à scripter le tout. La vieille structure finira bien par être réutilisée à un moment donné.
+
+Avec la restructuration de la progression des tiers qui continue, nous avons commencé à étudier le minage. Vous vous rappellerez peut-être qu'il y a quelques temps, Metadept faisait <a href="/18-aout-manipulation/" title="18 Août – Plus de Manipulation" target="_blank">des expériences avec le Matter Manipulator</a>, pour donner la possibilité au joueur de l'améliorer. Beaucoup de ceux qui jouent en nightly s'en seront probablement aperçu, car l'outil est devenu totalement déséquilibré. La raison pour laquelle nous n'avons pas encore réglé ce problème est que cela ne faisait pas de sens d'équilibrer les outils avant d'avoir fini d'équilibrer les blocs.
+
+Chaque bloc du jeu possède sa propre santé qui détermine la difficulté qu'aura le joueur à le briser. Étant donné que nous sommes en train de classer les biomes par tier (notez que vous pourrez trouver tous les types de biomes en fin de jeu), cela signifie que nous devons équilibrer un plus grand nombre de matériaux en fonction de leur biome et de leur place dans la progression en général. Au moment où j'écris ces lignes, nous avons plus de 140 types de tiles qui ont besoins d'être reconfigurés, c'est donc ce qui m'a principalement occupé ces derniers jours. Pour l'instant ça à l'air d'aller, mais nous devrons sans doutes effecteur quelques modifications au fur et à mesure de nos tests.
+
+Vu que le Matter Manipulator va devenir l'outil de minage principal, il est important de mentionner que les pioches ne vont pas toutes disparaître d'un coup. Au lieu de ça, elle resteront sous la forme de drops rares qui, selon si vous êtes chanceux ou pas, pourront être plus puissants que votre Matter Manipulator à ce moment là de la partie. En contrepartie, les pioches ne seront plus réparables, il vaudra donc mieux les garder pour les blocs les plus solides.
+
+La prochaine étape va consister à équilibrer le Matter Manipulator et ses améliorations. Nous nous assurerons de vous informer de nos progrès !
+
+<strong>Source :</strong> [<a href="http://playstarbound.com/september-23rd-digging-deeper/" title="September 23rd – Digging Deeper" target="_blank">September 23rd – Digging Deeper</a>]
+
+<hr />
+
+<h1>24 Septembre - Set de meubles en roseaux, par <em>Necotho</em></h1>
+
+Bonjour à vous, humains, non-humains et autres !
+
+Avez-vous déjà rêvé de décorer votre maison avec des roseaux ? Dormir sur des roseaux, s'asseoir sur des roseaux ou même manger sur des roseaux ? Starbound est sur le point de faire de votre rêve une réalité !
+
+Comme vous le savez nous travaillons pour le moment sur de nouveaux minibiomes. La prochaine étape (pour moi) va consister à travailler sur des oasis, une tenue de bédouin (NdT : Nomade vivant dans le désert), et une noix de coco à lancer.
+
+Bonne nuit !
+
+<a href="/?attachment_id=9569" rel="attachment wp-att-9569"><img src="/wp-content/uploads/2014/09/C0A8fxD.gif" alt="C0A8fxD" width="1258" height="695" class="aligncenter size-full wp-image-9569" /></a>
+
+<strong>Source :</strong> [<a href="http://playstarbound.com/september-24th-reed-furniture-set/" title="September 24th – Reed furniture set" target="_blank">September 24th – Reed furniture set</a>]
+
+<hr />
+
+<h1>Post du 26 Septembre, par <em>GeorgeV</em></h1>
+
+Voici un petit aperçu de ce que nous faisons en ce moment.
+
+<a href="/?attachment_id=9570" rel="attachment wp-att-9570"><img src="/wp-content/uploads/2014/09/Pic1.png" alt="Pic1" width="1089" height="533" class="aligncenter size-full wp-image-9570" /></a>
+
+Qu'est-ce que c'est ? Je vous laisse deviner.
+
+<a href="/?attachment_id=9571" rel="attachment wp-att-9571"><img src="/wp-content/uploads/2014/09/Pic2.png" alt="Pic2" width="1565" height="533" class="aligncenter size-full wp-image-9571" /></a>
+
+
+Vous pouvez faire beaucoup de choses avec du goudron, c'est très versatile. Essayez de vous faire une armure !
+
+Nous travaillons dur sur le contenu qui nous aidera à remplir les tiers. Ce n'étaient que de simples exemples. Attendez vous à des biomes et sous-biomes plus remplis avec plus de récompenses spécifiques au biome.
+
+C'est tout ! Bye !
+
+<strong>Source :</strong> [<a href="http://playstarbound.com/september-26th-dev-blog/" title=" September 26th Dev Blog" target="_blank">September 26th Dev Blog</a>]
+
+<hr />
+
+Bon ben voilà, c'était tout. Sur ce, je retourne jouer à Skyrim !
+-Article rédigé par <em>Silverthedragon</em>

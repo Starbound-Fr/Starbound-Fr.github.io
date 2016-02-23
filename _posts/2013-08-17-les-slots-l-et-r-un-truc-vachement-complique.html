@@ -1,0 +1,220 @@
+---
+layout: post
+cover_alt: cover
+wordpress_id: 6526
+categories:
+- News
+tags:
+- !binary |-
+  w6lxdWlwZW1lbnQ=
+- r
+- l
+- slots
+- Correction
+- bugs
+- inventaire
+- code
+- Starbound
+- !binary |-
+  Y29tcGxpcXXDqQ==
+title: "Les slots L et R : un truc vachement compliqué."
+cover: "/wp-content/uploads/2013/08/slots.png"
+---
+Voici aujourd'hui, après un travail extrêmement long de ma part, une traduction du pavé d'OmnipotentEntity qui, après quelques trucs basiques, nous explique aujourd'hui le fonctionnement de la barre de raccourcis et des slots L et R. Croyez-moi, vous allez en baver.
+
+<hr>
+
+Salut, mesdames et messieurs,
+
+Aujourd'hui fut un jour très animé. Ce fut surtout bartwe et moi, nous défiant sur des <strong>corrections de bugs </strong> en stream. Et c'est gonflant. Voici une courte liste avant que je ne vous parle de trucs plus intéressants.
+
+J'ai menti quand j'ai dit qu'il n'y avait eu que des corrections de bugs. J'ai aussi ajouté <strong>un second inventaire</strong>, les matériaux se retrouvant automatiquement dedans. Il y a donc maintenant <strong>92 slots plus les slots d'équipement</strong>. Honnêtement, j'avais complètement oublié que j'avais fait ça ce matin. Longue journée...
+
+C'est parti.
+
+Tout d'abord, bartwe a effectué quelques changements dans la <strong>gestion des erreurs sous Windows</strong>, essayant de rendre meilleur l'historique de la pile d'exécution qui se crée lorsque le jeu plante sous Windows. Ça nous aidera à débugger dans le futur, mais ça n'est pas vraiment une correction de bug. Il a ensuite corrigé un problème avec <strong>le nombre de dégâts affiché lors d'un coup</strong>. Après ça, il a changé un peu du code des risques dus à l'environnement pour permettre à une partie seulement des valeurs de dégâts de vie d'être utilisées. Ensuite, il a corrigé quelques oublis  grâce à l'ajout de la fonctionnalité sus-mentionnée. J'ai eu droit à quelques fonctionnalités manquantes. Il a aussi corrigé quelques problèmes de placement des <strong>particules de dérapage des ennemis</strong>. Elles n'étaient pas générées avec la bonne courbure. Enfin, il a corrigé quelques erreurs typographiques et fait un peu de ménage dans le code.
+
+J'ai commencé la journée avec le truc du second inventaire. J'ai ensuite corrigé quelques bugs concernant la façon dont était géré <strong>le rayon de la hache laser</strong>. La courbure était mauvaise. Ensuite, j'ai corrigé un oubli dans l'interface graphique qui pouvait conduire les volets à être enregistrés dans le gestionnaire de volets sans avoir été officiellement enregistrés au départ, causant quelques soucis. J'ai ensuite corrigé un problème du système de craft, celui-ci <strong>ne prenant pas en compte le second inventaire</strong>. Après avoir corrigé ça, j'ai dû corriger un autre bug car <strong>les objets n'étaient pas retirés de l'inventaire</strong> après les avoir utilisés pour crafter. Derp !
+
+Avez-vous déjà remarqué dans les streams que lorsque quelqu'un utilise la hache laser, la main du personnage se comporte bizarrement quand il tourne, <strong>une sorte d'à-coup en haut ou en bas avant de revenir doucement en bas ou en haut</strong> ? Corrigé. Il y avait aussi un problème en approchant le curseur trop près du joueur, <strong>la main devenait folle et s'agitait plus sauvagement qu'un chat jeté dans une baignoire</strong>. Ouais, corrigé aussi. J'ai aussi corrigé la gestion de quelques cas extrêmes, dont je parlerais plus en détail plus tard, et un autre problème d'interface utilisateur où les slots d'objets équipés <strong>ne chargeaient pas correctement</strong> lorsque on redémarrait le jeu à partir d'une sauvegarde.
+
+J'ai ensuite eu quelques bugs de George, qui m'avait dit que la fenêtre de navigation <strong>n'apparaissait et ne disparaissait pas correctement</strong>. Donc j'ai pris un peu de temps pour corriger ça. Le volet n'était pas marqué comme persistent et "mangeait" les touches frappées. Deux bugs corrigés, là. J'ai ensuite pris du temps pour ajouter une fonctionnalité qui me préoccupait : <strong>Shift+clic envoie maintenant les objets de l'inventaire à la barre de raccourcis et vice-versa</strong>. J'ai toujours besoin d'un bon raccourci pour ajouter l'objet dans la bonne main. Des idées ?
+
+Longue journée... pfiou.
+
+Donc... pour rendre les choses moins fades et listées, parlons de la <strong>gestion de l'inventaire</strong> et de la <strong>barre de raccourcis</strong> au sens large. Il y a eu récemment des modifications majeures pour les rendre bien plus réfléchis. Parce que c'est délicat et plein de cas extrêmes, c'est difficile de faire en sorte qu'il fasse "le bon truc".
+
+Donc ceci est ma barre de raccourcis. Il y en a bien d'autres comme celle-ci, mais c'est la mienne.
+
+<a href="/wp-content/uploads/2013/08/8-16_update2.png"><img src="/wp-content/uploads/2013/08/8-16_update2.png" alt="Action Bar 1" width="579" height="60" class="aligncenter size-full wp-image-6529" /></a>
+
+Une chose que vous pouvez remarquer est que les slots L et R sont maintenant <strong>de vrais slots</strong> et non plus un reflet d'autres slots de la barre. Cependant, souvenez-vous, il y a aussi des <strong>objets à deux mains</strong>, comment fonctionnent-ils avec ce système ? C'est très simple : on désactive simplement le slot approprié et on le montre en le grisant.
+
+<a href="/wp-content/uploads/2013/08/8-16_update1.png"><img src="/wp-content/uploads/2013/08/8-16_update1.png" alt="Action Bar 2" width="582" height="57" class="aligncenter size-full wp-image-6531" /></a>
+
+Cette solution semblait bien plus élégante que de forcer l'objet à sortir du slot et entrer dans un sac qui peut avoir ou ne pas avoir la place de le contenir.
+
+"Mais !" vous entends-je pleurer, "Cette méthode semble bien plus lourde ! Je perds la capacité de me déplacer rapidement entre les slots si j'ai besoin de déplacer un objet sur le slot L ou R !"
+
+"Pas si vite !" vous réponds-je, "Vous pouvez toujours vous déplacer rapidement entre les slots !"
+
+<a href="/wp-content/uploads/2013/08/8-16_update3.png"><img src="/wp-content/uploads/2013/08/8-16_update3.png" alt="Action Bar 3" width="576" height="89" class="aligncenter size-full wp-image-6532" /></a>
+
+Et ça marche bien sûr avec les objets à deux mains.
+
+<a href="/wp-content/uploads/2013/08/8-16_update4.png"><img src="/wp-content/uploads/2013/08/8-16_update4.png" alt="8-16_update4" width="595" height="86" class="aligncenter size-full wp-image-6533" /></a>
+
+Parlons donc un peu de tout ce travail.
+
+La barre de raccourcis en elle-même est <strong>contrôlée par le fichier /source/frontend/StarActionBar.hpp</strong> qui, avec son fichier cpp associé, est géré par <strong>l'interface principale</strong>, <strong>/source/frontend/StarMainInterface.hpp</strong>. Cette interface principale contrôle à peu près l'intégralité de l'interface graphique. Un fichier également pertinent pour cette discussion est <strong>la classe d'inventaire du joueur</strong>, localisée dans <strong>/source/game/StarPlayerInventory.hpp</strong>, qui a requis beaucoup de modifications pour rendre tout cela possible.
+
+Passons des changements de niveau basique aux changements de haut niveau. Nous allons donc commencer avec l'inventaire du joueur.
+
+Cette classe a subi deux changements majeurs pour que ça fonctionne. Tout d'abord, et évidemment, il a fallu lui ajouter <strong>deux nouveaux slots</strong>. Ceux-ci existent en dehors du reste des slots de la barre de raccourcis pour plus de facilité d'implémentation. Ils sont tout simplement appelés "LeftHand" et "RightHand" (ndlr : "MainGauche" et "MainDroite", pour les non anglophones). Ensuite, il a fallu ajouter<strong> le concept de slot "Held"</strong> (ndlr : tenu, équipé). Auparavant, nous gardions la trace de l'objet sélectionné dans la barre de raccourcis , mais cela utilisait simplement un type size_t du sac, plutôt que la classe InventorySlot créée pour désigner un emplacement unique n'importe où dans l'inventaire. Bien que ce ne soit pas actuellement utilisé, ce changement permet à <strong>n'importe quel InventorySlot d'être marqué comme "Held"</strong> plutôt qu'un emplacement potentiellement invalide quelque part dans un sac spécifique.
+
+Donc ! Maintenant, nous avons <strong>quatre objets différents</strong>, pouvant être équipés de façons variées, avec <strong>trois états possibles pour deux de ces objets et quatre états possibles pour les deux autres</strong>. Les slots de "Main" gauche et droite peuvent être<strong> à deux mains, à une main, sélectionnés mais vides ou non sélectionnés</strong>.
+
+Ce qui me conduit à la question suivante. Comment faisons-nous pour savoir quel objet doit être dans la main gauche et quel objet doit être dans la main droite ? Hé bien, c'est en fait quelque chose de très compliqué, et il y a <strong>144 possibilités de combinaisons différentes d'à deux mains, à une main, vide, non sélectionné etc.</strong> Donc la seule façon pour donner un peu de sens à ce désordre est d'énumérer tout ce qui doit arriver dans chaque cas. Faire cela aide également à repérer les bugs. Car le comportement attendu est parfaitement clair. Voici donc le remaniement actuel de la matrice de décision Alt Hand.
+
+<code>
+// The following is a grid of the possibilities here
+  // Source:
+  // AE = Alt hEld Item, AH = Alt Hand Item
+  // PE = Pri hEld Item, PH = Pri Hand Item
+  // 2 = two handed item
+  // 1 = one handed item
+  // 0 = empty slot (selected)
+  // N = not set (Held items only)
+  //
+  // Result:
+  // X = invalid / don't care
+  // P = primaryHeldSlot();
+  // p = leftHand();
+  // A = altHeldSlot();
+  // a = rightHand();
+  // 0 = none();
+  //
+  ///////////////////////////////////////////////////////////
+  // XX |AE | 2 | 2 | 2 | 1 | 1 | 1 | 0 | 0 | 0 | N | N | N |
+  // XX |AH | 2 | 1 | 0 | 2 | 1 | 0 | 2 | 1 | 0 | 2 | 1 | 0 |
+  // ---+---+---+---+---+---+---+---+---+---+---+---+---+---+
+  // PE |   |   |   |   |   |   |   |   |   |   |   |   |   |
+  // EH |   |   |   |   |   |   |   |   |   |   |   |   |   |
+  // ---+---+---+---+---+---+---+---+---+---+---+---+---+---+
+  // 22 |   | X | X | X | X | X | X | X | X | X | P | P | P |
+  // ---+---+---+---+---+---+---+---+---+---+---+---+---+---+
+  // 21 |   | X | X | X | X | X | X | X | X | X | P | P | P |
+  // ---+---+---+---+---+---+---+---+---+---+---+---+---+---+
+  // 20 |   | X | X | X | X | X | X | X | X | X | P | P | P |
+  // ---+---+---+---+---+---+---+---+---+---+---+---+---+---+
+  // 12 |   | X | X | X | A | A | A | 0 | 0 | 0 | 0 | a | a |
+  // ---+---+---+---+---+---+---+---+---+---+---+---+---+---+
+  // 11 |   | X | X | X | A | A | A | 0 | 0 | 0 | 0 | a | a |
+  // ---+---+---+---+---+---+---+---+---+---+---+---+---+---+
+  // 10 |   | X | X | X | A | A | A | 0 | 0 | 0 | 0 | a | a |
+  // ---+---+---+---+---+---+---+---+---+---+---+---+---+---+
+  // 02 |   | X | X | X | A | A | A | 0 | 0 | 0 | a | a | a |
+  // ---+---+---+---+---+---+---+---+---+---+---+---+---+---+
+  // 01 |   | X | X | X | A | A | A | 0 | 0 | 0 | a | a | a |
+  // ---+---+---+---+---+---+---+---+---+---+---+---+---+---+
+  // 00 |   | X | X | X | A | A | A | 0 | 0 | 0 | a | a | a |
+  // ---+---+---+---+---+---+---+---+---+---+---+---+---+---+
+  // N2 |   | A | A | A | A | A | A | p | p | p | p | p | p |
+  // ---+---+---+---+---+---+---+---+---+---+---+---+---+---+
+  // N1 |   | A | A | A | A | A | A | 0 | 0 | 0 | 0 | a | a |
+  // ---+---+---+---+---+---+---+---+---+---+---+---+---+---+
+  // N0 |   | A | A | A | A | A | A | 0 | 0 | 0 | a | a | a |
+  // ---+---+---+---+---+---+---+---+---+---+---+---+---+---+
+</code>
+
+La légende est incluse. J'espère que ça n'est pas trop difficile à comprendre. Grosso modo, il s'agit d'une <strong>table de recherche</strong>. Sur le côté, on trouve la main primaire, en haut, la main alternative.
+
+Ça se traduit en code de la façon suivante :
+
+<code>
+  auto priHand = underlyingPrimaryHandItem();
+  auto altHand = underlyingAltHandItem();
+
+  // If we have a two handed primary held item, return it
+  //   Covers 0,0 to 2,11 submatrix
+  if (safeTwoHanded(primaryHeldItem()))
+    return primaryHeldSlot();
+
+  // If we have a alt held item, it takes priority
+  //   Covers 0,0 to 11,5 submatrix
+  if (altHeldItem())
+    return altHeldSlot();
+
+  // if we're flagged as holding an empty item in altHeld
+  // and a two-handed item in our priHand, return priHand
+  //   Covers 9,6 to 9,8 submatrix
+  if (validInventorySlot(altHeldSlot()) &amp;&amp;
+      !altHeldItem() &amp;&amp;
+      !validInventorySlot(primaryHeldSlot()) &amp;&amp;
+      safeTwoHanded(priHand))
+    return InventorySlot::leftHand();
+
+  // If we have a alt held slot selected, but not item...
+  //   Covers 3,6 to 11,8 submatrix
+  if (validInventorySlot(altHeldSlot())) // implicit !altHeldItem()
+    return InventorySlot::none();
+
+  // If we have a no selected primary held item and primaryHandItem is two handed, use that
+  //   Covers 9,9 to 9,11 submatrix
+  if (!validInventorySlot(primaryHeldSlot()) &amp;&amp;
+      safeTwoHanded(priHand))
+    return InventorySlot::leftHand();
+
+  // If we have no item in primaryHeldSlot, but it's selected, and we're two handed, use rightHand
+  //   Covers 6,9 to 8,9 submatrix
+  if (validInventorySlot(primaryHeldSlot()) &amp;&amp;
+      !primaryHandItem() &amp;&amp;
+      safeTwoHanded(altHand))
+    return InventorySlot::rightHand();
+
+  // If we have have a valid one handed primary hand item, and we're two handed, return none
+  //   Covers 3,9 to 5,9 submatrix
+  if (validInventorySlot(primaryHeldSlot()) &amp;&amp;
+      safeOneHanded(primaryHeldItem()) &amp;&amp;
+      safeTwoHanded(altHand))
+    return InventorySlot::none();
+
+  // If we have a one handed primary hand item, and a two handed alt hand item, return none
+  //   Covers 10,9 cell
+  if (safeTwoHanded(altHand) &amp;&amp;
+      safeOneHanded(priHand))
+    return InventorySlot::none();
+
+  // Covers remainder
+  return InventorySlot::rightHand();
+</code>
+
+Quel cirque ! C'est un peu plus compliqué de juste "faire la bonne chose", en particulier quand la bonne chose n'est pas toujours claire dans les <strong>cas extrêmes</strong>. Par exemple, dans le cas où vous avez le slot d'équipement primaire sélectionné mais rien dedans, un objet à deux mains dans le slot alternatif. Il semble correct de désactiver les deux slots. Mais j'ai pensé que ce serait probablement <strong>une mauvaise idée</strong> et donc à la place, j'ai simplement donné au slot alternatif la priorité sur le slot primaire, même si ça semble violer les règles de priorité précédentes, parce que ça semble être la "bonne chose à faire".
+
+Ensuite, parlons de la zone de la <strong>barre de raccourcis</strong>. Maintenant que nous avons légitimité et support dans l'inventaire pour ce genre de chose, il y a quelques trucs en plus à ajouter à la barre de raccourcis. Tout d'abord, nous devons rendre les objets dans les slots L et R <strong>vraiment interactifs</strong>. Ils devraient faire des choses quand on clique. Dans le cas présent, il <strong>désélectionnent l'objet actuellement sélectionné ou le font tirer s'il est activé</strong>.
+
+Mais les autres objets de la barre ? Hé bien, c'est un peu plus compliqué. Il y a <strong>trois façons de sélectionner un objet comme équipé</strong>. Mais seulement une d'entre elle utilisé vraiment l'interface de la barre de raccourcis. Les autres utilisent l'interface principale, car il faut intercepter les frappes sur le clavier et les mouvements/clics de souris qui n'ont tout simplement rien à voir avec cette barre.
+
+Mais pour la méthode qui utilise vraiment le code dans StarActionBar.cpp, c'est un peu compliqué ! Il y a <strong>trois choses dont l'interface utilisateur doit garder la trace</strong>. Il y a trois couches :
+
+<p align="center"><img src="/wp-content/uploads/2013/08/selectedslot-2h.png" alt="Slot" width="20" height="35" class="size-full wp-image-6546" /> <img src="/wp-content/uploads/2013/08/selectedslot-l.png" alt="selectedslot-l" width="20" height="35" class="size-full wp-image-6550" /> <img src="/wp-content/uploads/2013/08/selectedslot-r.png" alt="selectedslot-r" width="20" height="35" class="size-full wp-image-6551" /></p>
+
+Ceci compte pour une. Ensuite, nous avons la position de la molette sur les slots L et R. Ces valeurs sont stockées dans l'interface principale, car c'est ce qui les référence. Enfin, nous devons savoir quel slot d'inventaire est sélectionné. Cette valeur est aussi stockée dans l'interface principale.
+
+Ces trois valeurs sont <strong>similaires mais subtilement différentes</strong>, et suivent des règles légèrement différentes. On doit donc en garder la trace séparément. Donc à chaque fois que je demande une mise à jour de blah blah, il y a une logique derrière qui contrôle ces trois trucs mais seulement si c'est approprié pour la situation actuelle. Si vous êtes toujours en train de lire et que vous prêtez toujours attention à ce que je raconte, bravo. J'aime votre cran. Répondez au topic avec "AltHandSmock", si vous êtes le premier, je vous enverrez par message privé une clé pour un pack pixel (ndlr : déjà fait par quelqu'un, pas la peine de vous précipiter sur l'article officiel, cependant j'offre une clé Steam pour Bastion à la première personne à faire ça ici). Je n'ai pas encore trouvé de bon moyen de garder une trace de toutes ces dépendances. Mais la bonne nouvelle est que j'ai tout fait à peu près correctement <strong>du premier coup</strong>, donc tout va bien. Jusqu'à la maintenance, bien sûr.
+
+Ainsi, quand vous cliquez sur un slot, vous avez plusieurs options. Si vous faites <strong>shift+clic</strong>, ça essaiera d'envoyer l'objet <strong>dans un contenant ouvert</strong>, si un tel contenant existe dans le monde. Sinon, il essaie de l'envoyer <strong>dans votre inventaire</strong>. Si vous <strong>ne maintenez pas shift</strong>, ça vérifie que votre inventaire est ouvert. S'il l'est, ça met simplement l'objet de votre barre de raccourcis <strong>dans le slot d'échange</strong>, qui est un autre truc de l'inventaire dont je n'ai pas encore parlé, qui contribue à savoir quel objet est utilisé. À moins que vous ne fassiez un <strong>clic droit</strong>, auquel cas ça essaie <strong>d'appliquer l'objet</strong> déjà dans le slot d'échange à l'objet sur lequel vous venez de cliquer. C'est comme ça qu'on <strong>répare</strong> des objets comme les pioches. Si l'inventaire n'est pas ouvert, ça met l'objet <strong>dans votre slot d'équipement primaire</strong>. À moins que vous n'ayez fait un <strong>clic droit</strong>, auquel cas ça le met <strong>dans votre slot d'équipement alternatif</strong>. Ensuite, ça vérifie si votre objet est <strong>à deux mains</strong>. S'il l'est, ça fait la chose appropriée et met à jour les trois informations mentionnées précédemment S'il ne l'est pas, ça fait la chose appropriée pour cette situation.
+
+Quand vous faites tourner <strong>la molette</strong> vers le haut ou le bas ou que vous appuyez sur une <strong>touche de 1 à 9 (plus le 0)</strong> de votre clavier, l'interface principale s'en charge. Le code est similaire mais plus simple car il y a moins d'actions possibles. Il y a toujours besoin de mettre à jour les trois valeurs, en fonction de ce qui est approprié.
+
+Et je pense que c'est tout ce qu'il y a à dire, aussi loin que vont les détails d'implémentation gonflants. Ce problème particulier a fini par me prendre beaucoup plus de temps que je ne l'avais prévu, malheureusement. Si vous vous rappelez de mon stream de la nuit dernière, c'est probablement 90% de ce que vous avez vu. J'ai eu quelques faux départs, ce qui est la raison pour laquelle ça m'a pris autant de temps. Mais j'ai vraiment mis en forme le fonctionnement de PlayerInventory, et ça a fini par faire en sorte que tout marche finalement bien mieux. Ce qui est très sympa à la fin de la journée, parce que ça m'a causé un stress infini pendant que c'était en cours.
+
+Enfin bon, j'vais me taire. J'espère que vous appréciez votre pavé. Voici une image en récompense.
+
+<a href="/wp-content/uploads/2013/08/1376715994741.gif"><img src="/wp-content/uploads/2013/08/1376715994741.gif" alt="Wario reward" width="320" height="288" class="aligncenter size-full wp-image-6548" /></a>
+
+<hr>
+
+Bon, ça y est, c'est enfin fini, j'espère que vous appréciez votre pavé traduit, bien complexe et gorgé de trucs techniques. On peut donc ainsi comprendre mieux le fonctionnement du jeu.
+
+<strong>Source :</strong> [<a href="http://playstarbound.com/16th-august-progress/" title="16th August Progress" target="_blank">16th August Progress</a>]

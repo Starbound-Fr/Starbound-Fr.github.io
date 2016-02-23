@@ -1,0 +1,32 @@
+---
+layout: post
+cover_alt: cover
+wordpress_id: 5441
+categories:
+- News
+tags:
+- grappin
+title: "Le grappin, sans doute l'objet le plus complexe du jeu"
+cover: "/wp-content/uploads/2013/07/accueil9juin.png"
+---
+<p style="text-align: justify;">u_u les développeurs veulent ma mort. Accrochez-vous à votre écran car ce qui va suivre est une déferlante de termes techniques sur...le grappin. Tout ce texte juste pour vous expliquer le fonctionnement d'un seul objet ! Mais jusqu’où iront-ils ? Dans cet article, vous aurez le droit à de jolis schémas et divagations d'<em><strong>Omni</strong></em>.</p>
+<p style="text-align: justify;">Hier, <strong>le grappin a enfin été ajouté au jeu</strong>. Il peut être équipé et ne provoque aucuns bugs. Mais Omni doit régler des glitchs (les bugs qui peuvent permettre de tricher; pas la race) avant de pouvoir nous le montrer. Donc pour aujourd'hui, <em><strong>Omni</strong></em> va nous expliquer comment devrait fonctionner le grappin. Il s'est inspiré du jeu "<em>Umihara Kawase"</em> dont vous pouvez voir une vidéo <a href="http://www.youtube.com/watch?v=9NzErZcyOqM">sur YouTube</a>.</p>
+<p style="text-align: justify;">Commençons par parler de <strong>la façon dont s'étend le grappin</strong>. Si vous vous souvenez de vos cours de physique, nous allons parler de <a href="https://fr.wikipedia.org/wiki/Loi_de_Hooke" target="_blank">la loi de Hooke</a> (j'ai pas souvenir d'avoir vu ça au lycée ^^'), qui change la force de traction du grappin en fonction de la longueur de la corde . Cette loi se traduit par la relation F = kx, où k est une constante qui sera définie dans un fichier de configuration, et x est la variation de la longueur de la corde. Bien sûr, <strong>vous pouvez faire en sorte que la longueur de la corde soit plus ou moins longue lorsque vous vous balancez</strong>. Donc, il faut juste calculer la longueur de la corde. Mais il y a un problème, la corde peut plier et faire le tour de blocs et le calcul se complique.</p>
+<p style="text-align: justify;">Eh bien, <strong>il faut enregistrer l'endroit où la corde a plié</strong>. Donc, passons au système permettant de définir ce point : il doit d'abord toucher un bloc et c'est généralement un angle de celui-ci. Mais les blocs sont collés entre eux et partagent des angles; il faut savoir quel bloc provoque le pli. Ce qui signifie que nous avons besoin de garder une liste de deux valeurs, les coordonnées du bloc et une coordonnée spatiale.</p>
+<p style="text-align: justify;">Mais la plus grande difficulté est qu<strong>'il faut gérer la possibilité d'ajouter et d'enlever des blocs</strong>. La plupart des autres jeux qui comportent un grappin évolué (<em>Umihara Kawase, Worms, Hedgewars</em>...) n'ont pas d’environnement modifiable. Et dans <em>Starbound</em>, à tout moment l'élément lié au point de virage peut tout simplement disparaître. Qu'advient-il alors? Que se passe-t-il si un bloc est placé sur la ligne entre l'extrémité du grappin et le joueur ?</p>
+<p style="text-align: justify;">Eh bien, quand un bloc disparaît, les devs souhaitent détecter puis déplacez le point d'ancrage vers le milieu de la ligne formée par les points d'ancrage précédent et suivant  (vous suivez ? :3). À moins que le point d'ancrage qui a disparu était le crochet. Dans ce cas, ils vont juste rompre le lien et <strong>laisser le joueur chuter vers une mort certaine</strong>.</p>
+&nbsp;
+
+<a href="http://playstarbound.com/wp-content/uploads/2013/07/derp1.png"><img class="aligncenter" alt="derp1" src="http://playstarbound.com/wp-content/uploads/2013/07/derp1-300x187.png" width="300" height="187" /></a>
+<p style="text-align: justify;">Que se passe-t-il si un bloc se situe sur le chemin ? C'est similaire (mais pas identique) au cas où vous vous déplacez et le câble touche un bloc. Donc, voici un ensemble de règles pour gérer cela.</p>
+<p style="text-align: justify;">Si le chemin entre le point A et le point B est bloqué, nous devons d'abord déterminer tous les composants qui sont proches. Ensuite, déterminer lequel est le plus proche. Ce sera le bloc de travail. Maintenant, il y a deux cas: le premier c'est lorsque vous êtes face au bloc. Dans ce cas, il faut considérer les deux coins que vous pouvez voir. Le deuxième cas se passe lorsque vous êtes en diagonale avec le bloc, ce qui signifie que vous devez prendre en considération les deux coins opposés.</p>
+<a href="http://playstarbound.com/wp-content/uploads/2013/07/derp2.png"><img class="aligncenter" alt="derp2" src="http://playstarbound.com/wp-content/uploads/2013/07/derp2-300x187.png" width="300" height="187" /></a>
+<p style="text-align: justify;">Le système considère ensuite un côté, puis l'autre. Il faut donc introduire un élément au hasard afin de ne pas systématiquement privilégier une voie sur l'autre. Quoi qu'il en soit dans le premier cas, ils essaient le coin gauche, et vérifient pour voir si ils peuvent réellement faire le tour de cette manière, puis si cela fonctionne, l'algorithme se répète jusqu'à ce qu'il dise qu'on ait fait le tour.</p>
+Il y a aussi d'autres cas, par exemple, <strong>vous vous balancez</strong> autour d'un mur et votre grappin se détache de la paroi, le système doit détecter l'angle formé.
+
+<em><strong>Omni </strong></em>fini ses explications en disant :
+<blockquote><p style="text-align: justify;">"J’espère que ce n'était pas trop ennuyant ou mauvais. Oh mon dieu, je ne peut pas croire que l'on puisse appeler ça du dessin."</p></blockquote>
+
+A vous de juger ! ^^
+
+<p style="text-align: justify;">Désolé si les explications sont un peu brouillonnes, c'est assez difficile pour moi de vous expliquer quelque chose que je ne connais pas. Néanmoins, n'hésitez pas à poser des questions si vous avez un doute, je pourrais peut être mieux vous réexpliquer même si je ne suis surement pas le mieux placé pour vous faire des explications.</p>

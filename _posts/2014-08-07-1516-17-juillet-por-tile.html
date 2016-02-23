@@ -1,0 +1,74 @@
+---
+layout: post
+cover_alt: cover
+wordpress_id: 9258
+categories:
+- News
+tags:
+- bloc
+- portail
+- micro-donjon
+- microdonjon
+- rendu
+- porte
+- Performances
+- Avian
+- CPU
+title: "15,16 et 17 Juillet : Por-Tile"
+cover: "/wp-content/uploads/2014/08/une-15-16-17-juillet-portile.png"
+---
+Bonjour. Aujourd'hui, je vous traduis 3 articles en retard :)
+Ça parle de portail et de rendu des tiles.
+
+<hr />
+
+<h1>15 Juillet - Mais un jour le système de rendu des tiles décida de passer à l'attaque, par <em>Kyren</em></h1>
+
+Comme metadept et omni vous l'ont dit, je suis en train de réécrire <strong>complètement</strong> le moteur de rendu des tiles. L'ancien code était un véritable enfer de code répété, rassemblé en gros blocs de logique, le tout bourré de bugs, causant de gros ralentissements. De fait, il s'agissait de 3 systèmes fonctionnant en parallèle (un pour les blocs normaux, un pour les plateformes, et un pour les blocs changeant d'apparence selon les blocs voisins, comme les tuyaux). J'en ai quasiment fini avec le nouveau système, qui remplacera l'ancien groupe de systèmes par un système basé sur des règles (plus) simples, qui représente un dixième de la taille de l'ancien en terme de lignes de code.
+
+Même si le nouveau moteur de rendu applique les nouvelles règles d'adaptation des blocs à chaque frame et pour chaque tile, l'utilisation du CPU par Starbound en mode plein écran est <strong>descendue de 30%</strong>. La prochaine étape va consister à permettre la mise en cache des chuncks par le système, de manière à ce que celui-ci puisse réutiliser leur géométrie pour les futures frames s'ils ne sont pas modifiés (le système a été conçu avec cette idée en tête dès le départ). Cela devrait <strong>considérablement</strong> réduire l'utilisation du CPU.
+
+Je ne peux pas encore commencer pour le moment, car il reste quelques petites fonctionnalités non-implémentées qui rendraient nos artistes dingues, comme des blocs qui ne changent pas de couleur correctement, ou des prévisualisations de tiles en désordre. Je préfère ne pas m'engager pour l'instant, mais une fois que ces petits problèmes seront réglés, et que la mise en cache sera ajoutée, cela devrait porter ces fruits. J'espère pouvoir finir ça tôt demain, j'aurai alors de meilleurs chiffres au niveau des performances.
+
+(*) Les 30% sont partiellement dus au nouveau système, et partiellement à d'autre changements liés au système qui améliorent aussi les performances, c'est difficile à dire.
+
+<strong>Source :</strong> [<a href="http://playstarbound.com/july-15-everything-changed-when-the-tile-rendering-system-attacked/" title="July 15 – Everything changed when the tile rendering system attacked">July 15 – Everything changed when the tile rendering system attacked</a>]
+
+<hr />
+
+<h1>Progrès du 16 Juillet, par <em>Tiy</em></h1>
+
+Le système de portails nous a demandé beaucoup de travail aujourd'hui. Nous avons dû décider à quoi exactement il allait ressembler, et nous en avons dessiné des maquettes. Une grande partie des dessins vient de George, mais je voulais vous montrer ce à quoi nous étions arrivé.
+
+Cela devrait changer un peu d'ici à ce que ce soit fini.
+
+<a href="http://playstarbound.com/wp-content/uploads/2014/07/gate.gif"><img src="/wp-content/uploads/2014/08/gate-300x196.gif" alt="gate-300x196" width="300" height="196" class="aligncenter size-full wp-image-9261" /></a>
+
+Cliquez pour agrandir l'image !
+
+<strong>Source :</strong> [<a href="July 16th Progress" title="http://playstarbound.com/july-16th-progress/" target="_blank">July 16th Progress</a>]
+
+<hr />
+
+<h1>17 Juillet - Le défi que représentent les micro-donjons, par <em>Armagon</em></h1>
+
+Hey les gens ! J'ai bien peur de ne rien avoir de terriblement excitant à vous raconter vu que j'ai simplement continué à faire les mêmes choses qu'en début de semaine, c'est-à-dire créer plein de trucs cools à trouver sous terre.
+
+Je dois vous avouer que travailler sur ce genre de contenu sous-terrain se révèle assez compliqué. Ces trucs ne peuvent pas être très gros, et il n'est pas vraiment possible de savoir à quel type de terrain s'attendre autour d'un micro-donjon donné, à moi de sculpter vous-même le terrain, et procéder ainsi cause quelques problèmes.
+
+Premièrement, cela peut réduire drastiquement les chance d'un donjon d'apparaître, vu que cette méthode tend à augmenter la taille des donjons. Plus un micro-donjon est petit, plus il a de chances d'apparaître. L'autre problème est principalement le temps, car sculpter le terrain environnant pour obtenir une certaine forme peut se révéler très chronophage, ce qui vient interférer avec mon objectif qui est de remplir les sous-terrains avec un maximum de trucs possibles. Par conséquent, j'ai tendance à garder le façonnage du terrain autour de ces trucs à son minimum
+
+Pour le moment, je vais continuer à travailler de la sorte jusqu'à ce que l'on ait à nouveau besoin de moi pour la progression. Laissez-moi vous donner un aperçu de ce que j'ai fait aujourd'hui sur les micro-donjons Avians.
+
+<a href="/wp-content/uploads/2014/08/SurpriseGuestIncoming-1024x736.png"><img src="/wp-content/uploads/2014/08/SurpriseGuestIncoming-1024x736.png" alt="SurpriseGuestIncoming-1024x736" width="1024" height="736" class="aligncenter size-full wp-image-9262" /></a>
+
+La plupart des micro-donjons ne seront pas aussi faciles à trouver. ;)
+À la prochaine les gars !
+
+<strong>Source :</strong> [<a href="http://playstarbound.com/july-17th-the-challenges-of-making-a-microdungeon/" title="July 17th – The challenges of making a microdungeon!" target="_blank">July 17th – The challenges of making a microdungeon!</a>]
+
+<hr />
+
+À l'heure où je finis cet article, il se fait tard et je suis fatigué, d'où le calembour douteux dans le titre :>
+Désolé de pas avoir publié ça hier soir.
+En attendant, le prochain article sera plutôt gros, vu les articles que je vais devoir traduire.

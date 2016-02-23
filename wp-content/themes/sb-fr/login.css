@@ -1,0 +1,45 @@
+body.login{
+	line-height: 17px;
+	background:url('/wp-content/uploads/2013/01/fond-étoilé1.jpg') no-repeat #2B003A;
+	font-family: 'Open Sans', sans-serif;
+	color:#2B003A;
+}
+.login h1 a{
+	background:url('./images/logo-login.png') no-repeat;
+	width:310px;
+	height:80px;
+	margin:0 auto;
+}
+.login form{
+	background:#2D2D2D;
+	border:1px solid #0C0C0C;
+	-webkit-box-shadow:  0px 0px 4px 0px rgba(0, 0, 0, 0.65);
+	box-shadow:  0px 0px 4px 0px rgba(0, 0, 0, 0.65);
+}
+.login #nav, .login #backtoblog{
+	text-shadow: none;
+	margin:0 auto;
+	text-align:center;
+	background-color: rgba(0, 0, 0, 0.6);
+	padding:10px;
+	width: 288px;
+	margin: 0;
+	margin-left: 10px;
+}
+.login #nav a, .login #backtoblog a{
+	color:#00ACEE;
+	font-weight:bold;
+}
+.login #nav a:hover, .login #backtoblog a:hover{
+	color:#fbf97b;
+}
+div.updated, .login .message{
+	background:#161616;
+	border:1px solid rgb(37, 37, 37);
+	-webkit-box-shadow:  0px 0px 4px 0px rgba(0, 0, 0, 0.65);
+	box-shadow:  0px 0px 4px 0px rgba(0, 0, 0, 0.65);
+	color:white;
+}
+.cptch_block{
+	color: grey;
+}

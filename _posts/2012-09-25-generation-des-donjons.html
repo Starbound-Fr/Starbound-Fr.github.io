@@ -1,0 +1,66 @@
+---
+layout: post
+cover_alt: cover
+wordpress_id: 739
+categories:
+- News
+tags:
+- !binary |-
+  Z8OpbsOpcmF0aW9u
+- Avian
+- Donjon
+- moteur
+title: "Génération des donjons"
+cover: "/wp-content/uploads/2012/09/dungeon11.png"
+---
+Bonjour tout le monde !
+
+En ce mardi 25 Septembre, nous avons du nouveau sur le jeu !
+
+D’ailleurs Tiy tient à s'excuser pour le peu de news en ce moment. C'est que, mine de rien, ils en ont du taff ! Ne vous inquiétez pas, ils avancent vite :)
+<strong>Comment sont générés les donjons ?</strong>
+
+Les donjons sont divisés en plusieurs salles et couloirs. Chaque salle est créée à partir d'une seule image et <strong>chaque pixel</strong> de l'image représente un bloc, un objet, des points de spawn...
+
+Le moteur du jeu connecte intelligemment ces salles et schématise de nouveaux donjons. Il gère le spawn de monstres et de coffres aléatoirement à l'intérieur du donjon.
+
+Voici une image  de l'entrée d'une tour Avian:
+
+<img src="/wp-content/uploads/2012/09/dungeon2.png" alt="dungeon2" width="193" height="69" class="aligncenter size-full wp-image-8512" />
+
+La plupart des couleurs des pixels font référence à différents blocs et objets:
+
+-Les pixels roses indiquent au moteur d'accepter quoi que ce soit à cet endroit.
+-Les pixels gris indiquent au moteur de combler ces endroits avec les blocs principaux du biome ou apparaît le donjon.
+-Les pixels bleus indiquent au moteur comment relier les pièces entre elles.
+-Les pixels noirs indiquent au moteur la position du ciel.
+
+Une fois que le moteur a lu l'image et l'a placé dans le monde, il ressemble à ceci:
+
+[caption id="" align="alignnone" width="691"]<a href="http://playstarbound.com/wp-content/uploads/2012/09/dungeon1.png" target="_blank"><img class="    " src="http://playstarbound.com/wp-content/uploads/2012/09/dungeon1.png" alt="" width="691" height="371" /></a> Cliquez sur l'image pour la voir en taille réelle ![/caption]
+
+Ces images seront utilisées pour générer toutes sortes de donjons différents, des temples, des cryptes...
+
+Le moteur est également capable de générer aléatoirement chaque pixel, donc une seule pièce peut apparaître dans une multitude de façons différentes.
+
+Et pour finir, les devs nous indiquent qu'une<strong> vidéo</strong> sur les voyages de planète en planète sera <strong>bientôt disponible !</strong>
+
+Voici d'autres exemples de génération de donjon :
+
+On aperçoit de nouveaux blocs, un nouveau fond et des nouveaux monstres :)
+
+<img class="alignnone" src="http://i.imgur.com/OF1ez.png" alt="" width="906" height="586" />
+
+<img class="alignnone" src="http://i.imgur.com/QYkOuh.jpg" alt="" width="1024" height="545" />
+
+<img class="alignnone" src="http://i.imgur.com/AOPlZ.png" alt="" width="919" height="376" />
+
+Vous pouvez découvrir deux nouvelles images du jeu  :
+
+[caption id="" align="aligncenter" width="1280"]<a href="/wp-content/uploads/2012/08/tumblr_ma2ocgvzQN1rxsyu7o1_1280.png"><img class="  " style="border: 1px solid gray;" title="Foret" src="/wp-content/uploads/2012/08/tumblr_ma2ocgvzQN1rxsyu7o1_1280.png" alt="" width="1280" height="800" /></a> Cliquez pour voir en taille réelle.[/caption]
+
+[caption id="" align="aligncenter" width="1280"]<a href="/wp-content/uploads/2012/08/tumblr_m9udpaLHjv1rxsyu7o1_1280.png" target="_blank"><img class=" " style="border: 1px solid grey;" title="Bartwe" src="/wp-content/uploads/2012/08/tumblr_m9udpaLHjv1rxsyu7o1_1280.png" alt="" width="1280" height="700" /></a> Cliquez pour voir en taille réelle.[/caption]
+
+&nbsp;
+
+Si vous voulez commenter cette news et/ou cet article, faites-le sur le <a href="/forum/showthread.php?tid=61">forum</a>.
