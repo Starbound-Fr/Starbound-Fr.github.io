@@ -37,4 +37,4 @@ markdown: kramdown
 encoding: utf-8
 
 # routing
-include: ['_pages']
+include: ['_pages', '404.html']
