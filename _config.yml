@@ -31,7 +31,7 @@ asset_path:
     css: "/Assets/sb/css"
     js: "/Assets/sb/js"
     fonts: "/Assets/sb/fonts"
-    uploads: "/Assets/sb/uploads"
+    uploads: "/Assets/uploads"
 
 # Build settings
 markdown: kramdown
