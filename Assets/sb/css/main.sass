@@ -1,6 +1,6 @@
 ---
 ---
-@font-face 
+@font-face
   font-family: 'Didact Gothic'
   font-style: normal
   font-weight: 400
@@ -11,7 +11,7 @@ html
   box-sizing: border-box
   margin: 0px
   padding: 0px
-*, *::before, *::after 
+*, *::before, *::after
   box-sizing: inherit
 
 // on empeche de faire sortir des blocs les images
@@ -20,7 +20,7 @@ img
   height: auto
   display: block
   margin: auto
-h1, h2, h3, h4, h5, h6 
+h1, h2, h3, h4, h5, h6
   font-family: "Didact Gothic", Helvetica, Arial, sans-serif
   font-weight: normal
 h2
@@ -44,7 +44,7 @@ hr
   background-image: -o-linear-gradient(left, #D0CCD1, #8c8b8b, #D0CCD1)
   margin: 1.5rem
 
-body 
+body
   background-color: #220025
   background-image: url('/wp-content/uploads/2013/01/fond-étoilé1.jpg')
   background-repeat: repeat
@@ -55,14 +55,14 @@ body
   padding: 0px
   margin: 0px
   font-size: 13px
-  
+
   // mise en flex des éléments principaux
-  .site-header > .wrapper, > .wrapper, > .site-footer 
+  .site-header > .wrapper, > .wrapper, > .site-footer
     display: flex
     flex-direction: row
     justify-content: space-between
     align-items: flex-start
-  
+
   // corp de la page + footer
   > .wrapper, > .site-footer
     background-color: rgba(255, 255, 255, 0.8)
@@ -75,7 +75,7 @@ body
     margin-bottom: 40px
     > .wrapper > #logo
       position: relative
-      
+
       > a.logo
         display: block
         position: relative
@@ -97,6 +97,16 @@ body
         top: 63px
         right: 2px
         font-size: 0.75em
+      > div
+        display: flex
+        flex-direction: row
+        justify-content: space-around
+        align-items: center
+
+        #txt-aleatoire
+          text-align: center
+          color: #aaa
+
     #menu-haut
       position: relative
       > ul > li
@@ -131,7 +141,7 @@ body
           &:hover
             background-color: #222
             color: #fff
-          
+
           ul
             display: none
             position: absolute
@@ -141,7 +151,7 @@ body
             background: #E4E1E4
             padding: 0px
             width: 150px
-            
+
             li
               display: block
               border-bottom: 1px solid #ccc
@@ -154,12 +164,12 @@ body
                 padding-bottom: 5px
             li:nth-last-child(1)
               border-bottom: none
-          
+
           &:hover
             > ul
               display: block
-      
-  
+
+
   // réglage du corp de page
   > .wrapper
     > .content
@@ -186,7 +196,7 @@ body
         img
           margin-top: 10px
           margin-bottom: 10px
-      
+
       .post-list
         display: flex
         flex-direction: row
@@ -194,7 +204,7 @@ body
         align-items: center
         flex-wrap: wrap
         position: relative
-        
+
         > .post-cover:nth-child(1)
           width: 620px
           height: 250px
@@ -205,7 +215,7 @@ body
           object-fit: cover
           margin-top: 20px
           position: relative
-          
+
           a:hover .thumbnail-title
             opacity: 0.9
           a
@@ -214,7 +224,7 @@ body
             overflow: hidden
             width: 100%
             height: 100%
-            
+
             .thumbnail-title
               position: absolute
               display: flex
@@ -228,7 +238,7 @@ body
               opacity: 0.65
               -moz-opacity: 0.65
               line-height: 17px
-              
+
               h2
                 // padding-left: 10px
                 text-align: center
@@ -237,14 +247,14 @@ body
                 display: block
                 text-decoration: none
                 margin: 5px
-      
+
       .pagination
         display: flex
         flex-direction: row
         justify-content: space-between
         align-items: center
         margin-top: 10px
-        
+
         .pagination-previous
           text-align: left
         .pagination-next
@@ -260,17 +270,17 @@ body
           color: #aaa
           font-weight: 400
           text-decoration: none
-          
+
         a:hover
           color: #fff
           background-color: #222
-        
+
     > aside
       flex: 1
       padding-right: 20px
       padding-top: 20px
       max-width: 300px
-      
+
       h2
         border-bottom: 1px solid #aaa
         padding-bottom: 10px
@@ -279,7 +289,7 @@ body
         .material-icons
           vertical-align: -23.475%
           margin-right: 0.25em
-      
+
       .label-info
         border-radius: 3px
         background-color: #F89406
@@ -295,12 +305,12 @@ body
         font-family: Helvetica,Arial,sans-serif
         font-weight: 700
         text-align: center
-        
+
         a
           color: #FAFAFA
           border-bottom: 1px dotted #FAFAFA
           margin-bottom: 2px
-      
+
       #social
         display: flex
         flex-direction: row
@@ -308,7 +318,7 @@ body
         align-items: center
         flex-wrap: wrap
         margin-top: 1em
-        
+
         h2
           width: 100%
         a
@@ -319,14 +329,14 @@ body
           opacity: 0.75
           &:hover
             opacity: 1
-          
+
       #partenaires
         display: flex
         flex-direction: row
         justify-content: space-around
         align-items: center
         flex-wrap: wrap
-        
+
         h2
           width: 100%
         a
@@ -334,21 +344,20 @@ body
           width: calc(50% - 2px)
           img
             width: 100%
-      
+
       #liens
         .blogroll
           padding-left: 1em
           li
             list-style-type: circle
 
-  
+
   .site-footer
     border-top: 1px solid #aaa
     padding: 0px 20px 0px 20px
     font-size: 1em
-    
+
     .footer-right
       text-align: right
     .footer-left
       text-align: left
-  
