@@ -1,12 +1,19 @@
 ---
-author: KiwiiCorporation
-comments: false
-date: 2012-09-22 18:05:34+00:00
+author: Purexo
 layout: page
 slug: archives
 title: Archives
-wordpress_id: 726
 permalink: "/archives/"
 ---
 
-No Content Found
+<ul class="post-list">
+  {% for post in site.posts %}
+    <li>
+      <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+
+      <h2>
+        <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+      </h2>
+    </li>
+  {% endfor %}
+</ul>
