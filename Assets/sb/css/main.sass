@@ -13,13 +13,6 @@ html
   padding: 0px
 *, *::before, *::after
   box-sizing: inherit
-
-// on empeche de faire sortir des blocs les images  contenu multimedia
-img, video, audio, iframe
-  max-width: 100%
-  height: auto
-  display: block
-  margin: auto
 h1, h2, h3, h4, h5, h6
   font-family: "Didact Gothic", Helvetica, Arial, sans-serif
   font-weight: normal
@@ -209,6 +202,12 @@ body
             font-size: 1.125em
           h6
             font-size: 1em
+          // on empeche de faire sortir des blocs les images contenu multimedia
+          img, video, audio, iframe
+            max-width: 100%
+            height: auto
+            display: block
+            margin: auto
 
       .post-list
         display: flex
