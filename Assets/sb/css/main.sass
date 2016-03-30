@@ -36,6 +36,14 @@ hr
   background-image: -ms-linear-gradient(left, #D0CCD1, #8c8b8b, #D0CCD1)
   background-image: -o-linear-gradient(left, #D0CCD1, #8c8b8b, #D0CCD1)
   margin: 1.5rem
+// on empeche de faire sortir des blocs les images contenu multimedia
+img, video, audio
+  max-width: 100%
+  height: auto
+  display: block
+  margin: auto
+iframe
+  max-width: 100%
 
 body
   background-color: #220025
@@ -202,14 +210,6 @@ body
             font-size: 1.125em
           h6
             font-size: 1em
-          // on empeche de faire sortir des blocs les images contenu multimedia
-          img, video, audio
-            max-width: 100%
-            height: auto
-            display: block
-            margin: auto
-          iframe
-            max-width: 100%
 
       .post-list
         display: flex
