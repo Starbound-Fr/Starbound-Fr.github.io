@@ -43,6 +43,7 @@ Nous espérons que vous verrez la différence mais ne paniquez pas si certaines 
 - Si vous rencontrez toujours des difficultés pour lancer le jeu, allez dans le dossier "prereqs" dans votre répertoire Starbound et installer le vc_redist.exe qui correspond à votre système d'exploitation.
 
 ## Changelog
+
 ### Changements majeurs
 
 - Système de colonie
