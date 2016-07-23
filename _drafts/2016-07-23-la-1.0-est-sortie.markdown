@@ -1,0 +1,48 @@
+---
+layout: post
+title:  "La 1.0 est sortie !"
+date:   2016-07-23 11:43:05 +0000
+cover_alt: cover
+categories:
+- News
+tags: []
+cover: /Assets/uploads/2016/07/starbound-cover-1.0.png
+author: Purexo
+---
+
+Bonjour à tous, ça fait un moment qu'on a pas fait de news. On a pas réussi comme je l'espéré à ratrapper le retard sur les articles. Je pense donc qu'il ne faut pas continuer de compter dessus. Toute l'équipe de rédacteur est occuppé, on a tous notre vie et peu de temps à accorder à la traduction d'article comme avant.
+
+----------------------
+
+Maintenant que ces choses sont dites, on va passer aux excellentes nouvelles :
+
+<p style="text-align: center">
+STARBOUND EST ENFIN SORTIE DE L'EARLY ACCESS  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+</p>
+
+Ça c'est dit ^^. Starbound est donc sortie officellement en 1.0 hier (22/07/2016), pour l'occasion ils ont publié un magnifique trailer :
+
+<center><iframe width="500" height="281" src="https://www.youtube.com/embed/-O6PUh3reG0" frameborder="0" allowfullscreen></iframe></center>
+
+------------------------
+
+Le **changelog** est disponible sur le [wiki de starbounder](http://starbounder.org/Version_History/Nightly#Daily_Asset_Differences) si un quelqu'un ce sent d'en faire une traduction il est le bienvenue ^^
+
+---------------------------
+
+Il faut aussi savoir que pour l'occasion ils ont integré les mods au steam workshop ce qui est plutôt cool, et en prime un gestionnaire de mods directement dans le jeu, ce qui est une superbe initiative
+
+![image_2016-07-21_18-19-07](http://playstarbound.com/wp-content/uploads/2016/07/image_2016-07-21_18-19-07.png)
+
+----------------------------
+
+Il y a évidement pleins d'autres choses mais ce sont les info récentes qui m'ont le plus frappé.
+
+Sur ce, je vous laisse et vous souhaite un excelent week-end. Amusez vous bien sur Starbound.
+
+---------------------------
+
+#### Les sources :
+- http://playstarbound.com/starbound-release/
+- http://playstarbound.com/starbound-1-0-steam-workshop/
+- http://playstarbound.com/starbound-release-announcement/
