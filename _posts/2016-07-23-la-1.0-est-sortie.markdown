@@ -10,7 +10,7 @@ cover: /Assets/uploads/2016/07/starbound-cover-1.0.png
 author: Purexo
 ---
 
-Bonjour à tous, ça fait un moment qu'on a pas fait de news. On a pas réussi comme je l'espéré à ratrapper le retard sur les articles. Je pense donc qu'il ne faut pas continuer de compter dessus. Toute l'équipe de rédacteur est occuppé, on a tous notre vie et peu de temps à accorder à la traduction d'article comme avant.
+Bonjour à tous, ça fait un moment qu'on a pas fait de news. On a pas réussi comme je l'espérais à rattraper le retard sur les articles. Je pense donc qu'il ne faut pas continuer de compter dessus. Toute l'équipe de rédacteur est occupé, on a tous notre vie et peu de temps à accorder à la traduction d'article comme avant.
 
 ----------------------
 
@@ -26,23 +26,29 @@ STARBOUND EST ENFIN SORTIE DE L'EARLY ACCESS  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 ------------------------
 
-Le **changelog** est disponible sur le [wiki de starbounder](http://starbounder.org/Version_History/Nightly#Daily_Asset_Differences) si un quelqu'un ce sent d'en faire une traduction il est le bienvenue ^^
+Le **changelog** est disponible sur le [wiki de starbounder](http://starbounder.org/Version_History/Nightly#Daily_Asset_Differences) si un quelqu'un se sent d'en faire une traduction, il est le bienvenue ^^
 
 ---------------------------
 
-Il faut aussi savoir que pour l'occasion ils ont integré les mods au steam workshop ce qui est plutôt cool, et en prime un gestionnaire de mods directement dans le jeu, ce qui est une superbe initiative
+Il faut aussi savoir que pour l'occasion ils ont intégré les mods au steam workshop ce qui est plutôt cool, et en prime un gestionnaire de mods directement dans le jeu, ce qui est une superbe initiative
 
 ![image_2016-07-21_18-19-07](http://playstarbound.com/wp-content/uploads/2016/07/image_2016-07-21_18-19-07.png)
 
 ----------------------------
 
-Il y a évidement pleins d'autres choses mais ce sont les info récentes qui m'ont le plus frappé.
+Il y a évidement plein d'autres choses, mais ce sont les infos récentes qui m'ont le plus frappé.
 
-Sur ce, je vous laisse et vous souhaite un excelent week-end. Amusez vous bien sur Starbound.
+Sur ce, je vous laisse et vous souhaite un excellent week-end. Amusez-vous bien sur Starbound.
 
----------------------------
+--------------------------
 
-#### Les sources :
-- http://playstarbound.com/starbound-release/
-- http://playstarbound.com/starbound-1-0-steam-workshop/
-- http://playstarbound.com/starbound-release-announcement/
+### Les sources :
+- <http://playstarbound.com/starbound-release/>
+- <http://playstarbound.com/starbound-1-0-steam-workshop/>
+- <http://playstarbound.com/starbound-release-announcement/>
+
+--------------------------
+
+### EDIT :
+
+Je tiens à rappeler que le [serveur discord](https://discord.gg/0qoNECfjS1BY2mn6) vous est ouvert à tous, notamment pour ceux qui souhaiteront se retrouver pour jouer en groupe.
