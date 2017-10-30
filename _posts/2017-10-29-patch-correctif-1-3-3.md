@@ -19,8 +19,7 @@ une ou plusieurs catégories pour trouver les mods de ces sections.
 
 En ce qui concerne le développement, nous nous sommes concentrés sur des évenements passionnants que vous pourrez rencontrer lors de vos objectifs de prime.
 
-
-![](https://thumbs.gfycat.com/ThriftySlipperyCirriped-size_restricted.gif)
+<div style='position:relative;padding-bottom:54%'><iframe src='https://gfycat.com/ifr/ThriftySlipperyCirriped' frameborder='0' scrolling='no' width='100%' height='100%' style='position:absolute;top:0;left:0' allowfullscreen></iframe></div>
 
 Dans cet exemple, votre enquête est bloquée par une porte verrouillée par un code ce qui vous rend hors de portée de votre cible. 
 Vous devrez user de manipulation sociale afin d'obtenir le code de la porte et pouvoir progresser.
