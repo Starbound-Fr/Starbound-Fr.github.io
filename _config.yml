@@ -16,8 +16,9 @@ twitter_username: starbound_fr
 github_username:  Starbound-Fr-net
 permalink: /:title/
 
+plugins: [jekyll-paginate]
+
 # Pagination
-gems: [jekyll-paginate]
 paginate: 11
 paginate_path: "/page/:num/"
 
