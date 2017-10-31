@@ -34,6 +34,9 @@ asset_path:
     fonts: "/Assets/sb/fonts"
     uploads: "/Assets/uploads"
 
+category_title_prefix: 'Categorie: '
+category_dir: 'categories'
+
 # Build settings
 markdown: kramdown
 encoding: utf-8
