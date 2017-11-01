@@ -57,10 +57,28 @@ module Jekyll
         # Returns nothing.
         def generate(site)
           if site.config['paginate_category_basepath']
-            for category in site.categories.keys
+            for category in all_categories(site)
               paginate_category(site, category)
             end
           end
+        end
+
+        def all_categories(site)
+          categories = []
+
+          for post in site.posts.docs
+            if post.data['categories']
+              categories.concat(post.data['categories'])
+            end
+
+            if post.data['category']
+              categories.push(post.data['category'])
+            end
+          end
+
+          categories.uniq!
+
+          return categories
         end
 
         # Do the blog's posts pagination per category. Renders the index.html file into paginated 
@@ -73,7 +91,10 @@ module Jekyll
         # Returns nothing.
         def paginate_category(site, category)
           # Retrieve posts from that specific category.
-          all_posts = site.categories[category]
+          # all_posts = site.categories[category]
+          all_posts = site.posts.docs.select do |post|
+            post.data['categories'].include?(category) or post.data['category'] == category
+          end
 
           # Category base path
           category_path = site.config['paginate_category_basepath'] || '/categories/:name/'
