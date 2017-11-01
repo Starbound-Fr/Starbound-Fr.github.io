@@ -13,7 +13,7 @@ Starbound a évolué depuis la 1.0 et malheureusement ce site est resté sans no
 
 Dans ce résumé, nous allons aborder les changements majeurs des patchs 1.1, 1.2 et 1.3.
 
-Rentrons directement dans le vif du sujet avec :
+Taillons directement dans le gras avec :
 
 ## Patch 1.1 ##
 Ce patch a apporté des ajouts de pêche, de collecte d'objets, les villages Novakid et plus.
