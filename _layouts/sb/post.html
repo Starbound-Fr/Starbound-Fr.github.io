@@ -26,6 +26,33 @@ layout: default
   <div class="post-content" itemprop="articleBody">
     {{ content }}
   </div>
+
+  <div class="post-footer" itemprop="articleFooter">
+    {% if page.category %}
+      {% if page.categories.size > 0 %}
+        Catégories :
+        <ul>
+          {% for categorie in page.categories %}
+            <li><a href="/categories/{{ categorie | slugify: 'ascii' }}">{{ categorie }}</a></li>
+          {% endfor %}
+          <li><a href="/categories/{{ page.category | slugify: 'ascii' }}">{{ page.category }}</a></li>
+        </ul>
+      {% else %}
+        Catégorie : <a href="/categories/{{ page.category | slugify: 'ascii' }}">{{ page.category }}</a>
+      {% endif %}
+    {% else %}
+      {% if page.categories.size > 1 %}
+        Catégories :
+        <ul>
+          {% for categorie in page.categories %}
+            <li><a href="/categories/{{ categorie | slugify: 'ascii' }}">{{ categorie }}</a></li>
+          {% endfor %}
+        </ul>
+      {% else %}
+        Catégorie : <a href="/categories/{{ page.categories | first | slugify: 'ascii' }}">{{ page.categories | first }}</a>
+      {% endif %}
+    {% endif %}
+  </div>
     
   {% if page.next or page.previous %}
     <div class="pagination">
