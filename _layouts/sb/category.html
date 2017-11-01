@@ -4,11 +4,18 @@ layout: default
 <div class="home">
 
   <header class="home-header">
-    <h1 class="home-title">{{ page.title }}</h1>
+    <h1 class="home-title">
+      <a href="{{ page.url }}" {% if paginator.total_pages > 1 %}title="Pages total : {{ paginator.total_pages }}"{% endif %}>
+        {{ page.title }}
+        {% if paginator.total_pages > 1 %}
+          ( Page {{ paginator.page }})
+        {% endif %}
+      </a>
+    </h1>
   </header>
 
   <div class="post-list">
-    {% for post in page.posts %}
+    {% for post in paginator.posts %}
       <div id="{{ post.title }}" class="post-cover">
         <a href="{{ post.url | prepend: site.baseurl }}" rel="bookmark" title="{{ post.title }}">
           <img src="{{ post.cover | default: site.generic_cover }}" class="" alt="{{ post.cover_alt | default: "" }}">
@@ -19,5 +26,27 @@ layout: default
       </div>
     {% endfor %}
   </div>
+    
+  {% if paginator.total_pages > 1 %}
+    <div class="pagination">
+      <div class="pagination-previous">
+        {% if paginator.previous_page %}
+          <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}"
+             title="Pages Restantes {{ paginator.page | minus: 1 }}">
+            <span>&laquo; Page précédente</span>
+          </a>
+        {% endif %}
+      </div>
+    
+      <div class="pagination-next">
+        {% if paginator.next_page %}
+          <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}"
+             title="Pages Restantes {{ paginator.total_pages | minus: paginator.page}}">
+            <span>Page suivante &raquo;</span>
+          </a>
+        {% endif %}
+      </div>
+    </div>
+  {% endif %}
 
 </div>

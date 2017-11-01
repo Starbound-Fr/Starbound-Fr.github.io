@@ -37,6 +37,9 @@ asset_path:
 category_title_prefix: 'Categorie: '
 category_dir: 'categories'
 
+paginate_category_basepath: '/categories/:name/'
+paginate_category_layout: 'category.html'
+
 # Build settings
 markdown: kramdown
 encoding: utf-8

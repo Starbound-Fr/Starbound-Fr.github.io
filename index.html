@@ -22,7 +22,8 @@ layout: default
     <div class="pagination">
       <div class="pagination-previous">
         {% if paginator.previous_page %}
-          <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">
+          <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}"
+             title="Pages Restantes {{ paginator.page | minus: 1 }}">
             <span>&laquo; Page précédente</span>
           </a>
         {% endif %}
@@ -30,7 +31,8 @@ layout: default
     
       <div class="pagination-next">
         {% if paginator.next_page %}
-          <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">
+          <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}"
+             title="Pages Restantes {{ paginator.total_pages | minus: paginator.page}}">
             <span>Page suivante &raquo;</span>
           </a>
         {% endif %}

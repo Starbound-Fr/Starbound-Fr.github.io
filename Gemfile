@@ -9,4 +9,6 @@ git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
 gem "jekyll", "~> 3.6"
 
 # Added at 2017-10-31 19:06:39 +0100 by root:
-gem "jekyll-paginate", "~> 1.1"
+group :jekyll_plugins do
+    gem "jekyll-paginate", "~> 1.1"
+end
