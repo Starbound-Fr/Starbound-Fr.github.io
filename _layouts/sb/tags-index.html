@@ -1,0 +1,13 @@
+---
+layout: page
+title: Tags
+---
+
+<ul class="tags-list">
+    {% for tag in page.tags %}
+        <li>
+            <a href="/tags/{{tag | slugify: 'ascii' }}/">{{ tag }}</a>
+            ({{ page.posts_by_tag[tag] | size }})
+        </li>
+    {% endfor %}
+</ul>

@@ -1,0 +1,13 @@
+---
+layout: page
+title: Catégories
+---
+
+<ul class="categories-list">
+    {% for category in page.categories %}
+        <li>
+            <a href="/categories/{{category | slugify: 'ascii' }}/">{{ category }}</a>
+            ({{ page.posts_by_category[category] | size }})
+        </li>
+    {% endfor %}
+</ul>

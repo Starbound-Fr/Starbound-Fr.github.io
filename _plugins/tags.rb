@@ -6,25 +6,37 @@ module Jekyll
   module Paginate
     module Tags
 
-      class TagPage < Jekyll::Page
-        # Attributes for Liquid templates
-        ATTRIBUTES_FOR_LIQUID = %w(
-          content
-          dir
-          name
-          path
-          url
-        )
-
+      class Page < Jekyll::Page
         # Initialize a new Tag Page
-        def initialize(site, base, category)
+        def initialize(site, base, tag)
           layout = site.config['paginate_tag_layout'] || 'tag.html'
           layouts_base = site.config['layouts_dir'] || '_layouts'
           super(site, base, layouts_base, layout)
           process('index.html')
           
           tag_title_prefix = site.config['tag_title_prefix'] || 'Tag: '
-          self.data['title'] = "#{tag_title_prefix}#{category}"
+          self.data['title'] = "#{tag_title_prefix}#{tag}"
+        end
+      end
+
+      class Index < Jekyll::Page
+        # Initialize a new Tag Page
+        def initialize(site, base, posts_by_tag)
+          @site = site
+          @base = base
+          @dir = site.config['tag_dir'] || 'tags'
+          @name = 'index.html'
+          
+          layouts_base = site.config['layouts_dir'] || '_layouts'
+          layout = site.config['tag_index_layout'] || 'tags-index.html'
+
+          self.process(@name)
+          self.read_yaml(File.join(base, layouts_base), layout)
+
+          process('index.html')
+          
+          self.data['tags'] = posts_by_tag.keys
+          self.data['posts_by_tag'] = posts_by_tag
         end
       end
       
@@ -44,28 +56,45 @@ module Jekyll
         # Returns nothing.
         def generate(site)
           if site.config['paginate_category_basepath']
-            for tag in all_tags(site)
+            posts_by_tag = get_posts_by_tag(site)
+            
+            site.pages << Index.new(site, site.source, posts_by_tag)
+            
+            posts_by_tag.each do |tag, posts|
               paginate_tag(site, tag)
             end
           end
         end
 
-        def all_tags(site) 
-          tags = []
+        def get_posts_by_tag(site)
+          posts_by_tag = {}
 
-          for post in site.posts.docs
+          for post in site.posts.docs.reverse
             if post.data['tags']
-              tags.concat(post.data['tags'])
+              for tag in post.data['tags']
+                if !posts_by_tag[tag]
+                  posts_by_tag[tag] = []
+                end
+                posts_by_tag[tag].push(post)
+              end
             end
 
             if post.data['tag']
-              tags.push(post.data['tag'])
+              if !posts_by_tag[post.data['tag']]
+                posts_by_tag[post.data['tag']] = []
+              end
+              posts_by_tag[post.data['tag']].push(post)
             end
           end
 
-          tags.uniq!
+          posts_by_tag.each do |tag, posts|
+            posts.uniq! { |p| p.id }
+          end
 
-          return tags
+          posts_by_tag = posts_by_tag.sort_by { |tag, posts| tag }.to_h
+          posts_by_tag = posts_by_tag.sort_by { |tag, posts| -posts.size }.to_h
+
+          return posts_by_tag
         end
 
         # Do the blog's posts pagination per tag. Renders the index.html file into paginated 
@@ -96,7 +125,7 @@ module Jekyll
             pager.update_paginate_paths(site, tag_path)
 
             # Create new page, based on tag layout
-            newpage = TagPage.new(site, site.source, tag)
+            newpage = Page.new(site, site.source, tag)
             newpage.pager = pager
             newpage.dir = Pager.paginate_path_tag(site, current_num_page, tag_path)
             site.pages << newpage

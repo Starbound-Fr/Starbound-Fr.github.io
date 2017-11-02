@@ -39,12 +39,14 @@ category_title_prefix: 'Categorie: '
 category_dir: 'categories'
 paginate_category_basepath: '/categories/:name/'
 paginate_category_layout: 'category.html'
+category_index_layout: 'categories-index.html'
 
 # Tags.rb config
 tag_title_prefix: 'Tags: '
 tag_dir: 'tags'
 paginate_tag_basepath: '/tags/:name/'
 paginate_tag_layout: 'category.html'
+tag_index_layout: 'tags-index.html'
 
 # Build settings
 markdown: kramdown

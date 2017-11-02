@@ -7,37 +7,37 @@ module Jekyll
     module Categories
 
       class CategoryPage < Jekyll::Page
-        # Attributes for Liquid templates
-        ATTRIBUTES_FOR_LIQUID = %w(
-          category
-          content
-          dir
-          name
-          path
-          url
-        )
-
         # Initialize a new Category Page
         def initialize(site, base, category)
           layout = site.config['paginate_category_layout'] || 'category.html'
           layouts_base = site.config['layouts_dir'] || '_layouts'
           super(site, base, layouts_base, layout)
           process('index.html')
-
-          # Get the category into layout using page.category
-          @category = category
           
           category_title_prefix = site.config['category_title_prefix'] || 'Category: '
           self.data['title'] = "#{category_title_prefix}#{category}"
+          self.data['category'] = category
         end
+      end
+      
+      class Index < Jekyll::Page
+        # Initialize a new Tag Page
+        def initialize(site, base, posts_by_category)
+          @site = site
+          @base = base
+          @dir = site.config['category_dir'] || 'categories'
+          @name = 'index.html'
+          
+          layouts_base = site.config['layouts_dir'] || '_layouts'
+          layout = site.config['category_index_layout'] || 'categories-index.html'
 
-        # Produce a category object suitable for Liquid.
-        #
-        # Returns a String
-        def category
-          if @category.is_a? String
-            @category
-          end
+          self.process(@name)
+          self.read_yaml(File.join(base, layouts_base), layout)
+
+          process('index.html')
+          
+          self.data['categories'] = posts_by_category.keys
+          self.data['posts_by_category'] = posts_by_category
         end
       end
       
@@ -57,28 +57,45 @@ module Jekyll
         # Returns nothing.
         def generate(site)
           if site.config['paginate_category_basepath']
-            for category in all_categories(site)
-              paginate_category(site, category)
+            posts_by_category = get_posts_by_category(site)
+
+            site.pages << Index.new(site, site.source, posts_by_category)
+            
+            posts_by_category.each do |category, posts|
+              paginate_category(site, category, posts)
             end
           end
         end
 
-        def all_categories(site)
-          categories = []
+        def get_posts_by_category(site)
+          posts_by_category = {}
 
-          for post in site.posts.docs
+          for post in site.posts.docs.reverse
             if post.data['categories']
-              categories.concat(post.data['categories'])
+              for category in post.data['categories']
+                if !posts_by_category[category]
+                  posts_by_category[category] = []
+                end
+                posts_by_category[category].push(post)
+              end
             end
 
             if post.data['category']
-              categories.push(post.data['category'])
+              if !posts_by_category[post.data['category']]
+                posts_by_category[post.data['category']] = []
+              end
+              posts_by_category[post.data['category']].push(post)
             end
           end
 
-          categories.uniq!
+          posts_by_category.each do |category, posts|
+            posts.uniq! { |p| p.id }
+          end
 
-          return categories
+          posts_by_category = posts_by_category.sort_by { |category, posts| -posts.size }.to_h
+          posts_by_category = posts_by_category.sort_by { |category, posts| category }.to_h
+
+          return posts_by_category
         end
 
         # Do the blog's posts pagination per category. Renders the index.html file into paginated 
@@ -87,14 +104,10 @@ module Jekyll
         #
         # site     - The Site.
         # category - The category to paginate.
+        # all_posts - The posts to paginate.
         #
         # Returns nothing.
-        def paginate_category(site, category)
-          # Retrieve posts from that specific category.
-          # all_posts = site.categories[category]
-          all_posts = site.posts.docs.select do |post|
-            post.data['categories'].include?(category) or post.data['category'] == category
-          end
+        def paginate_category(site, category, all_posts)
 
           # Category base path
           category_path = site.config['paginate_category_basepath'] || '/categories/:name/'
