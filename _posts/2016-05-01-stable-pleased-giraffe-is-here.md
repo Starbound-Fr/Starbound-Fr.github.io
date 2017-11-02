@@ -6,7 +6,8 @@ categories:
 tags: []
 title: "[Retard] - 25 Aout - [STABLE] La Pleased Giraffe est arrivée !"
 cover: /Assets/uploads/2016/04/maxresdefault.jpg
-author: Jumpstyle - Purexo
+author: Jumpstyle
+contributor: Purexo
 ---
 
 Aujourd'hui grosse mise à jour de Starbound donc je vous fais un petit listing des ajouts, on y va ? :D

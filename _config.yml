@@ -35,7 +35,7 @@ asset_path:
     uploads: "/Assets/uploads"
 
 # Categories.rb config
-category_title_prefix: 'Categorie: '
+category_title_prefix: 'Catégorie: '
 category_dir: 'categories'
 paginate_category_basepath: '/categories/:name/'
 paginate_category_layout: 'category.html'
@@ -47,6 +47,20 @@ tag_dir: 'tags'
 paginate_tag_basepath: '/tags/:name/'
 paginate_tag_layout: 'category.html'
 tag_index_layout: 'tags-index.html'
+
+# Authors.rb config
+author_title_prefix: 'Rédacteur: '
+author_dir: 'authors'
+paginate_author_basepath: '/authors/:name/'
+paginate_author_layout: 'author.html'
+author_index_layout: 'authors-index.html'
+
+# Contributors.rb config
+contributor_title_prefix: 'Correcteur: '
+contributor_dir: 'contributors'
+paginate_contributor_basepath: '/contributors/:name/'
+paginate_contributor_layout: 'author.html'
+contributor_index_layout: 'contributors-index.html'
 
 # Build settings
 markdown: kramdown

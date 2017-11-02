@@ -6,7 +6,8 @@ categories:
 tags: []
 title: "Patch correctif 1.3.3"
 cover: /Assets/uploads/2017/10/patch_1_3_3.png
-author: Yohann, Pyro
+author: Yohann
+contributor: Pyro
 ---
 
 Salut tout le monde !

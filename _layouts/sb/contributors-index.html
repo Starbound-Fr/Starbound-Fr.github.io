@@ -1,0 +1,13 @@
+---
+layout: page
+title: Correcteurs
+---
+
+<ul class="contributors-list">
+    {% for contributor in page.contributors %}
+        <li>
+            <a href="/contributors/{{contributor | slugify: 'ascii' }}/">{{ contributor }}</a>
+            ({{ page.posts_by_contributor[contributor] | size }})
+        </li>
+    {% endfor %}
+</ul>

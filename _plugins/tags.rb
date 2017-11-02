@@ -55,13 +55,13 @@ module Jekyll
         #
         # Returns nothing.
         def generate(site)
-          if site.config['paginate_category_basepath']
+          if site.config['paginate_tag_basepath']
             posts_by_tag = get_posts_by_tag(site)
             
             site.pages << Index.new(site, site.source, posts_by_tag)
             
             posts_by_tag.each do |tag, posts|
-              paginate_tag(site, tag)
+              paginate_tag(site, tag, posts)
             end
           end
         end
@@ -105,12 +105,7 @@ module Jekyll
         # tag - The tag to paginate.
         #
         # Returns nothing.
-        def paginate_tag(site, tag)
-          # Retrieve posts from that specific tag.
-          all_posts = site.posts.docs.select do |post|
-            post.data['tags'].include?(tag) or post.data['tag'] == tag
-          end
-
+        def paginate_tag(site, tag, all_posts)
           # Tag base path
           tag_path = site.config['paginate_tag_basepath'] || '/tags/:name/'
           tag_path = tag_path.sub(':name', Utils.slugify(tag, :mode => 'ascii'))

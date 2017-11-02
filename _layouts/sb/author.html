@@ -1,0 +1,81 @@
+---
+layout: default
+---
+<div class="home">
+
+  {% assign slug_author = page.title | slugify: 'ascii' %}
+  {% assign author = site.data.authors[slug_author] %}
+  <header class="home-header">
+    <h1 class="home-title">
+      <a href="{{ page.url }}" {% if paginator.total_pages > 1 %}title="Pages total : {{ paginator.total_pages }}"{% endif %}>
+        {{ page.prefix }} {% if author %}{{ author.name }}{% else %}{{ page.title }}{% endif %}
+        {% if paginator.total_pages > 1 %}
+          ( Page {{ paginator.page }})
+        {% endif %}
+      </a>
+    </h1>
+
+    {% if author %}
+      <p>
+        <dl>
+          {% if author.email %}
+            <dt>Email :</dt>
+            <dd><a href="mailto:{{author.email}}">{{author.email}}</a></dd>
+          {% endif %}
+          {% if author.web %}
+            <dt>Site Web :</dt>
+            <dd><a href="{{author.web}}" target="_blank">{{author.web}}</a></dd>
+          {% endif %}
+          {% if author.social %}
+            {% if author.social.twitter %}
+              <dt>Twitter :</dt>
+              <dd><a href="https://twitter.com/{{author.social.twitter}}">@{{author.social.twitter}}</a></dd>
+            {% endif %}
+            {% if author.social.github %}
+              <dt>Github :</dt>
+              <dd><a href="https://github.com/Purexo/{{author.social.github}}">{{author.social.github}}</a></dd>
+            {% endif %}
+          {% endif %}
+        </dl>
+      </p>
+    {% endif %}
+
+    <h2 class="home-title">Ses {{ page.type }}</h2>
+  </header>
+
+  <div class="post-list">
+    {% for post in paginator.posts %}
+      <div id="{{ post.title }}" class="post-cover">
+        <a href="{{ post.url | prepend: site.baseurl }}" rel="bookmark" title="{{ post.title }}">
+          <img src="{{ post.cover | default: site.generic_cover }}" class="" alt="{{ post.cover_alt | default: "" }}">
+          <div class="thumbnail-title">
+            <h2>{{ post.title }}</h2>
+          </div>
+        </a>
+      </div>
+    {% endfor %}
+  </div>
+    
+  {% if paginator.total_pages > 1 %}
+    <div class="pagination">
+      <div class="pagination-previous">
+        {% if paginator.previous_page %}
+          <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}"
+             title="Pages Restantes {{ paginator.page | minus: 1 }}">
+            <span>&laquo; Page précédente</span>
+          </a>
+        {% endif %}
+      </div>
+    
+      <div class="pagination-next">
+        {% if paginator.next_page %}
+          <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}"
+             title="Pages Restantes {{ paginator.total_pages | minus: paginator.page}}">
+            <span>Page suivante &raquo;</span>
+          </a>
+        {% endif %}
+      </div>
+    </div>
+  {% endif %}
+
+</div>

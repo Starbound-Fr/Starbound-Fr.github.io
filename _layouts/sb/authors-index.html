@@ -1,0 +1,16 @@
+---
+layout: page
+title: Rédacteurs
+---
+
+<ul class="authors-list">
+    {% for author in page.authors %}
+        {% assign slug_author = author | slugify: 'ascii' %}
+        {% assign data_author = site.data.authors[slug_author] %}
+
+        <li>
+            <a href="/authors/{{ slug_author }}/">{% if data_author %}{{data_author.name}}{% else %}{{ author }}{% endif %}</a>
+            ({{ page.posts_by_author[author] | size }})
+        </li>
+    {% endfor %}
+</ul>

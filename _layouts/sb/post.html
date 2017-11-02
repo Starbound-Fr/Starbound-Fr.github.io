@@ -1,7 +1,6 @@
 ---
 layout: default
 ---
-{% assign author = site.data.authors[page.author] %}
 
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
@@ -9,49 +8,165 @@ layout: default
     <h1 class="post-title" itemprop="name headline">{{ page.title }}</h1>
     <p class="post-meta">
       <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: " %B, %d %Y" }}</time><!-- %b %-d, %Y -->
-      {% if author %}
-         <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+
+      {% if page.author %}
+        {% assign slug_author = page.author | slugify: 'ascii' %}
+        {% assign author = site.data.authors[slug_author] %}
+        <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <span itemprop="name">
+            <a href="/authors/{{ slug_author }}">{% if author %}{{ author.name }}{% else if page.author %}{{ page.author }}{% endif %}</a>
+          </span>
+        </span>
+      {% endif %}
+      {% if page.authors %}
+        {% if page.author %} - {% endif %}
+        {% for author in page.authors %}
+          {% assign slug_author = author | slugify: 'ascii' %}
+          {% assign data_author = site.data.authors[slug_author] %}
+          <span itemprop="author" itemscope itemtype="http://schema.org/Person">
             <span itemprop="name">
-              <a href="/author/{{ page.author }}">{{ author.name }}</a>
+              <a href="/authors/{{ slug_author }}">{% if data_author %}{{ data_author.name }}{% else %}{{ author }}{% endif %}</a>
             </span>
           </span>
-      {% else if page.author %}
-         <span itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <span itemprop="name">{{ page.author }}</span>
-          </span>
+        {% endfor %}
       {% endif %}
     </p>
   </header>
 
   <div class="post-content" itemprop="articleBody">
     {{ content }}
+
+    {% if page.sources or page.source %}
+      Sources :
+
+      <ul>
+        {% if page.source %}
+          <li>
+            <a href="{{page.source}}" target="_blank">
+              {{page.source}}
+            </a>
+          </li>
+        {% endif %}
+
+        {% for source in page.sources %}
+          <li>
+            <a href="{{source}}" target="_blank">
+              {{source}}
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    {% endif %}
   </div>
 
   <div class="post-footer" itemprop="articleFooter">
-    {% if page.category %}
-      {% if page.categories.size > 0 %}
-        Catégories :
-        <ul>
-          {% for categorie in page.categories %}
-            <li><a href="/categories/{{ categorie | slugify: 'ascii' }}">{{ categorie }}</a></li>
-          {% endfor %}
-          <li><a href="/categories/{{ page.category | slugify: 'ascii' }}">{{ page.category }}</a></li>
-        </ul>
+    <p>
+      {% if page.contributor %}
+        {% if page.contributors.size > 0 %}
+          Correcteurs :
+          <ul>
+            {% assign slug_contributor = page.contributor | slugify: 'ascii' %}
+            {% assign data_contributor = site.data.authors[slug_contributor] %}
+            <li><a href="/contributors/{{ slug_contributor }}/">
+              {% if data_contributor %}{{ data_contributor.name }}{% else %}{{ page.contributor }}{% endif %}
+            </a></li>
+
+            {% for contributor in page.contributors %}
+              {% assign slug_contributor = contributor | slugify: 'ascii' %}
+              {% assign data_contributor = site.data.authors[slug_contributor] %}
+              <li><a href="/contributors/{{ slug_contributor }}">
+                {% if data_contributor %}{{ data_contributor.name }}{% else %}{{ contributor }}{% endif %}
+              </a></li>
+            {% endfor %}
+          </ul>
+        {% else %}
+          {% assign slug_contributor = page.contributor | slugify: 'ascii' %}
+          {% assign data_contributor = site.data.authors[slug_contributor] %}
+          Correcteur : <a href="/contributors/{{ slug_contributor }}">
+            {% if data_contributor %}{{ data_contributor.name }}{% else %}{{ page.contributor }}{% endif %}
+          </a>
+        {% endif %}
       {% else %}
-        Catégorie : <a href="/categories/{{ page.category | slugify: 'ascii' }}">{{ page.category }}</a>
-      {% endif %}
-    {% else %}
-      {% if page.categories.size > 1 %}
-        Catégories :
-        <ul>
-          {% for categorie in page.categories %}
-            <li><a href="/categories/{{ categorie | slugify: 'ascii' }}">{{ categorie }}</a></li>
+        {% if page.contributors.size > 1 %}
+          Correcteurs :
+          <ul>
+            {% for contributor in page.contributors %}
+              {% assign slug_contributor = contributor | slugify: 'ascii' %}
+              {% assign data_contributor = site.data.authors[slug_contributor] %}
+              <li><a href="/contributors/{{ slug_contributor }}">
+                {% if data_contributor %}{{ data_contributor.name }}{% else %}{{ contributor }}{% endif %}
+              </a></li>
+            {% endfor %}
+          </ul>
+        {% else if page.contributors %}
+          {% for contributor in page.contributors %}
+            {% assign slug_contributor = contributor | slugify: 'ascii' %}
+            {% assign data_contributor = site.data.authors[slug_contributor] %}
+            Correcteur : <a href="/contributors/{{ slug_contributor }}">
+                {% if data_contributor %}{{ data_contributor.name }}{% else %}{{ contributor }}{% endif %}
+            </a>
           {% endfor %}
-        </ul>
-      {% else %}
-        Catégorie : <a href="/categories/{{ page.categories | first | slugify: 'ascii' }}">{{ page.categories | first }}</a>
+        {% endif %}
       {% endif %}
-    {% endif %}
+    </p>
+
+    <p>
+      {% if page.category %}
+        {% if page.categories.size > 0 %}
+          Catégories :
+          <ul>
+            <li><a href="/categories/{{ page.category | slugify: 'ascii' }}">{{ page.category }}</a></li>
+            {% for categorie in page.categories %}
+              <li><a href="/categories/{{ categorie | slugify: 'ascii' }}">{{ categorie }}</a></li>
+            {% endfor %}
+          </ul>
+        {% else %}
+          Catégorie : <a href="/categories/{{ page.category | slugify: 'ascii' }}">{{ page.category }}</a>
+        {% endif %}
+      {% else %}
+        {% if page.categories.size > 1 %}
+          Catégories :
+          <ul>
+            {% for categorie in page.categories %}
+              <li><a href="/categories/{{ categorie | slugify: 'ascii' }}">{{ categorie }}</a></li>
+            {% endfor %}
+          </ul>
+        {% else %}
+          {% for categorie in page.categories %}
+            Catégorie : <a href="/categories/{{ categorie | slugify: 'ascii' }}">{{ categorie }}</a>
+          {% endfor %}
+        {% endif %}
+      {% endif %}
+    </p>
+
+    <p>
+      {% if page.tag %}
+        {% if page.tags.size > 0 %}
+          Tags :
+          <ul>
+            <li><a href="/tags/{{ page.tag | slugify: 'ascii' }}">{{ page.tag }}</a></li>
+            {% for tag in page.tags %}
+              <li><a href="/tags/{{ tag | slugify: 'ascii' }}">{{ tag }}</a></li>
+            {% endfor %}
+          </ul>
+        {% else %}
+          Tag : <a href="/tags/{{ page.tag | slugify: 'ascii' }}">{{ page.tag }}</a>
+        {% endif %}
+      {% else %}
+        {% if page.tags.size > 1 %}
+          Tags :
+          <ul>
+            {% for tag in page.tags %}
+              <li><a href="/tags/{{ tag | slugify: 'ascii' }}">{{ tag }}</a></li>
+            {% endfor %}
+          </ul>
+        {% else %}
+          {% for tag in page.tags %}
+            Tag : <a href="/tags/{{ tag | slugify: 'ascii' }}">{{ tag }}</a>
+          {% endfor %}
+        {% endif %}
+      {% endif %}
+    </p>
   </div>
     
   {% if page.next or page.previous %}

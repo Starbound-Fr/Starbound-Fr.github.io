@@ -7,8 +7,7 @@ tags: []
 title: "Résumé depuis la 1.0"
 cover: /Assets/uploads/2017/11/resume_depuis_1.0.png
 author: Pyro
-contributors:
-- Shyning
+contributor: Shyning
 ---
 
 Starbound a évolué depuis la 1.0 et malheureusement ce site est resté sans nouvelles depuis un moment.
