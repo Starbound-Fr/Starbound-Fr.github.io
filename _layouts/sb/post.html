@@ -37,7 +37,15 @@ layout: default
     {{ content }}
 
     {% if page.sources or page.source %}
-      Sources :
+      {% if page.sources.size > 1 %}
+        Sources :
+      {% else if (page.sources.size > 0) and page.source %}
+        Sources :
+      {% else if page.source or (page.sources.size > 0) %}
+        Source :
+      {% else %}
+        Source :
+      {% endif %}
 
       <ul>
         {% if page.source %}
