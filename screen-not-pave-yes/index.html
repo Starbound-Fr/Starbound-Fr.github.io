@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Pas de screen? Un pavé !</title>
+  <meta name="description" content="Bonjour à tous, et désolé pour le retard dans la publication de cet article. Nous en sommes désolés (je dis nous car nous nous nous sommes mis à deux avec Ug...">
+
+  <!-- <link rel="stylesheet" href="/css/main.css"> -->
+  <link rel="icon" type="image/png" href="/Assets/sb/images/favicon.ico" />
+  <link rel="stylesheet" href="/Assets/sb/css/main.css">
+  <link rel="stylesheet" href="/Assets/sb/fonts/material-icons/material-icons.css">
+  <link rel="canonical" href="http://starbound-fr.net/screen-not-pave-yes/">
+  <link rel="alternate" type="application/rss+xml" title="Starbound-Fr | Communauté Francophone autour de Starbound" href="http://starbound-fr.net/feed.xml">
+
+  <script src="/Assets/sb/js/libs.js"></script>
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+    <!-- l'image du site -->
+    <div id="logo">
+      <a href="/" class="logo">
+        <h1>Communauté francophone autour de Starbound</h1>
+      </a>
+
+      <div>
+        <div id="txt-aleatoire"></div>
+        <!-- ☻ < I'm a pedosmiley -->
+        <a href="http://www.wwwdotcom.com/" rel="nofollow" target="_blank" id="dotcom">¤</a>
+      </div>
+    </div>
+
+    <div id="menu-haut">
+      <ul>
+        <li id="menu-info">
+          <a href="/informations-generales/">Infos générales</a>
+          <ul>
+            <li><a href="/faq/">FAQ</a></li>
+          </ul>
+        </li>
+        <li id="menu-media">
+          <a href="/medias/">Medias</a>
+          <ul>
+            <li><a href="/medias/la-generation-du-vendredi/">La génération du vendredi !</a></li>
+            <li><a href="/medias/screenshots/">Screenshots</a></li>
+            <li><a href="/medias/fonds-decrans/">Fonds d'écrans</a></li>
+            <li><a href="/medias/videos/">Vidéos</a></li>
+            <li><a href="/medias/images-commentees/">Images commentées</a></li>
+          </ul>
+        </li>
+        <li id="menu-forum">
+          <a href="http://starbound-fr.net/forum/"><del>Forum</del></a>
+        </li>
+        <li id="menu-chat">
+          <a href="/discord/" alt="Discutez en direct avec les membres ! (HTML5 edition)"><strong>Chat Discord</strong></a>
+        </li>
+        <li id="menu-github">
+          <a href="https://github.com/Starbound-Fr/Starbound-Fr.github.io" alt="Source du blog"><strong>Github</strong></a>
+          <ul>
+            <li><a href="https://github.com/Starbound-Fr/Starbound-Fr.github.io/wiki">Wiki : Comment nous aider</a></li>
+            <li><a href="https://github.com/Starbound-Fr/Starbound-Fr.github.io/issues">Issues : reporter un bug, erreur, etc</a></li>
+          </ul>
+        </li>
+        <li id="menu-acheter">
+          <a href="https://www.humblebundle.com/store/p/starbound_storefront"><strong>Acheter</strong></a>
+          <ul>
+            <li><a href="http://store.steampowered.com/app/211820/">Sur Steam</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+
+</header>
+
+
+    <div class="wrapper">
+      <section class="content">
+          <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Pas de screen? Un pavé !</h1>
+    <p class="post-meta">
+      <time datetime="2013-08-07T00:00:00+00:00" itemprop="datePublished"> August, 07 2013</time><!-- %b %-d, %Y -->
+
+      
+        
+        
+        <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <span itemprop="name">
+            <a href="/authors/smokey">Smokey</a>
+          </span>
+        </span>
+      
+      
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    Bonjour à tous, et désolé pour le retard dans la publication de cet article. Nous en sommes désolés (je dis nous car nous nous nous sommes mis à deux avec Uga...). Bonne lecture ! Allez, <em>OmnipotentEntity</em>, dites nous tout !
+
+<hr />
+
+Hey, bonjour. C'est drôle de vous voir à cette heure-ci. Je vous ai manqué ?
+
+Encore une journée de travail sur des petites choses par-ci par-là. Croyez-le ou non, la plupart des jours sont en fait comme ça pour tout le monde (enfin, ma journée a été un peu plus occupé que d'habitude, mais ça constitue une moyenne).
+
+Aujourd'hui j'ai commencé en corrigeant des "<strong>idioties</strong>" que j'avais faites la veille (j'ai quitté la console en laissant du spam dedans, que j'ai dû enlever).
+
+Ensuite, j'ai corrigé le fait que la <strong>barre de carburant</strong> ne s'affiche pas, car le widget (NdT : La barre) n'était pas réglé à sa taille normale. Il était par conséquent totalement invisible (il disait qu'il n'y avait rien à afficher), tout cela dû à une récente optimisation.
+
+J'ai ensuite fixé mon attention sur la <strong>barre d'action</strong>. Même si cela a probablement déjà été mentionné quelque part sur le site officiel, nous essayons de faire en sorte que les slots (Ndt: On peut traduire ça par un emplacement d'arme dans la barre d'action) L et R de la barre d'action soient de véritables slots, avec possibilité d'échanger un objet entre les deux. Donc j'ai commencé à créer un simple item (maniable) qui peut être mis dans ce slot. Cet objet en particulier a été mal positionné, je l'ai appris plus tard. Il y a aussi un nouveau type d’inventaire pour les joueurs et deux emplacements supplémentaires (qui ne sont pas utilisés actuellement).
+
+J'ai ensuite nettoyé quelques lignes de programmation dans <strong>l'inventaire du joueur</strong>, et j'ai aussi ajouté le nouveau type de slots aux fonctions utilitaires pendant que je faisais ça.
+
+J’ai reçu quelques rapports comme quoi <strong>l’Interface de l’utilisateur</strong> ne fonctionnait pas bien parce que je n’ai pas fait la distinction entre une fenêtre normale ou Interface. Du coup j’ai ajouté une fonction pour paramétrer les fenêtres et leur affichage .
+
+Ensuite, je suis retourné sur <strong>L’inventaire du joueur</strong>, et j’ai corrigé un remarquable bug qui arrivait lorsqu'on récoltait l'argent d'un coffre.
+
+Je suis ensuite retourné sur <strong>l’interface graphique de l’utilisateur</strong> (GUI) et j’ai opéré de nombreux changements sur les widgets, pour régler leur taille et définir correctement leur zone. J’ai aussi débogué Windows qui rendait les zones de certaines parties d’interfaces (GUI) plus grandes qu’elles ne le sont (ce qui signifie qu’elles n’étaient pas disposées comme il le fallait).
+
+Puis j’ai trouvé que ces aller-retours prêtaient à confusion, alors j’ai commencé à travailler sur un petit truc (ce que je pensais faire s'est avéré beaucoup plus difficile que je ne le pensais, mais a fini par être beaucoup plus facile). Ce petit truc était simplement l’action :<strong> “shift+click"</strong> ; qui déplace les objets directement d’un inventaire à l’autre. Je n’avais pas compris une partie du code et j’ai commencé à faire des choses insensées et inutiles.
+Ensuite j’ai reçu un rapport qui décrivait des bugs par rapport à la barre d’action et les icônes “Droit” et “Gauche” (Même s’ils sont toujours en développement et sur la bonne voie). J’ai réparé les bugs et même certains non-indiqués sur le rapport.
+Revenant au “shift+click”. Je faisais mon boulot quand <em>Bart</em> (Ntd : Bartwe) vint me prévenir que mes sémantiques étaient mauvaises (comme je l’ai mentionné plus haut) et ce n’était pas si compliqué que je ne le pensais.
+
+Et les autres développeurs ?
+<em>Kyren</em> a fait le tri sur les objets de décor que nos artistes nous proposent (comme les arbres ou les coffres), et les a configurés pour éviter qu’ils ne soient déplacés ou détruits.
+Elle s’est ensuite employée à faire en sorte que l'on puisse utiliser une vieille version du fichier joueur (yay) dans une nouvelle version du jeu sans plantage. Elle a aussi nettoyé certains points du jeu qui persistaient sans raison...
+
+Après, elle a optimisé <strong>les profils-type</strong> du générateur de <strong>donjons</strong>, évitant ainsi les redistributions hasardeuses. Elle a aussi réduit la mémoire-vive nécessaire au fonctionnement du jeu. Elle semble avoir fait moins de travail que moi, mais c’est probablement le contraire. J’ai fait beaucoup de choses, mais sûrement trop de petites choses.
+<em>Bart</em> a changé la résistance retirée aux blocs par le manipulateur de matière. Il a agrandi l’amplitude des dommages sur certaines armes (au lieu de 1, 9 ou 25 points de dégâts, on peut donner 1, 4, 9, 16 ou 25 points de dégâts).
+
+Il a paramétré le positionnement <strong>multiple de blocs</strong> par défaut (NdT : On place 4 blocs par 4 blocs à la base mais on peut réduire à un seul bloc par bloc). Je ne sais pas comment cela évoluera, mais ça me parait raisonnable.
+
+Après cette petite chose il s’est lancé dans quelque chose de beaucoup plus gros avec l’ordre de programmer le placement des objets tel que le décor et pleins d’autres détails.
+Legris a travaillé sur le changement de teinte du ciel. Il a fait en sorte que ce soit le plus beau possible. Il s’est ensuite occupé des <strong>parallaxes</strong> (NdT: C’est l’effet de déplacement de l’arrière-plan du jeu dû aux déplacements du joueur) du désert et a apporté des modifications aux nuages des planètes.
+
+A propos de parallaxes : <em>Rho</em> a changé de façon convenable celles du biome enneigé. Il a aussi supprimé un fichier .ogg (NdT : Un fichier son) du rire <strong>d’Eddie Murphy</strong> dans les codes (Ndt : Uga et moi nous sommes longtemps demandé pourquoi ils avaient ça dans leur programme) et a ajouté de nouveaux objets attrayants...
+
+<em>GeorgeV </em>a passé beaucoup de temps sur l’Interface de l’Utilisateur (NdT : UI). Vous avez sûrement vu Tiy en parler dans le forum (NdT : Le forum Chucklefish, pas le nôtre). Nous avons décidé comment nous voulions organiser l'Interface de l’Utilisateur en termes de positionnement de la multitude de barres.
+
+Finalement <em>Tiy</em> a fait de nombreuses choses ( comme à son habitude ), il a peaufiné les couleurs des cieux (NdT : Pour une fois qu’on peut employer “Cieux”, c’est très rare car il n’y a qu’un seul ciel sur le plancher des vaches). Avec Legris, il a rempli tous les trous du code des drops par biomes ce qui veut dire que le jeu sait maintenant quel objet va dans quel biome et quel coffre, sur quel terrain, etc..
+
+Ensuite, il a, en à peine une journée, ajouté un nouveau minibiome entier, et y a peaufiné certains éléments, notamment les objets qu’on peut s’y procurer.
+Dans l'ensemble, ce fut une journée productive. Peut-être un peu plus que la moyenne, mais rien ne sort de l'ordinaire par rapport à une de nos “périodes de pointe” folle.
+
+Je sais que parfois il semble que nous ne communiquions pas assez sur les avancées. Rassembler les nouveautés comme sur ce message prend un certain temps. Et c'est bien sûr d’autant plus plus important que nous obtenons plus d’avancées sur le jeu.
+
+En espérant que cela permette de vous donner un aperçu des activités de nos grosses journées.
+
+<hr />
+
+Voilà, voilà. Sinon, <em>Tiy</em> s'est amusé sur Twitter : Il a tout recentré ! <a title="CLiquez ici" href="http://i.imgur.com/lbxfih4.png" target="_blank">Clique</a>
+Ou sinon, regardez ça ! Tiy nous a demandé ce que l'on préférait entre ces deux images : <a title="Clique" href="http://community.playstarbound.com/index.php?threads/which-of-these-do-you-prefer.27558/" target="_blank">Cliquez ici</a>
+Bon, sur ce, je vous dis.. merci à <strong>Ugarimpty</strong> pour la traduction, à <strong>Philou</strong> pour sa relecture et pour son aide... Et bonne journée !
+
+<strong>Source :</strong> [<a href="http://playstarbound.com/6-august-progress/">6 August Progress</a>]
+
+
+    
+  </div>
+
+  <div class="post-footer" itemprop="articleFooter">
+    <p>
+      
+        
+          
+        
+      
+    </p>
+
+    <p>
+      
+        
+          
+            Catégorie : <a href="/categories/news">News</a>
+          
+        
+      
+    </p>
+
+    <p>
+      
+        
+          
+        
+      
+    </p>
+  </div>
+    
+  
+    <div class="pagination">
+      <div class="pagination-previous">
+        
+          <a href="/gogolplex/"
+             title="Un Gogolminex de nouvelles.">
+            <span>&laquo; Article précédent</span>
+          </a>
+        
+      </div>
+    
+      <div class="pagination-next">
+        
+          <a href="/14-nouveautes-pour-4-screenshots/"
+             title="14 Nouveautés pour 4 screenshots !">
+            <span>Article suivant &raquo;</span>
+          </a>
+        
+      </div>
+    </div>
+  
+  
+  <div id="disqus">
+    <div id="disqus_thread"></div>
+    <script>
+        /*
+        var disqus_config = function () {
+            this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+            this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        };
+        */
+        (function() {  // DON'T EDIT BELOW THIS LINE
+            var d = document, s = d.createElement('script');
+            
+            s.src = '//sb-fr.disqus.com/embed.js';
+            
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+  </div>
+
+</article>
+
+      </section>
+      
+      <aside>
+    <section id="recrutement" class="label-info">
+          Nous recherchons des rédacteurs motivés, pour<br>
+          des traductions ou des chroniques.<br>
+          Présentez-nous votre projet en utilisant
+          <a href="https://github.com/Starbound-Fr/Starbound-Fr.github.io/issues">les issues github</a>. et lisez le
+          <a href="https://github.com/Starbound-Fr/Starbound-Fr.github.io/wiki">wiki</a> pour savoir comment participer :)
+    </section>
+    <section id="social">
+      <a href="https://twitter.com/Starbound_Fr" target="_blank">
+        <img src="/Assets/sb/images/sociaux/svg/twt.svg" title="Wazo bleu" alt="Wazo bleu">
+      </a>
+      <a href="http://www.facebook.com/StarboundFr" target="_blank">
+        <img src="/Assets/sb/images/sociaux/svg/fcbk.svg" title="aife bleu" alt="aife bleu">
+      </a>
+      <a href="http://steamcommunity.com/groups/starbound-fr" target="_blank">
+        <img src="/Assets/sb/images/sociaux/svg/stm.svg" title="Stym" alt="Stym">
+      </a>
+      <a href="https://plus.google.com/+StarboundfrNetFrance/" rel="publisher">
+        <img src="/Assets/sb/images/sociaux/svg/ggl.svg" title="Gougueul +StarboundfrNetFrance" alt="Gougueul +StarboundfrNetFrance">
+      </a>
+      <a href="https://plus.google.com/communities/109303408905292762594" rel="publisher" target="_blank">
+        <img src="/Assets/sb/images/sociaux/svg/gglcom.svg" title="Google+ Communauté" alt="Google+ Communauté">
+      </a>
+      <a href="https://discord.gg/0qoNECfjS1BY2mn6" target="_blank">
+        <img src="/Assets/sb/images/sociaux/svg/dscrd.svg" title="DiscordApp" alt="DiscordApp">
+      </a>
+      <a href="/feed">
+        <img src="/Assets/sb/images/sociaux/svg/r-ss.svg" title="RSS du blog" alt="RSS">
+      </a>
+    </section>
+    <section id="sondage">
+      <h2><i class="material-icons">star</i> Sondage</h2>
+      <script type="text/javascript" src="http://www.easypolls.net/ext/scripts/emPoll.js?p=579f9511e4b00deaf4dc0c30"></script><a class="OPP-powered-by" href="http://trailguide.net/html" style="text-decoration:none;"><div style="font: 9px arial; color: gray;">bike trails</div></a>
+      <noscript>JavaScript is disabled!</noscript>
+    </section>
+    <section id="partenaires">
+      <h2><i class="material-icons">chat_bubble</i>Partenaires</h2>
+      <a href="http://cubeworld.fr/" target="_blank">
+        <img src="/Assets/sb/images/partenaires/cubeworld-fr.png" title="Cubeworld.fr - Communauté Française de Cube World" alt="Cubeworld.fr">
+      </a>
+      <a href="http://starbound.terrasquare.fr/" target="_blank">
+        <img src="/Assets/sb/images/partenaires/Bannierepartenariat2.gif" title="Terrasquare - Serveur Starbound RolePlay" alt="Terrasquare - Serveur Starbound RolePlay">
+      </a>
+      <a href="http://game-sphere.fr/" target="_blank">
+        <img src="/Assets/sb/images/partenaires/game-sphere.png" title="Game Sphere : le webzine participatif des jeux indépendants - actu, test, concours" alt="Game-Sphere.fr">
+      </a>
+      <a href="http://starbound-fr.net/contactez-nous/">
+        <img src="/Assets/sb/images/partenaires/dev-part.png" title="Deviens Partenaire !" alt="Deviens Partenaire !">
+      </a>
+    </section>
+    <section id="liens">
+      <h2><i class="material-icons">link</i>Liens</h2>
+      <ul class="blogroll">
+        <li><a href="http://playstarbound.com/" target="_blank">Site officiel</a></li>
+        <li><a href="https://twitter.com/Starbound_Fr/starbound-devs" target="_blank">Tweets des devs</a></li>
+        <li><a href="http://community.playstarbound.com/index.php?pages/charcreator/" target="_blank">Générateur de personnages</a></li>
+        <li><a href="/roadmap">Roadmap</a></li>
+      </ul>
+    </section>
+</aside>
+
+    </div>
+
+    <footer class="site-footer">
+  <div class="footer-left">
+    <p>
+      <a href="/" title="Accueil">Starbound-Fr.net</a>
+    - <a href="/archives/">Archives</a>
+    - <a href="/contactez-nous/">Contact</a>
+    - <a href="/about/">À propos & L'équipe</a>
+    </p>
+
+    <p>
+      gracieusement hébergé par <a href="https://github.com/Starbound-Fr/Starbound-Fr.github.io"><strong>Github</strong></a>, <br />
+      (ils en ont probablement rien à foutre) via le service <a href="https://pages.github.com/"><strong>Github Pages</strong></a>
+    </p>
+  </div>
+
+  <div class="footer-right">
+    <p>
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/fr/">Creative Commons BY-NC-SA</a>
+      - <a href="https://laquadrature.net/fr">π</a>
+    </p>
+    <p>
+      <a href="http://playstarbound.com/"><strong>Starbound</strong></a> est un jeu développé par <a href="http://www.chucklefish.org/"><strong>Chucklefish</strong></a>, tous droits réservés.
+    </p>
+    <p>Par des fans, pour des fans.</p>
+  </div>
+</footer>
+<script src="/Assets/sb/js/script.js"></script>
+
+<!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//php-sbfr.rhcloud.com/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 1]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//php-sbfr.rhcloud.com/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code -->
+
+
+  </body>
+
+</html>

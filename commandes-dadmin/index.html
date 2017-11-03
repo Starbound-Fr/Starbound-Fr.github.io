@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Plus de commandes d&#39;admin !</title>
+  <meta name="description" content="Bonjour Mesdames, Messieurs (Rayez la mention inutile)Aujourd'hui, voici deux articles de Kyren et d'Omni, ça parle surtout de programmation !10 Juin, Docume...">
+
+  <!-- <link rel="stylesheet" href="/css/main.css"> -->
+  <link rel="icon" type="image/png" href="/Assets/sb/images/favicon.ico" />
+  <link rel="stylesheet" href="/Assets/sb/css/main.css">
+  <link rel="stylesheet" href="/Assets/sb/fonts/material-icons/material-icons.css">
+  <link rel="canonical" href="http://starbound-fr.net/commandes-dadmin/">
+  <link rel="alternate" type="application/rss+xml" title="Starbound-Fr | Communauté Francophone autour de Starbound" href="http://starbound-fr.net/feed.xml">
+
+  <script src="/Assets/sb/js/libs.js"></script>
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+    <!-- l'image du site -->
+    <div id="logo">
+      <a href="/" class="logo">
+        <h1>Communauté francophone autour de Starbound</h1>
+      </a>
+
+      <div>
+        <div id="txt-aleatoire"></div>
+        <!-- ☻ < I'm a pedosmiley -->
+        <a href="http://www.wwwdotcom.com/" rel="nofollow" target="_blank" id="dotcom">¤</a>
+      </div>
+    </div>
+
+    <div id="menu-haut">
+      <ul>
+        <li id="menu-info">
+          <a href="/informations-generales/">Infos générales</a>
+          <ul>
+            <li><a href="/faq/">FAQ</a></li>
+          </ul>
+        </li>
+        <li id="menu-media">
+          <a href="/medias/">Medias</a>
+          <ul>
+            <li><a href="/medias/la-generation-du-vendredi/">La génération du vendredi !</a></li>
+            <li><a href="/medias/screenshots/">Screenshots</a></li>
+            <li><a href="/medias/fonds-decrans/">Fonds d'écrans</a></li>
+            <li><a href="/medias/videos/">Vidéos</a></li>
+            <li><a href="/medias/images-commentees/">Images commentées</a></li>
+          </ul>
+        </li>
+        <li id="menu-forum">
+          <a href="http://starbound-fr.net/forum/"><del>Forum</del></a>
+        </li>
+        <li id="menu-chat">
+          <a href="/discord/" alt="Discutez en direct avec les membres ! (HTML5 edition)"><strong>Chat Discord</strong></a>
+        </li>
+        <li id="menu-github">
+          <a href="https://github.com/Starbound-Fr/Starbound-Fr.github.io" alt="Source du blog"><strong>Github</strong></a>
+          <ul>
+            <li><a href="https://github.com/Starbound-Fr/Starbound-Fr.github.io/wiki">Wiki : Comment nous aider</a></li>
+            <li><a href="https://github.com/Starbound-Fr/Starbound-Fr.github.io/issues">Issues : reporter un bug, erreur, etc</a></li>
+          </ul>
+        </li>
+        <li id="menu-acheter">
+          <a href="https://www.humblebundle.com/store/p/starbound_storefront"><strong>Acheter</strong></a>
+          <ul>
+            <li><a href="http://store.steampowered.com/app/211820/">Sur Steam</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+
+</header>
+
+
+    <div class="wrapper">
+      <section class="content">
+          <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Plus de commandes d'admin !</h1>
+    <p class="post-meta">
+      <time datetime="2014-06-11T00:00:00+00:00" itemprop="datePublished"> June, 11 2014</time><!-- %b %-d, %Y -->
+
+      
+        
+        
+        <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <span itemprop="name">
+            <a href="/authors/silverthedragon">Silverthedragon</a>
+          </span>
+        </span>
+      
+      
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    Bonjour Mesdames, Messieurs (Rayez la mention inutile)
+Aujourd'hui, voici deux articles de Kyren et d'Omni, ça parle surtout de programmation !
+
+<hr />
+
+<h2>10 Juin, Documentation, paires de substitution UTF et Commandes en LUA, par <em>OmnipotentEntity</em></h2>
+J'ai récemment travaillé sur quelques trucs sympas, en coulisses.
+
+La première chose que j'ai fais a été d'améliorer quelques unes des commandes d'admin. Les bannissements peuvent maintenant être temporaires : le joueur sera automatiquement débanni lorsque le temps sera écoulé. La seule condition est que le serveur reste ouvert, parce que le temps n'est pas enregistré, du moins pas encore (les bannissements définitifs le sont, bien entendu). C'est pratique pour les bans à court terme, de 10 minutes à quelques heures, le temps pour quelqu'un de se calmer.
+
+Ensuite, j'ai retravaillé les commandes en doublon, pour qu'elles se servent d'un unique playerSpecifier. Allez voir <a href="http://community.playstarbound.com/index.php?threads/player-specifiers.80155/" target="_blank">mon post à ce sujet</a> sur le forum pour plus de détails.
+
+J'ai ensuite changé la commande /listcid en /list et je l'ai modifié pour qu'elle affiche aussi l'IDUU des joueurs et, si le pseudonyme du personnage contient des caractères qui ne peuvent pas être affichés par notre police de d'écriture, le code UTF de ces caractères sera affiché à la place. Donc si vous tombez sur quelqu'un appelé “ <img src="/wp-content/uploads/2014/06/emoji.png" alt="emoji" width="31" height="19" class="size-full wp-image-8947" /> ” Vous ne pourrez pas lire son pseudonyme mais la liste affichée par la commande l'affichera ainsi $3 : \ud83d\ude00\u2603 : $$ (L'IDUU se trouve ici).
+
+Vous pouvez utiliser cette séquence d'unicodes pour désigner le joueur en tapant une commande.
+
+Remarquez que j'utilise des séquences unicode en \u et pas en \U, ce qui signifie que la j'ai passé presque toute ma matinée à écrire un encodeur/décodeur pour paires de substitution, et à réécrire certaines parties de l'analyseur syntaxique pour que tout fonctionne. Tout ça vous évitera d'user vos touches.
+
+Ensuite, j'ai ajouté un Script Hook (NdT : En LUA, fonction qui permet d'étendre ou de modifier le comportement de certains assets) au processeur de commandes. Vous pourrez maintenant définir vos propres commandes. Il n'en existe pas encore beaucoup, mais cela devrait changer au fur et à mesure que nous aurons des idées.
+
+Finalement, j'ai changé le format des fonctions de rappel Lua pour que Doxygen (NdT : Un générateur de documentation. En gros, ça prend le code et ça le traduit en quelque chose de compréhensible pour le commun des mortels) puisse les analyser (ou au moins en analyser certaines, il reste beaucoup à faire), j'ai ensuite modifié nos paramètres Doxygen pour rendre cette documentation plus accessible au public (j'ai enlevé les verbatim_headers et les full_source).
+
+Vous pourrez trouver la documentation publique à cette adresse : <a href="http://doc.playstarbound.com" target="_blank">http://doc.playstarbound.com</a>.
+
+Pour l'instant c'est mis à jour manuellement quand j'ai le temps. Mais une fois que notre système de nightlies sera fonctionnel, je m'assurerai que le script qui met les nightlies en ligne mette aussi la documentation à jour. Amusez vous bien, les moddeurs !
+(NdT : Pour les nightlies, voyez l'article ci-dessous)
+
+<strong>Source :</strong> [<a href="http://playstarbound.com/june-10-documentation-utf-surrogate-pairs-and-lua-admin-commands/" target="_blank">June 10, Documentation, UTF Surrogate Pairs, and Lua Admin Commands</a>]
+
+<hr />
+
+<h2>Les trucs du 10 Juin, par <em>Kyren</em></h2>
+J'ai fais plein de trucs divers dernièrement, j'ai principalement corrigé des bugs et j'ai aidé les autres au niveau des monstres et des interfaces de IAs. J'ai récemment corrigé un bug très très énervant où les positions de notre système d'animation en réseau étaient désynchronisées. Cela m'a obligé à retravailler le système d'animation côté client, en retirant tout le code côté client du code côté serveur, ce qui, globalement, améliore le système.
+
+J'ai corrigé beaucoup de bugs pour metadept, j'ai réparé quelques problèmes de projectiles, j'ai modifié la méthode de mise à jour des entités scriptées, et j'ai ajouté ça à l'API Lua. J'ai aussi réglé un méchant bug de réseaux, qui obligeait le serveur à envoyer d'énormes quantités de données. Je dois toujours vérifier ça sur la version stable actuelle. Merci à Underbalanced d'avoir parlé de ce bug à Omni. Je suis en fait tombée sur le bug indépendamment en travaillant sur le bug d'animations, mais cela confirme mes craintes : le bug est aussi présent sur la version Steam stable et devra être réparé.
+
+J'ai réglé une série de bugs d'interblocages (NdT : Lorsque deux processus s'attendent mutuellement. Les processus bloqués ainsi le sont définitivement) causés par une classe (NdT : En programmation, ensemble d'objets) que nous utilisons qui n'était pas COMPLÈTEMENT TOTALEMENT imperméable aux interbloquages. C'était plutôt drôle.
+
+J'ai passé trois heures à traquer un problème d'animation de particules, qui s'est révélé se résumer à une correction d'une seule ligne.
+
+Ensuite vient tout ce qui concerne l'interface des IAs… le code de notre interface est un peu… spécial… pour le moment. Il se trouve que ça s'est dressé en travers de mon travail. Pendant la création de l'interface de l'IA j'ai corrigé quelque chose comme un Zillion (NdT : Pas d'erreur de traduction, c'était écrit comme ça :3) de bugs d'interface et, avec de la chance, j'en ai créé un peu moins. Rien d'intéressant de ce côté là.
+
+Finalement, nous nous préparons à rétablir notre serveur de compilation (c'est quasiment terminé à vrai dire) et à commencer à faire des MISES EN LIGNES AUTOMATIQUES TOUT LES SOIRS sur Steam. Elles seront AUTOMATISÉES, SCRIPTÉES et arriveront CHAQUE SOIR, donc soyez prudents, elles sont uniquement faites pour ceux qui s'y connaissent et qui suivent le développement de près, pas vraiment pour ceux qui veulent jouer normalement. Elles pourraient manger votre chien, mettre le feu à votre maison, manger votre maison, ou mettre le feu à votre chien. Qui sait. Elles pourraient aussi ne pas fonctionner, alors ne vous plaignez pas.
+
+<strong>Source :</strong> [<a href="http://playstarbound.com/jun-10-things/" target="_blank">Jun 10 things</a>]
+
+<hr />
+
+Voilà, c'est tout (enfin, c'est déjà beaucoup) pour aujourd'hui !
+Ah, et l'image de une, c'est la nouvelle mascotte de Chucklefish : <a href="https://twitter.com/Tiyuri/status/476497032266670080" target="_blank">ils se sont acheté un chien</a> !
+Bye baille !
+-Article rédigé par <em>Silverthedragon</em>
+
+
+    
+  </div>
+
+  <div class="post-footer" itemprop="articleFooter">
+    <p>
+      
+        
+          
+        
+      
+    </p>
+
+    <p>
+      
+        
+          
+            Catégorie : <a href="/categories/news">News</a>
+          
+        
+      
+    </p>
+
+    <p>
+      
+        
+          Tags :
+          <ul>
+            
+              <li><a href="/tags/serveur">serveur</a></li>
+            
+              <li><a href="/tags/bugs">bugs</a></li>
+            
+              <li><a href="/tags/maj">MAJ</a></li>
+            
+              <li><a href="/tags/builds">builds</a></li>
+            
+              <li><a href="/tags/admin">admin</a></li>
+            
+              <li><a href="/tags/interblocage">interblocage</a></li>
+            
+              <li><a href="/tags/documentation">documentation</a></li>
+            
+              <li><a href="/tags/unicode">unicode</a></li>
+            
+          </ul>
+        
+      
+    </p>
+  </div>
+    
+  
+    <div class="pagination">
+      <div class="pagination-previous">
+        
+          <a href="/9-juin-news-vont-faire-du-bruit/"
+             title="9 Juin : Des News qui vont faire du bruit !">
+            <span>&laquo; Article précédent</span>
+          </a>
+        
+      </div>
+    
+      <div class="pagination-next">
+        
+          <a href="/11-juin-article-du-chien/"
+             title="11 Juin : Des News qui ont du chien">
+            <span>Article suivant &raquo;</span>
+          </a>
+        
+      </div>
+    </div>
+  
+  
+  <div id="disqus">
+    <div id="disqus_thread"></div>
+    <script>
+        /*
+        var disqus_config = function () {
+            this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+            this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        };
+        */
+        (function() {  // DON'T EDIT BELOW THIS LINE
+            var d = document, s = d.createElement('script');
+            
+            s.src = '//sb-fr.disqus.com/embed.js';
+            
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+  </div>
+
+</article>
+
+      </section>
+      
+      <aside>
+    <section id="recrutement" class="label-info">
+          Nous recherchons des rédacteurs motivés, pour<br>
+          des traductions ou des chroniques.<br>
+          Présentez-nous votre projet en utilisant
+          <a href="https://github.com/Starbound-Fr/Starbound-Fr.github.io/issues">les issues github</a>. et lisez le
+          <a href="https://github.com/Starbound-Fr/Starbound-Fr.github.io/wiki">wiki</a> pour savoir comment participer :)
+    </section>
+    <section id="social">
+      <a href="https://twitter.com/Starbound_Fr" target="_blank">
+        <img src="/Assets/sb/images/sociaux/svg/twt.svg" title="Wazo bleu" alt="Wazo bleu">
+      </a>
+      <a href="http://www.facebook.com/StarboundFr" target="_blank">
+        <img src="/Assets/sb/images/sociaux/svg/fcbk.svg" title="aife bleu" alt="aife bleu">
+      </a>
+      <a href="http://steamcommunity.com/groups/starbound-fr" target="_blank">
+        <img src="/Assets/sb/images/sociaux/svg/stm.svg" title="Stym" alt="Stym">
+      </a>
+      <a href="https://plus.google.com/+StarboundfrNetFrance/" rel="publisher">
+        <img src="/Assets/sb/images/sociaux/svg/ggl.svg" title="Gougueul +StarboundfrNetFrance" alt="Gougueul +StarboundfrNetFrance">
+      </a>
+      <a href="https://plus.google.com/communities/109303408905292762594" rel="publisher" target="_blank">
+        <img src="/Assets/sb/images/sociaux/svg/gglcom.svg" title="Google+ Communauté" alt="Google+ Communauté">
+      </a>
+      <a href="https://discord.gg/0qoNECfjS1BY2mn6" target="_blank">
+        <img src="/Assets/sb/images/sociaux/svg/dscrd.svg" title="DiscordApp" alt="DiscordApp">
+      </a>
+      <a href="/feed">
+        <img src="/Assets/sb/images/sociaux/svg/r-ss.svg" title="RSS du blog" alt="RSS">
+      </a>
+    </section>
+    <section id="sondage">
+      <h2><i class="material-icons">star</i> Sondage</h2>
+      <script type="text/javascript" src="http://www.easypolls.net/ext/scripts/emPoll.js?p=579f9511e4b00deaf4dc0c30"></script><a class="OPP-powered-by" href="http://trailguide.net/html" style="text-decoration:none;"><div style="font: 9px arial; color: gray;">bike trails</div></a>
+      <noscript>JavaScript is disabled!</noscript>
+    </section>
+    <section id="partenaires">
+      <h2><i class="material-icons">chat_bubble</i>Partenaires</h2>
+      <a href="http://cubeworld.fr/" target="_blank">
+        <img src="/Assets/sb/images/partenaires/cubeworld-fr.png" title="Cubeworld.fr - Communauté Française de Cube World" alt="Cubeworld.fr">
+      </a>
+      <a href="http://starbound.terrasquare.fr/" target="_blank">
+        <img src="/Assets/sb/images/partenaires/Bannierepartenariat2.gif" title="Terrasquare - Serveur Starbound RolePlay" alt="Terrasquare - Serveur Starbound RolePlay">
+      </a>
+      <a href="http://game-sphere.fr/" target="_blank">
+        <img src="/Assets/sb/images/partenaires/game-sphere.png" title="Game Sphere : le webzine participatif des jeux indépendants - actu, test, concours" alt="Game-Sphere.fr">
+      </a>
+      <a href="http://starbound-fr.net/contactez-nous/">
+        <img src="/Assets/sb/images/partenaires/dev-part.png" title="Deviens Partenaire !" alt="Deviens Partenaire !">
+      </a>
+    </section>
+    <section id="liens">
+      <h2><i class="material-icons">link</i>Liens</h2>
+      <ul class="blogroll">
+        <li><a href="http://playstarbound.com/" target="_blank">Site officiel</a></li>
+        <li><a href="https://twitter.com/Starbound_Fr/starbound-devs" target="_blank">Tweets des devs</a></li>
+        <li><a href="http://community.playstarbound.com/index.php?pages/charcreator/" target="_blank">Générateur de personnages</a></li>
+        <li><a href="/roadmap">Roadmap</a></li>
+      </ul>
+    </section>
+</aside>
+
+    </div>
+
+    <footer class="site-footer">
+  <div class="footer-left">
+    <p>
+      <a href="/" title="Accueil">Starbound-Fr.net</a>
+    - <a href="/archives/">Archives</a>
+    - <a href="/contactez-nous/">Contact</a>
+    - <a href="/about/">À propos & L'équipe</a>
+    </p>
+
+    <p>
+      gracieusement hébergé par <a href="https://github.com/Starbound-Fr/Starbound-Fr.github.io"><strong>Github</strong></a>, <br />
+      (ils en ont probablement rien à foutre) via le service <a href="https://pages.github.com/"><strong>Github Pages</strong></a>
+    </p>
+  </div>
+
+  <div class="footer-right">
+    <p>
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/fr/">Creative Commons BY-NC-SA</a>
+      - <a href="https://laquadrature.net/fr">π</a>
+    </p>
+    <p>
+      <a href="http://playstarbound.com/"><strong>Starbound</strong></a> est un jeu développé par <a href="http://www.chucklefish.org/"><strong>Chucklefish</strong></a>, tous droits réservés.
+    </p>
+    <p>Par des fans, pour des fans.</p>
+  </div>
+</footer>
+<script src="/Assets/sb/js/script.js"></script>
+
+<!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//php-sbfr.rhcloud.com/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 1]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//php-sbfr.rhcloud.com/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code -->
+
+
+  </body>
+
+</html>

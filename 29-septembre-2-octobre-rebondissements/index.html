@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>29 Septembre - 2 Octobre : Rebondissements</title>
+  <meta name="description" content="Cette semaine, les devs nous offrent trois posts, au lieu des cinq habituels. Il reste à espérer que c'est parce qu'ils étaient trop occupés à travailler sur...">
+
+  <!-- <link rel="stylesheet" href="/css/main.css"> -->
+  <link rel="icon" type="image/png" href="/Assets/sb/images/favicon.ico" />
+  <link rel="stylesheet" href="/Assets/sb/css/main.css">
+  <link rel="stylesheet" href="/Assets/sb/fonts/material-icons/material-icons.css">
+  <link rel="canonical" href="http://starbound-fr.net/29-septembre-2-octobre-rebondissements/">
+  <link rel="alternate" type="application/rss+xml" title="Starbound-Fr | Communauté Francophone autour de Starbound" href="http://starbound-fr.net/feed.xml">
+
+  <script src="/Assets/sb/js/libs.js"></script>
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+    <!-- l'image du site -->
+    <div id="logo">
+      <a href="/" class="logo">
+        <h1>Communauté francophone autour de Starbound</h1>
+      </a>
+
+      <div>
+        <div id="txt-aleatoire"></div>
+        <!-- ☻ < I'm a pedosmiley -->
+        <a href="http://www.wwwdotcom.com/" rel="nofollow" target="_blank" id="dotcom">¤</a>
+      </div>
+    </div>
+
+    <div id="menu-haut">
+      <ul>
+        <li id="menu-info">
+          <a href="/informations-generales/">Infos générales</a>
+          <ul>
+            <li><a href="/faq/">FAQ</a></li>
+          </ul>
+        </li>
+        <li id="menu-media">
+          <a href="/medias/">Medias</a>
+          <ul>
+            <li><a href="/medias/la-generation-du-vendredi/">La génération du vendredi !</a></li>
+            <li><a href="/medias/screenshots/">Screenshots</a></li>
+            <li><a href="/medias/fonds-decrans/">Fonds d'écrans</a></li>
+            <li><a href="/medias/videos/">Vidéos</a></li>
+            <li><a href="/medias/images-commentees/">Images commentées</a></li>
+          </ul>
+        </li>
+        <li id="menu-forum">
+          <a href="http://starbound-fr.net/forum/"><del>Forum</del></a>
+        </li>
+        <li id="menu-chat">
+          <a href="/discord/" alt="Discutez en direct avec les membres ! (HTML5 edition)"><strong>Chat Discord</strong></a>
+        </li>
+        <li id="menu-github">
+          <a href="https://github.com/Starbound-Fr/Starbound-Fr.github.io" alt="Source du blog"><strong>Github</strong></a>
+          <ul>
+            <li><a href="https://github.com/Starbound-Fr/Starbound-Fr.github.io/wiki">Wiki : Comment nous aider</a></li>
+            <li><a href="https://github.com/Starbound-Fr/Starbound-Fr.github.io/issues">Issues : reporter un bug, erreur, etc</a></li>
+          </ul>
+        </li>
+        <li id="menu-acheter">
+          <a href="https://www.humblebundle.com/store/p/starbound_storefront"><strong>Acheter</strong></a>
+          <ul>
+            <li><a href="http://store.steampowered.com/app/211820/">Sur Steam</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+
+</header>
+
+
+    <div class="wrapper">
+      <section class="content">
+          <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">29 Septembre - 2 Octobre : Rebondissements</h1>
+    <p class="post-meta">
+      <time datetime="2014-10-05T00:00:00+00:00" itemprop="datePublished"> October, 05 2014</time><!-- %b %-d, %Y -->
+
+      
+        
+        
+        <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <span itemprop="name">
+            <a href="/authors/silverthedragon">Silverthedragon</a>
+          </span>
+        </span>
+      
+      
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    Cette semaine, les devs nous offrent trois posts, au lieu des cinq habituels. Il reste à espérer que c'est parce qu'ils étaient trop occupés à travailler sur le jeu x)
+
+<hr />
+
+<h1>29 Septembre - Protégez-vous, par <em>Metadept</em></h1>
+
+Aujourd'hui j'ai implémenté le système de protection des blocs, de manière à ce nous puissions faire des missions où vous ne pouvez pas placer ou détruire de murs avant d'avoir désactivé un générateur de bouclier quelque part dans la mission. Ça marche de la façon suivante : chaque bloc du monde possède un ‘ID de donjon’, ce nom est d'ailleurs quelque peu inapproprié, puisque cet ID sert aussi à spécifier quels blocs ne font pas partie d'un donjon, quels blocs ont été modifiés par le joueur, ainsi que quelques autres choses. Certains IDs de donjon spécifiques seront protégés pour un monde donné, et la liste de ces IDs pourra être modifiée côté serveur par le biais de scripts Lua, ou via les commandes d'admin. Je suis sûr que certaines personnes trouveront des utilisations intéressantes pour ce système au-delà de son usage d’origine, comme par exemple construire une planète pour tester l'habileté des joueurs, et la protéger pour en faire un véritable défi. Je suis impatient de voir ce que vous en ferez !
+
+<strong>Source :</strong> [<a href="http://playstarbound.com/september-29th-using-protection/" title="September 29th – Using Protection" target="_blank">September 29th – Using Protection</a>]
+
+<hr />
+
+<h1>30 Septembre - Faites que ça marche, par <em>Armagon</em> !</h1>
+
+Vous aurez peut être remarqué que nos artistes n'ont pas arrêté d'ajouter du nouveau contenu récemment, de manière à étoffer les biomes et à motiver les joueurs à explorer les biomes en les récompensant. Présentement, nous essayons de donner une ressource et des loots uniques à chaque biome sous la forme de costumes, d'outils et d'armes. Nous faisons tout ça pour obtenir de la variété !
+
+C'est à moi qu'il revient de faire fonctionner tous ces objets. Je m'occupe de chaque objet : je m'assure qu'ils fonctionnent comme le joueur s'y attendrais, je m'assure que la hitbox des projectiles est à la bonne taille, ce genre de choses. J'ajoute aussi plein de recettes de craft au tout, du coup beaucoup d'objets que vous ne pouviez auparavant obtenir qu'en les droppant peuvent désormais être fabriqués. Si vous êtes assez chanceux pour trouver une arme à usage unique (dagues et haches à lancer, par exemple), vous serez récompensés par un plan qui vous permettra de la crafter autant de fois que vous voulez, de moment que vous avez les ressources pour.
+
+Certaines armes que les artistes m'ont envoyé ont été difficiles mais plutôt drôles à faire. L'une de ces nouvelles armes est celle que vous a laissé entrevoir George dans son post, une lance qui envoie des boules de boue lorsque vous vous en servez. La boue en elle-même ne fait pas énormément de dégâts, mais elle ralentit les ennemis, rendant leurs attaques plus faciles à éviter et plus facile à frapper au corps-à-corps. Après tout ce temps passé à travailler sur les armes et les projectiles, j'en ai appris beaucoup, et c'est toujours encourageant de voir les choses marcher comme vous voulez qu'elles marchent.
+
+En vous servant de la capacité qu'aura le Matter Manipulator amélioré, vous pouvez désormais mettre votre propre eau en bouteille, entre autres choses. Une fois qu'un liquide est mis en bouteille, vous pouvez le consommer pour en reçevoir les effets. Par exemple, certains liquides ont des propriétés curatives lorsqu'ils sont ingérés. Après vous être fabriqué une bouteille avec du verre, vous pouvez collecter un liquide avec le Matter Manipulator, le mettre en bouteille sur une Cooking Table, et vous en servir lorsque vous vous trouverez en mauvaise posture.
+
+En passant, vous buvez désormais vos boissons ! Je serais incapable de dire le nombre de fois où j'ai tressailli en écoutant mon personnage "consommer" une bouteille de whiskey avec un craquement. Ça me fait mal aux dents rien que d'y penser.
+
+Ce long processus de configuration est parfois difficile, mais lorsque ça marche, ça en vaut la peine. Je compte continuer à travailler là-dessus pendant les semaines à venir, mais il est aussi possible que je soit amené à faire autre chose à n'importe quel moment. Ahhh, les joies du développement de jeux !
+
+Bonne nuit tout le monde !
+
+<strong>Source :</strong> [<a href="http://playstarbound.com/september-30th-make-it-work/" title="September 30th – Make it work!" target="_blank">September 30th – Make it work!</a>]
+
+<hr />
+
+<h1>Statut des changements de statut, <em>Metadept</em></h1>
+
+Vu que Kyren a pratiquement fini de retravailler le système de statut, j'ai passé quelques jours à l'aider à designer et tester les nouvelles APIs Lua (NdT : Pour rappel, "API" signifie "Interface de programmation"), à régler des bugs, et à se préparer à intégrer ces changements à la branche de développement principale. L'un des changements les plus visibles est que les effets de statut sont désormais actionnés par des scripts Lua, et ont accès à une large variété de fonctions de l'API, les rendant incroyablement flexibles et amusants à modifier. Aujourd'hui nous avons testé de nouvelles fonctionnalités et nous avons exploré le genre de choses extraordinaires qui sont désormais à notre portée. Voici un exemple, une épée avec un gros knockback qui fait rebondir les monstres :
+
+<iframe src="http://gfycat.com/ifr/JitteryZigzagDodobird" frameborder="0" scrolling="no" width="494" height="192" style="-webkit-backface-visibility: hidden;-webkit-transform: scale(1);" ></iframe>
+
+Ou bien, que diriez-vous d'un effet “nitroglycérine” qui fait exploser le joueur s'il tombe de trop haut ?
+
+<iframe src="http://gfycat.com/ifr/WelcomeWelloffBedbug" frameborder="0" scrolling="no" width="420" height="250" style="-webkit-backface-visibility: hidden;-webkit-transform: scale(1);" ></iframe>
+
+Bien évidemment nous réimplémentons et améliorons aussi les effets de statut déjà existants tels que le feu, le poison ou le ralentissement, mais c'est toujours amusant de tester de nouvelles possibilités ! Je pense que beaucoup de ces idées folles pourraient bien atterrir dans le jeu final sous une forme ou une autre pour lui donner un petit parfum de rogue-like.
+
+<strong>Source :</strong> [<a href="http://playstarbound.com/october-2nd-status-of-the-status-changes/" title="October 2nd – Status of the Status Changes" target="_blank">October 2nd – Status of the Status Changes</a>]
+
+<hr />
+
+Petit détail, pour ceux que ça intéresse, le jeu devrait bientôt accueillir des Steam Trading Cards, des badges, des fonds de profil et des smileys sur Steam :
+
+<blockquote class="twitter-tweet" lang="fr"><p><a href="https://twitter.com/hashtag/Starbound?src=hash">#Starbound</a> now has steam trading cards, profile backgrounds and badges!! :D</p>&mdash; Tiy (@Tiyuri) <a href="https://twitter.com/Tiyuri/status/517689245738496002">2 Octobre 2014</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<em>Starbound possède désormais des Steam Trading Cards, des fonds de profil et des badges !! :D</em>
+
+<blockquote class="twitter-tweet" lang="fr"><p><a href="http://t.co/ucxNsgWBdf">http://t.co/ucxNsgWBdf</a></p>&mdash; Tiy (@Tiyuri) <a href="https://twitter.com/Tiyuri/status/517694417701183488">2 Octobre 2014</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+Bon eh bien, à dimanche prochain !
+-Article rédigé par <em>Silverthedragon</em>
+
+
+    
+  </div>
+
+  <div class="post-footer" itemprop="articleFooter">
+    <p>
+      
+        
+          
+        
+      
+    </p>
+
+    <p>
+      
+        
+          
+            Catégorie : <a href="/categories/news">News</a>
+          
+        
+      
+    </p>
+
+    <p>
+      
+        
+          Tags :
+          <ul>
+            
+              <li><a href="/tags/trading">Trading</a></li>
+            
+              <li><a href="/tags/id">ID</a></li>
+            
+              <li><a href="/tags/nytroglyc-rine">nytroglycérine</a></li>
+            
+              <li><a href="/tags/boue">boue</a></li>
+            
+              <li><a href="/tags/bloc">bloc</a></li>
+            
+              <li><a href="/tags/statut">statut</a></li>
+            
+              <li><a href="/tags/arme">arme</a></li>
+            
+              <li><a href="/tags/steam">steam</a></li>
+            
+              <li><a href="/tags/donjon">Donjon</a></li>
+            
+              <li><a href="/tags/cards">Cards</a></li>
+            
+          </ul>
+        
+      
+    </p>
+  </div>
+    
+  
+    <div class="pagination">
+      <div class="pagination-previous">
+        
+          <a href="/22-26-septembre-javais-roseau/"
+             title="22-26 Septembre : Si j'avais un roseau...">
+            <span>&laquo; Article précédent</span>
+          </a>
+        
+      </div>
+    
+      <div class="pagination-next">
+        
+          <a href="/6-10-octobre-disco/"
+             title="6-10 Octobre : Disco !">
+            <span>Article suivant &raquo;</span>
+          </a>
+        
+      </div>
+    </div>
+  
+  
+  <div id="disqus">
+    <div id="disqus_thread"></div>
+    <script>
+        /*
+        var disqus_config = function () {
+            this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+            this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        };
+        */
+        (function() {  // DON'T EDIT BELOW THIS LINE
+            var d = document, s = d.createElement('script');
+            
+            s.src = '//sb-fr.disqus.com/embed.js';
+            
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+  </div>
+
+</article>
+
+      </section>
+      
+      <aside>
+    <section id="recrutement" class="label-info">
+          Nous recherchons des rédacteurs motivés, pour<br>
+          des traductions ou des chroniques.<br>
+          Présentez-nous votre projet en utilisant
+          <a href="https://github.com/Starbound-Fr/Starbound-Fr.github.io/issues">les issues github</a>. et lisez le
+          <a href="https://github.com/Starbound-Fr/Starbound-Fr.github.io/wiki">wiki</a> pour savoir comment participer :)
+    </section>
+    <section id="social">
+      <a href="https://twitter.com/Starbound_Fr" target="_blank">
+        <img src="/Assets/sb/images/sociaux/svg/twt.svg" title="Wazo bleu" alt="Wazo bleu">
+      </a>
+      <a href="http://www.facebook.com/StarboundFr" target="_blank">
+        <img src="/Assets/sb/images/sociaux/svg/fcbk.svg" title="aife bleu" alt="aife bleu">
+      </a>
+      <a href="http://steamcommunity.com/groups/starbound-fr" target="_blank">
+        <img src="/Assets/sb/images/sociaux/svg/stm.svg" title="Stym" alt="Stym">
+      </a>
+      <a href="https://plus.google.com/+StarboundfrNetFrance/" rel="publisher">
+        <img src="/Assets/sb/images/sociaux/svg/ggl.svg" title="Gougueul +StarboundfrNetFrance" alt="Gougueul +StarboundfrNetFrance">
+      </a>
+      <a href="https://plus.google.com/communities/109303408905292762594" rel="publisher" target="_blank">
+        <img src="/Assets/sb/images/sociaux/svg/gglcom.svg" title="Google+ Communauté" alt="Google+ Communauté">
+      </a>
+      <a href="https://discord.gg/0qoNECfjS1BY2mn6" target="_blank">
+        <img src="/Assets/sb/images/sociaux/svg/dscrd.svg" title="DiscordApp" alt="DiscordApp">
+      </a>
+      <a href="/feed">
+        <img src="/Assets/sb/images/sociaux/svg/r-ss.svg" title="RSS du blog" alt="RSS">
+      </a>
+    </section>
+    <section id="sondage">
+      <h2><i class="material-icons">star</i> Sondage</h2>
+      <script type="text/javascript" src="http://www.easypolls.net/ext/scripts/emPoll.js?p=579f9511e4b00deaf4dc0c30"></script><a class="OPP-powered-by" href="http://trailguide.net/html" style="text-decoration:none;"><div style="font: 9px arial; color: gray;">bike trails</div></a>
+      <noscript>JavaScript is disabled!</noscript>
+    </section>
+    <section id="partenaires">
+      <h2><i class="material-icons">chat_bubble</i>Partenaires</h2>
+      <a href="http://cubeworld.fr/" target="_blank">
+        <img src="/Assets/sb/images/partenaires/cubeworld-fr.png" title="Cubeworld.fr - Communauté Française de Cube World" alt="Cubeworld.fr">
+      </a>
+      <a href="http://starbound.terrasquare.fr/" target="_blank">
+        <img src="/Assets/sb/images/partenaires/Bannierepartenariat2.gif" title="Terrasquare - Serveur Starbound RolePlay" alt="Terrasquare - Serveur Starbound RolePlay">
+      </a>
+      <a href="http://game-sphere.fr/" target="_blank">
+        <img src="/Assets/sb/images/partenaires/game-sphere.png" title="Game Sphere : le webzine participatif des jeux indépendants - actu, test, concours" alt="Game-Sphere.fr">
+      </a>
+      <a href="http://starbound-fr.net/contactez-nous/">
+        <img src="/Assets/sb/images/partenaires/dev-part.png" title="Deviens Partenaire !" alt="Deviens Partenaire !">
+      </a>
+    </section>
+    <section id="liens">
+      <h2><i class="material-icons">link</i>Liens</h2>
+      <ul class="blogroll">
+        <li><a href="http://playstarbound.com/" target="_blank">Site officiel</a></li>
+        <li><a href="https://twitter.com/Starbound_Fr/starbound-devs" target="_blank">Tweets des devs</a></li>
+        <li><a href="http://community.playstarbound.com/index.php?pages/charcreator/" target="_blank">Générateur de personnages</a></li>
+        <li><a href="/roadmap">Roadmap</a></li>
+      </ul>
+    </section>
+</aside>
+
+    </div>
+
+    <footer class="site-footer">
+  <div class="footer-left">
+    <p>
+      <a href="/" title="Accueil">Starbound-Fr.net</a>
+    - <a href="/archives/">Archives</a>
+    - <a href="/contactez-nous/">Contact</a>
+    - <a href="/about/">À propos & L'équipe</a>
+    </p>
+
+    <p>
+      gracieusement hébergé par <a href="https://github.com/Starbound-Fr/Starbound-Fr.github.io"><strong>Github</strong></a>, <br />
+      (ils en ont probablement rien à foutre) via le service <a href="https://pages.github.com/"><strong>Github Pages</strong></a>
+    </p>
+  </div>
+
+  <div class="footer-right">
+    <p>
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/fr/">Creative Commons BY-NC-SA</a>
+      - <a href="https://laquadrature.net/fr">π</a>
+    </p>
+    <p>
+      <a href="http://playstarbound.com/"><strong>Starbound</strong></a> est un jeu développé par <a href="http://www.chucklefish.org/"><strong>Chucklefish</strong></a>, tous droits réservés.
+    </p>
+    <p>Par des fans, pour des fans.</p>
+  </div>
+</footer>
+<script src="/Assets/sb/js/script.js"></script>
+
+<!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//php-sbfr.rhcloud.com/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 1]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//php-sbfr.rhcloud.com/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code -->
+
+
+  </body>
+
+</html>
