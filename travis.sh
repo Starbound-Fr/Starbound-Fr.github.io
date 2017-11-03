@@ -11,7 +11,7 @@ git config --global user.name "Travis CI"
 rm -rf ./_site
 
 git_url="https://${CI_USER_TOKEN}@github.com/Starbound-Fr/Starbound-Fr.github.io"
-git clone -b master ${git_url} ./_site
+git clone -b master "${git_url}" ./_site
 
 rm -rf ./_site/*
 
