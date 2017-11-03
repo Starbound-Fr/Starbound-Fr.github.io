@@ -17,6 +17,8 @@ rm -rf ./_site/*
 
 bundle exec jekyll build -t
 
+cd ./_site
+
 git add .
 git commit -m "Travis-CI - Site Updated - ${DATE}"
 

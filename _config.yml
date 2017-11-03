@@ -68,3 +68,6 @@ encoding: utf-8
 
 # routing
 include: ['_pages', '404.html']
+
+# for travis build
+exclude: [vendor]
