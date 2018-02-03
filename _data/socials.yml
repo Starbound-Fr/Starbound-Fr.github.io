@@ -1,0 +1,37 @@
+twitter:
+    href: https://twitter.com/Starbound_Fr
+    img: /sociaux/svg/twt.svg
+    title: Wazo bleu
+    alt: Wazo bleu
+facebook:
+    href: http://www.facebook.com/StarboundFr
+    img: /sociaux/svg/fcbk.svg
+    title: aife bleu
+    alt: aife bleu
+steam:
+    href: http://steamcommunity.com/groups/starbound-fr
+    img: /sociaux/svg/stm.svg
+    title: Stym
+    alt: Stym
+google_plus:
+    href: https://plus.google.com/+StarboundfrNetFrance/
+    img: /sociaux/svg/ggl.svg
+    title: Gougueul +StarboundfrNetFrance
+    alt: Gougueul +StarboundfrNetFrance
+google_community:
+    href: https://plus.google.com/communities/109303408905292762594
+    img: /sociaux/svg/gglcom.svg
+    title: Google+ Communauté
+    alt: Google+ Communauté
+discord:
+    href: https://discord.gg/0qoNECfjS1BY2mn6
+    img: /sociaux/svg/dscrd.svg
+    title: DiscordApp
+    alt: DiscordApp
+
+feed:
+    href: /feed
+    img: /sociaux/svg/r-ss.svg
+    title: RSS du blog
+    alt: RSS
+    isIntern: true
