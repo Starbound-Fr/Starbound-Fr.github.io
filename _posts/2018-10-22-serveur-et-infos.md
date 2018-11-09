@@ -87,7 +87,7 @@ N'oubliez pas d'activer le '**assets mismatch**' dans les options du jeux !!*
 - *Veuillez relire la section '**Sanctions et mods**' un peu plus haut*
 
 **Ou puis-je avoir toutes les autres informations du serveur ? (Redémarrages, Infos...)**
-- "Veuillez vous rendre sur le discord de [**Starbound-fr.net**](https://discord.gg/mREMHzg) puis sur le channel '**#info**"
+- "Veuillez vous rendre sur le discord de [**Starbound-fr.net**](https://discord.gg/fkfJNBd) puis sur le channel '**#info**"
 
 
 # Le site web
