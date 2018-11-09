@@ -32,7 +32,7 @@ Pour y accéder, rien de plus simle:
 
 1/ Rendez-vous sur le serveur grâce à l'adresse IP:  **game.starbound-fr.net**
 
-2/ Vous pouvez dès lors commencer à jouer. Toutefois, nous vous demandons de vous rendre sur le discord de [**Starbound-fr.net**](https://discord.gg/mREMHzg) et d'aller sur le channel **#whitelist** afin de donner le pseudo de votre personnage pour qu'on puisse vous attribuer votre grade au plus vite.
+2/ Vous pouvez dès lors commencer à jouer. Toutefois, nous vous demandons de vous rendre sur le discord de [**Starbound-fr.net**](https://discord.gg/fkfJNBd) et d'aller sur le channel **#whitelist** afin de donner le pseudo de votre personnage pour qu'on puisse vous attribuer votre grade au plus vite.
 
 
 **<span style="text-decoration:underlined"><em>ATTENTION, si vous ne faites pas la deuxieme étape, vous ne passerez pas au grade de 'Membre' et vous ne pourrez faire aucune commande !!</em></span>**
