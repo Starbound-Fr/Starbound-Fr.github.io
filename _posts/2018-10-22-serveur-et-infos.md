@@ -96,8 +96,7 @@ N'oubliez pas d'activer le '**assets mismatch**' dans les options du jeux !!*
 Discutons maintenant du site web ! Comme vous avez peut-être pu le remarquer, cela fait presque 5-6 ans que le design
 du site internet n'as pas été renouvelé et malheureusement, le design du site sur les versions tablettes et mobiles n'ont jamais été une priorité.
 
-C'est pour cela que dans les prochaines semaines, le site va faire peau neuve avec un tout nouveau design, plus moderne mais toujours sur le thème de Starbound. Sachez aussi que le moteur
-du site internet va aussi changer ce qui va donner au final une REFONTE complète de TOUT ce qu'il y a actuellement, comme une remise à zéro.
+C'est pour cela que dans les prochaines semaines, le site va faire peau neuve avec un tout nouveau design, plus moderne mais toujours sur le thème de Starbound. Sachez aussi que le moteur du site internet va aussi changer. Au final, le rendu sera meilleur que celui actuellement.
 
 Les dessins ne vont pas être montrés car nous allons faire autrement. Le site internet EN DEVELOPPEMENT sera accessible sur [cette adresse](game.starbound-fr.net). Quand le développement
 sera terminé, les changements passeront sur le site internet de starbound-fr.net.
@@ -105,13 +104,6 @@ sera terminé, les changements passeront sur le site internet de starbound-fr.ne
 ### Prochains Articles
 
 Petite parenthèse, les prochains articles seront à propos du développement de mods,de l'actualité de Starbound puis sur les différentes façons d'optimiser le jeu.
-
-# Aide de paiement
-
-Pour ceux qui veulent aider au maintien du serveur, nous acceptons les dons de votre part. Cela nous permettra de couvrir les frais d'opération du serveur.
-Si cela vous intéresse de nous aider, voici le compte paypal associé (tous les fonds seront utilisé pour le serveur et éventuellement, le site web) :
-
-Compte Paypal: cyd.paypal@gmail.com
 
 
 Je vous remercie de votre soutien et de votre attention.
