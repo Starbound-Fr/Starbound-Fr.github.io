@@ -17,9 +17,9 @@ est vraiment devenue très petite, presque même inexistante.
 C'est pour cela que nous allons essayer d'y rémédier en mettant en place plusieurs projets et modifications:
 
 Sommaire:
-- Le serveur</li>
-- Le site web</li>
-- L'aide de paiement</li>
+- Le serveur
+- Le site web
+- L'aide de paiement
 
 # Le serveur
 ### Comment y accéder ?
