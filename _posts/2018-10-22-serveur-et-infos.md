@@ -14,7 +14,7 @@ Bonjour à tous !
 Aujourd'hui, comme vous avez pu le constater, le site est devenu inactif et la communauté française de Starbound
 est vraiment devenue très petite, presque même inexistante.
 
-C'est pour cela que nous allons essayer d'y rémédier en mettant en place plusieurs projets et modifications:
+C'est pour cela que nous allons essayer d'y rémédier en mettant en place plusieurs projets et modifications :
 
 Sommaire:
 - Le serveur
@@ -24,13 +24,13 @@ Sommaire:
 # Le serveur
 ### Comment y accéder ?
 
-Pour y accéder, rien de plus simle:
+Pour y accéder, rien de plus simle :
 
 **Tout d'abord, veuillez cocher la case 'Assets Mismatch' dans les options du jeux (la case est nommée de la même façon même si votre jeu est en français)**
 
-1/ Rendez-vous sur le serveur grâce à l'adresse IP:  **game.starbound-fr.net**
+1/ Rendez-vous sur le serveur grâce à l'adresse IP :  **game.starbound-fr.net**
 
-2/ Vous pouvez dès lors commencer à jouer. Toutefois, nous vous demandons de vous rendre sur le discord de [**Starbound-fr.net**](https://discord.gg/fkfJNBd) et d'aller sur le channel **#whitelist** afin de donner le pseudo de votre personnage pour qu'on puisse vous attribuer votre grade au plus vite.
+2/ Vous pouvez dès lors commencer à jouer. Toutefois, nous vous demandons de vous rendre sur le discord de [**Starbound-Fr.net**](https://discord.gg/fkfJNBd) et d'aller sur le channel **#whitelist** afin de donner le pseudo de votre personnage pour qu'on puisse vous attribuer votre grade au plus vite.
 
 
 **<span style="text-decoration:underlined"><em>ATTENTION, si vous ne faites pas la deuxieme étape, vous ne passerez pas au grade de 'Membre' et vous ne pourrez faire aucune commande !!</em></span>**
@@ -45,7 +45,7 @@ vaisseau est protégé de base et qu'il ne compte pas dans les **8** protections
 Sachez que si vous voulez que vos amis vous aident à construire, etc... vous pouvez ajouter des membres à votre planète pour qu'ils puissent
 la modifier. Si vous souhaitez retirer ce droit à une personne après le lui avoir donné, c'est aussi possible.
 
-Note importante: Quand une planète est protégée, les coffres, mannequins, etc... ne pourront être ouvert que par des personnes membres de la planète.
+Note importante : Quand une planète est protégée, les coffres, mannequins, etc... ne pourront être ouvert que par des personnes membres de la planète.
 Tout comme les blocs, ils ne pourront être détruit que par les membres assignés à la planète.
 
 
@@ -56,7 +56,7 @@ Maintenant, nous allons parler des mods et leurs autorisations vis à vis du ser
 peut-être ouvert plus tard, mais pour le moment, ça n'est pas le cas !!
 
 Aussi, sachez que vous avez le droit d'avoir des mods sur le serveur, cependant, si jamais vous avez
-un mod qui **RAJOUTE** du contenu: si vous essayez de montrer, posez , parler ou tentez de faire apparaitre du contenu de ce mod (à l'outpost par ex) sur n'importe où sur le serveur, vous serez automatiquement éjecté du serveur. **ATTENTION, NE VENEZ JAMAIS AVEC UN PERSONNAGE FRACKIN' UNIVERSE, VOUS RISQUEZ UNE CORRUPTION DE PERSONNAGE**,
+un mod qui **RAJOUTE** du contenu : si vous essayez de montrer, posez, parler ou tentez de faire apparaitre du contenu de ce mod (à l'outpost par ex) sur n'importe où sur le serveur, vous serez automatiquement éjecté du serveur. **ATTENTION, NE VENEZ JAMAIS AVEC UN PERSONNAGE FRACKIN' UNIVERSE, VOUS RISQUEZ UNE CORRUPTION DE PERSONNAGE**
 
 Si vous vous faîtes éjecter du serveur à certains endroit du jeu, enlever le(s) mod(s) qui pose(nt) problème, nous ne pourront pas vous aider sinon.
 
@@ -67,10 +67,10 @@ Les mods qui givent (donnent) des items sont **TOLÉRÉS**. Vous avez le droit d
 ### Commandes de base
 ><p>/<span style="color:yellow">w</span> : Permet d'envoyer un message privé</p>
 ><p>/<span style="color:yellow">spawn</span> : Téléporte le vaisseau sur la planète ou le spawn configuré</p>
-><p>/<span style="color:yellow">who</span>  : Affiche une liste des joueurs actuellement connectés au serveur</p>
-><p>/<span style="color:yellow">here</span>  : Affiche une liste des joueurs présents sur la même planète que vous</p>
-><p>/<span style="color:yellow">claim</span>  : Permet de protéger une planète</p>
-><p>/<span style="color:yellow">unclaim</span>  : Permet de retirer la protection d'une planète</p>
+><p>/<span style="color:yellow">who</span> : Affiche une liste des joueurs actuellement connectés au serveur</p>
+><p>/<span style="color:yellow">here</span> : Affiche une liste des joueurs présents sur la même planète que vous</p>
+><p>/<span style="color:yellow">claim</span> : Permet de protéger une planète</p>
+><p>/<span style="color:yellow">unclaim</span> : Permet de retirer la protection d'une planète</p>
 ><p>/<span style="color:yellow">add_builder</span> <span style="color:#00FFFF">playername</span> : Permet d'ajouter un constructeur à la planète</p>
 ><p>/<span style="color:yellow">del_builder</span> <span style="color:#00FFFF">playername</span> : Permet de supprimer un constructeur de la planète</p>
 
@@ -87,25 +87,24 @@ N'oubliez pas d'activer le '**assets mismatch**' dans les options du jeux !!*
 - *Veuillez relire la section '**Sanctions et mods**' un peu plus haut*
 
 **Ou puis-je avoir toutes les autres informations du serveur ? (Redémarrages, Infos...)**
-- "Veuillez vous rendre sur le discord de [**Starbound-fr.net**](https://discord.gg/fkfJNBd) puis sur le channel '**#info**"
+- "Veuillez vous rendre sur le discord de [**Starbound-fr.net**](https://discord.gg/fkfJNBd) puis sur le channel '**#info**'"
 
 
 # Le site web
 Discutons maintenant du site web ! Comme vous avez peut-être pu le remarquer, cela fait presque 5-6 ans que le design
 du site internet n'as pas été renouvelé et malheureusement, le design du site sur les versions tablettes et mobiles n'ont jamais été une priorité.
 
-C'est pour cela que dans les prochaines semaines, le site va faire peau neuve avec un tout nouveau design, plus moderne mais toujours sur le thème de Starbound. Sachez aussi que le moteur du site internet va aussi changer. Au final, le rendu sera meilleur que celui actuellement.
+C'est pour cela que dans les prochaines semaines, le site va faire peau neuve avec un tout nouveau design, plus moderne mais toujours sur le thème de Starbound. Sachez aussi que le moteur du site Web va aussi changer. Au final, le rendu sera meilleur que celui actuellement.
 
-Les dessins ne vont pas être montrés car nous allons faire autrement. Le site internet EN DEVELOPPEMENT sera accessible sur [cette adresse](game.starbound-fr.net). Quand le développement
-sera terminé, les changements passeront sur le site internet de starbound-fr.net.
+Les dessins ne vont pas être montrés car nous allons faire autrement. Le site Web EN DEVELOPPEMENT sera accessible sur [cette adresse](http://game.starbound-fr.net). Quand le développement
+sera terminé, les changements passeront sur le site Web de Starbound-Fr.net.
 
 ### Prochains Articles
 
-Petite parenthèse, les prochains articles seront à propos du développement de mods,de l'actualité de Starbound puis sur les différentes façons d'optimiser le jeu.
+Petite parenthèse, les prochains articles seront à propos du développement de mods, de l'actualité de Starbound puis sur les différentes façons d'optimiser le jeu.
 
 
 Je vous remercie de votre soutien et de votre attention.
 Portez-vous bien et à bientôt !
 
 Yohann C.
-
