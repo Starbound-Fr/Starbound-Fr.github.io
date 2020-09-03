@@ -16,7 +16,6 @@ git clone -b master "${git_url}" ./_site
 rm -rf ./_site/*
 
 bundle exec jekyll build -t
-cp ./CNAME ./_site/
 
 cd ./_site
 
