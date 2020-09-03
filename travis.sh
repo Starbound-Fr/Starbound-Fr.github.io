@@ -15,6 +15,7 @@ git clone -b master "${git_url}" ./_site
 
 rm -rf ./_site/*
 
+gem install bundler:1.15.4
 bundle exec jekyll build -t
 cp ./CNAME ./_site/
 
