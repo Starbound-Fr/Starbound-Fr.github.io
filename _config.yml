@@ -11,7 +11,7 @@ email: contact@starbound-fr.net
 description: > # this means to ignore newlines until "baseurl:"
   Site francophone sur l'actualité autour de Starbound ! Communauté conviviale et accueillante !
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://starbound-fr.net" # the base hostname & protocol for your site
+url: "https://starbound-fr.github.io" # the base hostname & protocol for your site
 twitter_username: starbound_fr
 github_username:  Starbound-Fr-net
 permalink: /:title/
